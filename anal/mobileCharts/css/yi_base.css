@@ -1,0 +1,236 @@
+html {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+body {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px; 
+}
+h1 {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+h2 {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+h3 {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+h4 {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+h5 {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+h6 {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+/*
+div {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+*/
+span {
+	padding-right: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+p {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+ul {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+li {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+label {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+form {
+	padding-right: 0px; padding-left: 0px; font-size: 12px; padding-bottom: 0px; margin: 0px; word-spacing: 0px; padding-top: 0px; letter-spacing: 0px
+}
+body {
+	font-size: 12px; background: #fff; color: #666; line-height: 1.8; font-family: verdana, "ËÎÌו", arial,sans; text-align: center
+}
+a:link {
+	color: #000099; text-decoration: underline
+}
+a:visited {
+	color: #000099; text-decoration: underline
+}
+a:hover {
+	background: #fed762; color: #000; text-decoration: none
+}
+a:active {
+	background: #fed762; color: #000; text-decoration: none
+}
+ul {
+	list-style-type: none
+}
+li {
+	list-style-type: none
+}
+img {
+	border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px
+}
+#logo {
+	padding-right: 6px; display: block; float: left; margin: 5px 18px 6px 5px
+}
+#denglu {
+	padding-right: 10px; padding-left: 30px; right: 10px; background: url(tabfree.gif) no-repeat left bottom; float: right; padding-bottom: 0px; width: 505px; padding-top: 4px; top: 4px; height: 48px; text-align: right
+}
+#main {
+	margin: 10px auto 0px; width: 950px; text-align: left
+}
+#footer {
+	clear: both; padding-right: 0px; padding-left: 0px; background: url(footer_bg.jpg) repeat-x left top; padding-bottom: 10px; margin: 0px auto; padding-top: 10px; text-align: center
+}
+#header {
+	margin: 0px auto; width: 950px
+}
+#header h2 {
+	margin-top: 0px; font-weight: bold; font-size: 35px; color: #404040
+}
+#info {
+	float: left; width: 100%
+}
+#center {
+	margin: 0px 360px 0px 0px
+}
+#right {
+	float: left; margin-left: -350px; width: 350px
+}
+#rightbox {
+	margin: 0px
+}
+#nav li {
+	float: left; margin-left: 5px
+}
+#navbox {
+	margin-left: 330px; text-align: left
+}
+#nav {
+	margin-top: -30px; float: left; width: 100%; text-align: left
+}
+.nav_a a:link {
+	padding-right: 10px; margin-top: 3px; display: block; background: url(newp_nav_tbgb.gif) no-repeat right top; float: left; color: #000; text-decoration: none
+}
+.nav_a a:visited {
+	padding-right: 10px; margin-top: 3px; display: block; background: url(newp_nav_tbgb.gif) no-repeat right top; float: left; color: #000; text-decoration: none
+}
+.nav_a span {
+	display: block; padding-left: 10px; font-size: 14px; background: url(newp_nav_tbga.gif) no-repeat; float: left; cursor: hand; line-height: 29px
+}
+.nav_a a:hover {
+	padding-right: 10px; margin-top: 0px; display: block; background: url(newp_nav_tbgb.gif) no-repeat right bottom; color: #000; text-decoration: none
+}
+.nav_a active {
+	padding-right: 10px; margin-top: 0px; display: block; background: url(newp_nav_tbgb.gif) no-repeat right bottom; color: #000; text-decoration: none
+}
+.nav_a a:hover span {
+	margin-top: 0px; display: block; padding-left: 10px; font-size: 14px; background: url(newp_nav_tbga.gif) no-repeat left bottom; padding-bottom: 2px; cursor: hand; line-height: 29px; padding-top: 1px
+}
+.nav_a a:active span {
+	margin-top: 0px; display: block; padding-left: 10px; font-size: 14px; background: url(newp_nav_tbga.gif) no-repeat left bottom; padding-bottom: 2px; cursor: hand; line-height: 29px; padding-top: 1px
+}
+.nav_b a:link {
+	padding-right: 10px; margin-top: 0px; display: block; font-weight: bold; background: url(newp_nav_tbgav.gif) no-repeat right top; color: #fff; text-decoration: none
+}
+.nav_b a:visited {
+	padding-right: 10px; margin-top: 0px; display: block; font-weight: bold; background: url(newp_nav_tbgav.gif) no-repeat right top; color: #fff; text-decoration: none
+}
+.nav_b span {
+	display: block; padding-left: 10px; font-size: 14px; background: url(newp_nav_tbgav.gif) no-repeat left top; line-height: 29px; padding-top: 3px
+}
+.nav_b a:hover {
+	padding-right: 10px; margin-top: 0px; display: block; background: url(newp_nav_tbgav.gif) no-repeat right top; color: #fff; text-decoration: none
+}
+.nav_b active {
+	padding-right: 10px; margin-top: 0px; display: block; background: url(newp_nav_tbgav.gif) no-repeat right top; color: #fff; text-decoration: none
+}
+.nav_b a:hover span {
+	margin-top: 0px; display: block; padding-left: 10px; font-size: 14px; background: url(newp_nav_tbgav.gif) no-repeat left top; line-height: 29px
+}
+.nav_b a:active span {
+	margin-top: 0px; display: block; padding-left: 10px; font-size: 14px; background: url(newp_nav_tbgav.gif) no-repeat left top; line-height: 29px
+}
+#search {
+	padding-right: 4px; border-top: #5db30a 5px solid; padding-left: 4px; background: url(newp_search_bg.png) repeat-x left center; padding-bottom: 4px; padding-top: 4px; text-align: center
+}
+#search input {
+	border-right: #e8e8e8 1px solid; border-top: #999 1px solid; border-left: #999 1px solid; border-bottom: #e8e8e8 1px solid; height: 22px; background-color: #fff
+}
+ html #search input {
+	height: 18px
+}
+unknown {
+	height: 18px
+}
+#search .input-button {
+	border-top-width: 0px; padding-right: 2px; padding-left: 2px; border-left-width: 0px; font-size: 12px; background: url(button_bg.gif) no-repeat; border-bottom-width: 0px; width: 44px; margin-right: 8px; padding-top: 1px; height: 21px; border-right-width: 0px
+}
+.input-button {
+	border-top-width: 0px; padding-right: 2px; padding-left: 2px; border-left-width: 0px; font-size: 12px; background: url(button_bg_man.gif) no-repeat; border-bottom-width: 0px; width: 90px; margin-right: 8px; padding-top: 1px; height: 21px; border-right-width: 0px
+}
+a.ai:link {
+	color: #ff6600; text-decoration: none
+}
+a.ai:visited {
+	color: #ff6600; text-decoration: none
+}
+a.ai:hover {
+	color: #000; text-decoration: none
+}
+a.ai:active {
+	color: #000; text-decoration: none
+}
+#h_qiehuan li #qiehuanbox {
+	border-right: #ffa800 1px solid; padding-right: 10px; border-top: #ffa800 1px solid; margin-top: 5px; display: none; padding-left: 10px; z-index: 100; background: #fff; padding-bottom: 10px; margin-left: -138px; border-left: #ffa800 1px solid; width: 330px; padding-top: 10px; border-bottom: #ffa800 1px solid; position: absolute
+}
+#h_qiehuan li.cityhover #qiehuanbox {
+	display: block
+}
+#h_qiehuan a {
+	text-decoration: none
+}
+#qiehuanbox li {
+	float: left; width: 55px
+}
+#h_qiehuan {
+	margin-top: 5px; z-index: 110; margin-left: -160px; position: absolute
+}
+.c {
+	clear: both; overflow: hidden; height: 0px
+}
+.l {
+	float: left
+}
+.r {
+	float: right
+}
+.red {
+	font-weight: bold; color: #ff3300
+}
+.gray {
+	color: #ccc
+}
+#free {
+	position: absolute
+}
+#img_view_img {
+	padding-right: 10px; padding-left: 10px; padding-bottom: 10px; padding-top: 10px; text-align: left
+}
+#kijiji_other {
+	padding-right: 0px; border-top: #cdcdcd 1px solid; padding-left: 0px; padding-bottom: 10px; margin: 0px auto; width: 950px; padding-top: 10px
+}
+#kijiji_other h6 {
+	background-position: left center; padding-left: 10px; background-image: url(soil_icon.gif); margin-bottom: 10px; background-repeat: no-repeat
+}
+#kijiji_other li {
+	display: inline; margin-right: 10px
+}
+#search span {
+	padding-left: 5px
+}
+.bobo_news {
+	margin-left: -28px; padding-top: 5px; position: absolute
+}
+input.code {
+	font-family: "luxi mono", "courier new", monospace
+}

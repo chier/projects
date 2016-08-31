@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+
+	<!-- Enables the Spring MVC @Controller programming model <annotation-driven 
+		conversion-service="conversionService"> <argument-resolvers> <beans:bean 
+		class="org.springframework.samples.mvc.data.custom.CustomArgumentResolver"/> 
+		</argument-resolvers> </annotation-driven> -->
+
+	
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources/ directory -->
+	<mvc:resources mapping="/js/**" location="/js/" />
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/style/**" location="/style/" />
+	<mvc:resources mapping="/images/**" location="/images/" />
+	<mvc:resources mapping="/img/**" location="/img/" />
+	<mvc:resources mapping="/app-res/**" location="/app-res/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
+		in the /WEB-INF/views directory -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+		<property name="maxUploadSize" value="102400000" />
+		<property name="defaultEncoding" value="utf-8" />
+	</bean>
+
+
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean id="utf8StringHttpMessageConverter" class="com.cmcc.anal.common.spring.UTF8StringHttpMessageConverter"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- ①注册ConversionService -->  
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+	    <property name="converters">
+	       <list>
+	            <bean class="com.cmcc.anal.common.spring.converter.DateConverter">
+	            </bean>
+	        </list>
+	    </property>
+	</bean>
+	
+	<!-- ②使用ConfigurableWebBindingInitializer注册conversionService -->  
+	<bean id="webBindingInitializer" class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">  
+	    <property name="conversionService" ref="conversionService"/>  
+	</bean>
+	
+	<!-- 3 -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">  
+		<property name="webBindingInitializer" ref="webBindingInitializer"/>  
+	</bean>  
+    
+	<!-- Imports user-defined @Controller beans that process client requests -->
+	<context:component-scan base-package="com.cmcc.anal.framework.controller" />
+
+	<mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+
+
+</beans>

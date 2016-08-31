@@ -1,0 +1,253 @@
+.map {
+	background: url(../images/map2012.png) no-repeat left top;
+	float: left;
+	width: 1148px;
+	height: 595px;
+}
+.map h1 {
+	display: block; font-weight: normal; position: absolute; 
+}
+.map_2012 {
+	background: url(../images/map2012.png) no-repeat left top;
+	background-size:1000px 595px;
+	float: left;
+	width: 1000px;
+	height: 595px;
+}
+
+
+.map_2012 h1 {
+	display: block; font-weight: normal; position: absolute; 
+}
+
+.map_2013 {
+	background: url(../images/map2013.png) no-repeat left top;
+	background-size:1000px 595px;
+	float: left;
+	width: 1000px;
+	height: 595px;
+}
+
+
+.map_2013 h1 {
+	display: block; font-weight: normal; position: absolute; 
+}
+
+
+.map_2014 {
+	background: url(../images/map2014.png) no-repeat left top;
+	background-size:1000px 595px;
+	float: left;
+	width: 1000px;
+	height: 595px;
+}
+
+.map_2014 h1 {
+	display: block; font-weight: normal; position: absolute; 
+}
+
+
+
+
+
+
+.clear{ clear:both;}
+/***orange***/
+.mapl_orange a:link {
+	display: block; background: url(../images/maph101.gif) no-repeat; color: #000; text-decoration: none
+}
+.mapl_orange a:visited {
+	display: block; background: url(../images/maph101.gif) no-repeat; color: #000; text-decoration: none
+}
+.mapl_orange a:link {
+	background-position: left 4px; padding-left: 20px
+}
+.mapl_orange a:visited {
+	background-position: left 4px; padding-left: 20px
+}
+.mapl_orange a:hover {
+	padding-right: 20px; display: block; background: url(../images/maph101.gif) no-repeat; color: #ff0000
+}
+.mapl_orange a:active {
+	padding-right: 20px; display: block; background: url(../images/maph101.gif) no-repeat; color: #ff0000
+}
+#map .mapl_orange a:hover {
+	background-position: left bottom; padding-left: 20px
+}
+#map .mapl_orange a:active {
+	background-position: left bottom; padding-left: 20px
+}
+
+/***green***/
+.mapl_green a:link {
+	display: block; background: url(../images/maph103.gif) no-repeat; color: #000; text-decoration: none
+}
+.mapl_green a:visited {
+	display: block; background: url(../images/maph103.gif) no-repeat; color: #000; text-decoration: none
+}
+.mapl_green a:link {
+	background-position: left 4px; padding-left: 20px
+}
+.mapl_green a:visited {
+	background-position: left 4px; padding-left: 20px
+}
+.mapl_green a:hover {
+	padding-right: 20px; display: block; background: url(../images/maph103.gif) no-repeat; color: #ff0000
+}
+.mapl_green a:active {
+	padding-right: 20px; display: block; background: url(../images/maph103.gif) no-repeat; color: #ff0000
+}
+#map .mapl_green a:hover {
+	background-position: left bottom; padding-left: 20px
+}
+#map .mapl_green a:active {
+	background-position: left bottom; padding-left: 20px
+}
+
+/***blue***/
+.mapl_blue a:link {
+	display: block; background: url(../images/maph102.gif) no-repeat; color: #000; text-decoration: none
+}
+.mapl_blue a:visited {
+	display: block; background: url(../images/maph102.gif) no-repeat; color: #000; text-decoration: none
+}
+.mapl_blue a:link {
+	background-position: left 4px; padding-left: 20px
+}
+.mapl_blue a:visited {
+	background-position: left 4px; padding-left: 20px
+}
+.mapl_blue a:hover {
+	padding-right: 20px; display: block; background: url(../images/maph102.gif) no-repeat; color: #ff0000
+}
+.mapl_blue a:active {
+	padding-right: 20px; display: block; background: url(../images/maph102.gif) no-repeat; color: #ff0000
+}
+#map .mapl_blue a:hover {
+	background-position: left bottom; padding-left: 20px
+}
+#map .mapl_blue a:active {
+	background-position: left bottom; padding-left: 20px
+}
+
+
+/*************/
+#city {
+	padding-right: 0px; border-top: #cdcdcd 1px solid; padding-left: 0px; padding-bottom: 10px; margin: 0px auto; width: 950px; padding-top: 10px; border-bottom: #cdcdcd 1px solid; text-align: left
+}
+#city h6 {
+	background-position: left center; padding-left: 10px; font-size: 14px; background-image: url(city_icon.gif); margin-bottom: 10px; color: #000; background-repeat: no-repeat
+}
+#city a {
+	padding-right: 5px
+}
+#city strong {
+	margin-top: 5px; display: inline; margin-bottom: -2px; color: #333
+}
+#city h1 {
+	color: #333
+}
+#soil {
+	padding-right: 0px; padding-left: 0px; padding-bottom: 10px; margin: 0px auto; width: 950px; padding-top: 10px; text-align: left
+}
+#soil a {
+	margin: 0px 2px
+}
+#soil h6 {
+	background-position: left center; padding-left: 10px; font-size: 14px; background-image: url(soil_icon.gif); margin-bottom: 10px; color: #000; background-repeat: no-repeat
+}
+a.z {
+	color: #ff0000
+}
+#rightindex {
+	float: right; margin: 10px 0px 0px 10px; width: 380px
+}
+.rightbox {
+	background: url(index_rb1.gif) no-repeat left top; width: 341px
+}
+.rightbox p {
+	padding-right: 18px; padding-left: 18px; background: url(index_rb2.gif) no-repeat left bottom; padding-bottom: 15px; padding-top: 15px
+}
+
+/**********显示弹框*********/
+
+.fenl{ 
+	width:150px; height:100px; border:0px #000000 solid;
+	margin-top:80px; margin-left:20px; float:left;
+	border-radius:25px;
+	-moz-border-radius:25px; /* Old Firefox */
+}
+.fenl li{ width:100px; height:30px;}
+.li_yuan01{ 
+	width:10px; height:10px; border:1px #ff9933 solid; 
+	border-radius:25px;
+	-moz-border-radius:25px; /* Old Firefox */ 
+	background-color: #ff9933;
+	float:left;
+	margin-top:5px;
+}
+.li_yuan02{ 
+	width:10px; height:10px; border:1px #05435f solid; 
+	border-radius:25px;
+	-moz-border-radius:25px; /* Old Firefox */ 
+	background-color: #05435f;
+	float:left;
+	margin-top:5px;
+}
+.li_yuan03{ 
+	width:10px; height:10px; border:1px #81c531 solid; 
+	border-radius:25px;
+	-moz-border-radius:25px; /* Old Firefox */ 
+	background-color: #81c531;
+	float:left;
+	margin-top:5px;
+}
+
+.li_yuan04{
+	width: 10px;
+	height: 10px;
+	border: 1px #f3704b solid;
+	border-radius: 25px;
+	-moz-border-radius: 25px; /* Old Firefox */
+	background-color: #f3704b;
+	float: left;
+	margin-top: 5px;
+	margin-right:10px;
+}
+
+
+.map_con{
+	width:220px; height:150px; border:1px #666 solid;
+	margin-top:18%; margin-left:20px; float:left;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	box-shadow:0px 0px 5px #666;
+}
+.map_con p{
+	padding:15px;
+}
+	
+/**********列表list***********/
+.top_h1{
+	float: left;
+	font-size: 38px;
+	margin: 6px 0px 0px 262px;
+	font-family: Microsoft YaHei; 
+	font-weight: bold;
+}
+.l_con{
+	width: 99%;
+	height: auto;
+	border: 1px #666 solid;
+	margin: 5px;
+	float: left;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	box-shadow: 0px 0px 5px #666;
+}
+.l_con table { text-align:center;}
+.l_con table th{ border-bottom:1px #cccccc solid; height:30px; text-align:center; font-size:16px;}
+.l_contd01{ border-bottom:1px #cccccc solid; height:30px; border-right:1px #CCCCCC solid;}
+.l_contd02{ border-bottom:1px #cccccc solid; height:30px;}
+.l_con p{
+	padding:15px; color:#F90;}

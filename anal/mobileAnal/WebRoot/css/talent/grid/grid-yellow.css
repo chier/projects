@@ -1,0 +1,129 @@
+/*切换风格时，替换如下几种颜色：999900, adcd3c, ffffd7*/
+.talent_grid_table  {
+	font-family: "Tahoma", "宋体", "Arial", "Verdana";
+	font-size: 9pt;
+	line-height: 18px;
+	width:98%;
+	border:1px #adcd3c solid;
+	border-top: none;
+	border-collapse:collapse;
+}
+
+.talent_grid_table caption {
+	text-align: left;
+	border:1px #adcd3c solid;
+	font-weight: bold;
+	border-bottom: none;
+	background-color:#ffffd7;
+	padding: 2px;
+	padding-left: 5px;
+}
+
+.talent_grid_table caption span {
+	float:right;
+}
+
+.talent_grid_table thead  {
+	background-color: #adcd3c; /**#-96c2f1*/
+}
+.talent_grid_table thead tr td {
+	border-top:1px #adcd3c solid;
+	border-bottom:1px #adcd3c solid;
+	text-align: center;
+	font-weight: bold;
+	padding: 1px;
+	height: 20px;
+	color: #fff;
+}
+
+.talent_grid_table tbody tr td {
+	text-align:center;
+	border:1px #adcd3c solid; 
+	padding: 1px;
+}
+
+.talent_grid_table_tbody_row_odd {
+	background-color: #ffffd7;
+}
+.talent_grid_table_tbody_row_even {
+	background-color: #ffffff;
+}
+
+.talent_grid_table tfoot tr td {
+	border-top:1px #adcd3c solid;
+	text-align: right;
+	padding:none;
+}
+
+
+/*CSS Digg style pagination*/
+DIV.digg {
+	PADDING-RIGHT: 3px; 
+	PADDING-LEFT: 3px; 
+	PADDING-BOTTOM: 1px; 
+	PADDING-TOP: 0px; 
+	MARGIN: 0px;
+	TEXT-ALIGN: right;
+	background-color:#ffffd7;
+	font-weight: normal;
+	COLOR: #999900;
+}
+DIV.digg A {
+	BORDER: #ffffd7 1px solid; /*BORDER: #adcd3c 1px solid;*/
+	margin: 0px 1px 0px 1px;
+	PADDING: 1px 3px 1px 3px;
+	COLOR: #999900;
+	TEXT-DECORATION: none;
+}
+DIV.digg A:hover {
+	BORDER: #999900 1px solid; 
+	COLOR: #00f;
+	background-color:#fff;
+}
+DIV.digg A:active {
+	COLOR: #000; 
+	BORDER: #999900 1px solid;
+}
+DIV.digg SPAN.current {
+	BORDER: #999900 1px solid; 
+	PADDING: 1px 5px 1px 5px;
+	FONT-WEIGHT: bold; 
+	MARGIN: 0px 1px 0px 1px;
+	COLOR: #fff; 
+	BACKGROUND-COLOR: #999900;
+}
+
+DIV.digg SPAN.disabled {
+	BORDER: #eee 1px solid; 
+	PADDING-RIGHT: 5px; 
+	PADDING-LEFT: 5px; 
+	PADDING-BOTTOM: 2px; 
+	MARGIN: 2px; 
+	COLOR: #ddd; 
+	PADDING-TOP: 2px;
+}
+DIV.digg SPAN.record {
+	PADDING-RIGHT: 5px; 
+	PADDING-LEFT: 5px; 
+	PADDING-BOTTOM: 2px; 
+	MARGIN: 0px 5px 0px 5px;
+	PADDING-TOP: 2px;
+	font-weight: bold;
+}
+DIV.digg SPAN.separator {
+	MARGIN-left: 2px;
+	MARGIN-right: 2px;
+	font-weight: bold;
+}
+DIV.digg select {
+	width: 45px;
+	font-size: 0.8em;
+	height: 18px;
+	color: #999900;
+	margin-top:1px;
+	margin-bottom:0px;
+}
+DIV.digg .arrow {
+	BORDER: #adcd3c 1px solid;
+	padding: 2px 5px 2px 5px;
+}

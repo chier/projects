@@ -1,0 +1,24 @@
+请求类型
+{
+	op	String	必填	模块名称
+	source_id	String	必填	原ID，即请求的帐户ID，0表示登录请求，其它表示用户ID
+	token	String	令牌，业务ID
+	data JSONArray	必填	请求的数据集
+}
+
+
+
+
+
+
+
+返回类型
+{
+	op	String  密填	模块名称
+	result	int	必填	代码.0表示成功，其它失败
+	resultdesc	String	否		消息
+	token	String	必填	 令牌	 业务ID
+	data JSONArray	否	 data
+}
+
+

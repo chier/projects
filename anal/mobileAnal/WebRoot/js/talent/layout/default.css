@@ -1,0 +1,69 @@
+.talent_flexgrid_container {
+	/**000099, 85B5D1, eff7ff*/
+}
+.talent_flexgrid_label_container {
+	background-color : #ccddff;  /**85B5D1*/
+	text-align: right;
+	height: 24px;
+	display: inline;
+	padding:2px 2px 2px 2px;
+}
+.talent_flexgrid_input_container {
+	background-color : #eff7ff;
+	text-align: left;
+	height: 24px;
+	display: inline;
+	padding:2px 2px 2px 2px;
+}
+
+.talent_flexgrid_input_container input {
+	width:70%;
+	width:expression(this.type=="checkbox"?'26px':'70%');
+	width:expression(this.isBetween=="true"?'35%':'70%');
+	border:solid 1px #96c2f1;
+}
+.talent_flexgrid_input_container INPUT[type="checkbox"], .talent_flexgrid_input_container INPUT[type="radio"] {
+   width:26px;
+}
+.talent_flexgrid_input_container INPUT[isBetween="true"] {
+	width:35%;
+}
+
+.rowContainer {
+	width:100%;
+	height:26px;
+	padding:2px;
+	margin:0px;
+}
+.talent_flexgrid_label_1column {
+	width: 99%;
+	text-align: left;
+}
+.talent_flexgrid_input_1column {
+	width: 99%;
+}
+.talent_flexgrid_label_2column {
+	width: 20%;
+}
+.talent_flexgrid_input_2column {
+	width: 78%;
+}
+
+.talent_flexgrid_label_4column {
+	width: 10%;
+}
+.talent_flexgrid_input_4column {
+	width: 38%;
+}
+.talent_flexgrid_label_6column {
+	width: 8%;
+}
+.talent_flexgrid_input_6column {
+	width: 24%;
+}
+.talent_flexgrid_label_8column {
+	width: 5%;
+}
+.talent_flexgrid_input_8column {
+	width: 19%;
+}

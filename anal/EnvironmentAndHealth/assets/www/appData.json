@@ -1,0 +1,70 @@
+{
+    "name": "Sencha",
+    "js": [
+        {
+            "path": "js/lib/sencha-touch-all-debug.js"
+        },
+        {
+            "path": "js/lib/touch-charts.js"
+        }, 
+        {
+            "path": "custom.js"
+        },  
+        {
+            "path": "dashboard.js"
+        },                         
+        {
+            "path": "appData.js",
+            "update": "delta"
+        }
+    ],
+    "css": [
+        {
+            "path": "css/touch-charts-demo.css",
+            "update": "delta"
+        },
+        {
+            "path": "css/GridView.css",
+            "update": "delta"
+        },
+        {
+            "path": "css/main.css",
+            "update": "delta"
+        },
+         {
+            "path": "css/yi_base.css",
+            "update": "delta"
+        }, {
+            "path": "css/yi_index.css",
+            "update": "delta"
+        }
+		
+    ],
+    "appCache": {
+        "cache": [
+            "index.html"
+        ],
+        "network": [
+            "*"
+        ],
+        "fallback": []
+    },
+    "extras": [
+        "resources/icons",
+        "resources/loading"
+    ],
+    "archivePath": "archive",
+    "buildPaths": {
+        "testing": "../../deploy/testing/list",
+        "production": "../../deploy/production/list",
+        "package": "../../deploy/package/list",
+        "native": "../../deploy/native/list"
+    },
+    "buildOptions": {
+        "product": "touch",
+        "minVersion": 3,
+        "debug": false,
+        "logger": "no"
+    },
+    "id": "3a867610-670a-11e1-a90e-4318029d18bb"
+}

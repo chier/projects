@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>wificity-base</display-name>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:config/applicationContext.xml</param-value>
+	</context-param>
+
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+
+	<!--  Container关闭开启的Listener，用来做日志，初始化平台使用的一些环境变量、数据库……。其中数据库主要是检测UserInfo表中是否有loginId为admin的用户。 -->
+	<listener>
+		<listener-class>
+			com.cmcc.anal.common.controller.listener.AppContextListener
+		</listener-class>
+	</listener>
+	
+
+
+
+
+	<!-- Processes application requests -->
+	<servlet>
+		<servlet-name>dispatcherServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+				classpath*:config/servlet-context.xml
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcherServlet</servlet-name>
+		<url-pattern>*.talent</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<description></description>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>com.talent.platform.web.filter.CharsetEncodeFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>containerEncoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+
+	<servlet>
+		<servlet-name>GetBeanServlet</servlet-name>
+		<servlet-class>com.cmcc.anal.common.util.ApplicationContextServlet
+		</servlet-class>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	<!--Spring配置结束 -->
+
+	<servlet>
+		<servlet-name>ViewStatusMessages</servlet-name>
+		<servlet-class>ch.qos.logback.classic.ViewStatusMessagesServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ViewStatusMessages</servlet-name>
+		<url-pattern>/logback-status</url-pattern>
+	</servlet-mapping>
+	<!-- 过滤 json请求 并打印出日志 -->
+	<filter>
+		<filter-name>JsonAuthenticationFilter</filter-name>
+		<filter-class>com.cmcc.anal.framework.filter.JsonAuthenticationFilter
+		</filter-class>
+		<init-param>
+			<param-name>propertyName4Data</param-name>
+			<param-value>JsonAuthenticationFilter.data</param-value>
+		</init-param>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>JsonAuthenticationFilter</filter-name>
+		<url-pattern>*.talent</url-pattern>
+	</filter-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- session超时定义,单位为分钟 -->
+	<session-config>
+		<session-timeout>100000</session-timeout>
+	</session-config>
+
+</web-app>

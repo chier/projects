@@ -1,0 +1,52 @@
+.talent_flexgrid_container {
+	
+}
+.talent_flexgrid_label_container {
+	background-color : #9898ff;
+	text-align: right;
+	height: 24px;
+	display: inline-block;
+	margin:0px;
+	border: 0px solid #0000ff;
+	padding:2px 4px 2px 2px;
+}
+.talent_flexgrid_input_container {
+	background-color : #cdcdff;
+	text-align: left;
+	
+	height: 24px;
+	display: inline-block;
+	margin:0px;
+	border: 0px solid #0000ff;
+	padding:2px 2px 2px 4px;
+}
+
+.talent_flexgrid_input_container > input, select {
+	width:80%;
+}
+
+.talent_flexgrid_label_2column {
+	width: 30%;
+}
+.talent_flexgrid_input_2column {
+	width: 70%;
+}
+
+.talent_flexgrid_label_4column {
+	width: 20%;
+}
+.talent_flexgrid_input_4column {
+	width: 30%;
+}
+.talent_flexgrid_label_6column {
+	width: 13%;
+}
+.talent_flexgrid_input_6column {
+	width: 20%;
+}
+.talent_flexgrid_label_8column {
+	width: 10%;
+}
+.talent_flexgrid_input_8column {
+	width: 15%;
+}

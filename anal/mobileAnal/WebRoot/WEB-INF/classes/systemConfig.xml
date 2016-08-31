@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<systemConfig>
+
+	<!-- 系统默认字符集 -->
+	<defaultCharSet>UTF-8</defaultCharSet>
+
+	<!-- 节点上传图片路径 -->
+	<staticNodeFilePath>/static/nodeImageFile/</staticNodeFilePath>
+
+	<!-- 节点上传图片大小限制  204800 -->
+	<staticNodeFileMaxSize>0</staticNodeFileMaxSize>
+
+	<!-- 分页时每页显示的条目数 -->
+	<pageSize>16</pageSize>
+
+	<!-- Session超时时间（分钟） -->
+	<sessionTimeOut>30</sessionTimeOut>
+
+	<!-- 平台生成文件存放位置的相对路径 -->
+	<genFilePath>/static</genFilePath>
+
+	<!-- 平台是否做了集群 -->
+	<cluster>false</cluster>
+
+	<!-- 平台的请求后缀名 -->
+	<actionExt>portal</actionExt>
+
+	
+	<!--用户安全配置信息-->
+	<userSecurity>
+		<!-- 用户口令有效期 -->
+		<passwordTime>90</passwordTime>
+		<!-- 系统提前多少天进行提示 -->
+		<systemOverdueRemindDays>10</systemOverdueRemindDays>
+		<!-- 账号锁定 0表示有锁定功能 1表示没有锁定功能  -->
+		<userLocking>0</userLocking>
+		<!-- 不得使用最近几次重复的密码 -->
+		<recentlyPassword>5</recentlyPassword>
+		
+	</userSecurity>
+	
+
+	<!-- 平台登录是否有验证码 -->
+	<!-- <verifyImageCode>true</verifyImageCode> -->
+
+	<!-- 用户和用户组对应关系，"single"代表用户和组一一对应,"multi"代表用户和组多对多关系。-->
+	<!-- 只能在系统安装的时候设置初始值，一旦系统运行起来不能更改！-->
+	<!-- <userGroupMapping>multi</userGroupMapping> -->
+
+	<!-- i18n资源文件名 -->
+	<!-- <i18nMessageFileName>messages</i18nMessageFileName> -->
+
+	<!-- 异常信息i18n资源文件名 -->
+	<!-- <i18nExceptionMessageFileName>
+		exceptionMessages
+	</i18nExceptionMessageFileName> -->
+
+	<!-- 系统服务邮箱地址 -->
+<!-- 	<customerServiceMail>xiaozhi19820323@163.com</customerServiceMail> -->
+
+	<!-- Cache接口的实现类 -->
+<!-- 	<cacheImpl>com.cmcc.common.cache.impl.OSCacheImpl</cacheImpl> -->
+
+	<!-- 系统可用的Mail服务器信息 -->
+	<!-- 
+	<mailConfig>
+		<smtpMail>chenmingzhi@ultrapower.com.cn</smtpMail>
+		<smtpAuth>true</smtpAuth>
+		<smtpHost>mail.ultrapower.com.cn</smtpHost>
+		<mailUser>chenmingzhi@ultrapower.com.cn</mailUser>
+		<mailPasswd>quxiaodan</mailPasswd>
+	</mailConfig> -->
+
+
+	
+
+	
+	<!-- 内容管理上传文件相对路径 相对于应用程序根的路径 -->
+ 	<contentStaticFilepath>
+		/static/contentstaticfile/
+	</contentStaticFilepath>
+	<!-- 内容管理抓取远程图片保存到本地的路径  -->
+	 <contentCatchImagePath>
+		/static/contentimagepath/
+	</contentCatchImagePath>
+	<!-- 内容信息Tab页页面分页显示记录条数 -->
+	<!-- <contentTabPageSize>3</contentTabPageSize> -->
+	<!-- 内容信息Web页页面分页显示记录条数 -->
+	<!-- <contentWebPageSize>5</contentWebPageSize> -->
+	<!-- 内容信息Web页点完MORE的页面记录条数 -->
+	<!-- <contentShowMorePageSize>20</contentShowMorePageSize> -->
+	<!-- 内容信息上传附件大小限制  204800-->
+	 <contentAttachMaxSize>5000000000</contentAttachMaxSize>
+
+	<!-- 体验版用户的使用期限配置单位是天 -->
+	<!-- <subuseDeploy>90</subuseDeploy> -->
+
+	<!-- 体验版用户的使用模块权限配置 多个之间用英文,隔开 -->
+	<!-- <subuseDeployName>组织架构管理,员工管理,群发短信</subuseDeployName> -->
+
+	<!-- 控制树形菜单显示,各行业的行业编码 多个之间用英文,隔开 -->
+	<!-- <callingCode>2003</callingCode> -->
+	<!-- <versionCode>2</versionCode> -->
+
+	<!-- 体验版企业每月最大短信条数 -->
+	<!-- <demoCorpMsgLmt>50</demoCorpMsgLmt> -->
+
+	<!-- tab页签未激活图片 adtab生产环境地址 校园版-->
+	<!-- <tabLogoVersion2>
+		http://221.179.173.116:15333/images/tab_default.gif
+	</tabLogoVersion2> -->
+	<!-- tab页签激活图片  adtab生产环境地址 校园版-->
+	<!-- <tabHoverVersion2>
+		http://221.179.173.116:15333/images/tab_defaulthover.gif
+	</tabHoverVersion2> -->
+
+	<!-- tab页签未激活图片 adtab生产环境地址 -->
+	<!-- <tabLogo>
+		http://221.179.173.116:15333/images/tab_default_normal.png
+	</tabLogo> -->
+	<!-- tab页签激活图片  adtab生产环境地址-->
+	<!-- <tabHover>
+		http://221.179.173.116:15333/images/tab_default_down.png
+	</tabHover> -->
+	<!-- tab 页签滑过图片  adtab 生产环境地址 -->
+	<!-- <tabMouserover>
+		http://221.179.173.116:15333/images/tab_default_over.png
+	</tabMouserover> -->
+
+	<!-- <aopAddress>http://192.168.0.47:17002</aopAddress> -->
+
+	<!-- memcached客户端数量，memcached.xml文件中配置的客户端数据，目前数量为1 -->
+	<!-- <clientNum>0</clientNum> -->
+	<!-- memcached缓存数据失效时间，单位秒 -->
+	<!-- <cacheInvalidationTime>300</cacheInvalidationTime> -->
+
+
+
+	<!-- MOP请求地址 -->
+	<!-- <mopUrl>
+		http://221.179.173.116:17001/public/common/login/loginADCAction.portal
+	</mopUrl> -->
+	<!-- ADC平台webservice地址 -->
+	<!-- 企业版SI编码 -->
+	<!-- <SICode>200000353</SICode> --> -->
+
+	<!-- 
+		官网系统广播URL路径 
+		生产环境是： http://efeixin.10086.cn/news_
+		测试环境是：http://221.179.173.116:5333/news_
+	-->
+	<!-- <sysmsgUrl>http://221.179.173.116:5333/news_</sysmsgUrl> -->
+
+	<!-- 
+		官网url路径地址 
+		生产环境是： efeixin.10086.cn
+		测试环境是： 221.179.173.116:5333
+	-->
+
+	<!-- <efetionurl>221.179.173.116:5333</efetionurl> -->
+
+	<!-- 搜索模块地址 -->
+	<!-- <searchUrl>http://192.168.0.49:9010/smsIndex/search</searchUrl> -->
+
+	<!-- 总模块数 -->
+	<!-- <modalTotal>1</modalTotal> -->
+	<!-- 当前模块-->
+	<!-- <modalCurr>0</modalCurr> -->
+	
+	
+	<!-- zhangzhanliang jfxml文件列表目录 -->
+	<jrxmlUrl>c:\\japsersoft\\</jrxmlUrl>
+	
+	<suveyDataS>
+	    <CEN_GROUP name="2012">s%</CEN_GROUP>
+	    <CEN_GROUP name="2013">2013%</CEN_GROUP>
+	    <CEN_GROUP name="2014">2014%</CEN_GROUP>
+	    
+	</suveyDataS>
+</systemConfig>
+
+

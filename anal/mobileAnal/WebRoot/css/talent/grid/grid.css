@@ -1,0 +1,313 @@
+/*切换风格时，替换如下几种颜色：000099, 99BBE8, eff7ff*/
+.tt_panelHead {
+	background-image: url(./img/blue/list_table_Head.gif);
+	border:1px solid #96C2F1;
+	border-bottom: 1px solid #96C2F1;
+	color: #15428B;
+	height: 20px;
+	font-weight:bold;
+	padding:2px 2px 2px 5px;
+	margin:0px;
+	font-size: 9pt;
+}
+.talent_grid_table  {
+	font-family: "Tahoma", "宋体", "Arial", "Verdana";
+	font-size: 9pt;
+	line-height: 18px;
+	width:100%;
+	border:1px #99BBE8 solid;
+	border-top: none;
+	border-collapse:collapse;
+	padding:5px;
+}
+
+.talent_grid_table caption {
+	text-align: left;
+	border:1px #99BBE8 solid;
+	font-weight: bold;
+	border-bottom: none;
+	background-color:#eff7ff;
+	padding: 2px;
+	padding-left: 5px;
+}
+
+.talent_grid_table caption span {
+	float:right;
+}
+
+.talent_grid_table thead  {
+	background-color: #99BBE8; /**#-96c2f1*/
+}
+.talent_grid_table thead tr th {
+	border-top:0px #99BBE8 solid;
+	border-bottom:1px #99BBE8 solid;
+	text-align: center;
+	font-weight: bold;
+	padding: 1px;
+	height: 20px;
+	color: #15428B;
+	background-image: url(./img/blue/index_tbg.gif);
+}
+.talent_grid_table thead tr td {
+	border-top:1px #99BBE8 solid;
+	border-bottom:1px #99BBE8 solid;
+	text-align: center;
+	font-weight: bold;
+	padding: 1px;
+	height: 20px;
+	color: #fff;
+}
+
+#talent_grid_head_btn {
+	text-align: left;
+	font-weight:normal;
+	height:20px;
+	padding: 4px;
+	/**background-image: url(./img/blue/list_table_Head.gif);*/
+    border-top:none;
+    border-bottom:none;
+    background-image: url(./img/blue/Main_list_bottom_Bg.gif);
+}
+#talent_grid_head_btn .tt_separate4btn {
+	margin: 0px 8px;
+	border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #FFFFFF;
+    padding:0px;
+}
+#talent_grid_head_btn a {
+	font-weight: bold;
+	margin:0px;
+	padding:2px;
+	text-decoration: none;
+}
+#talent_grid_head_btn a:hover {
+	background-color: #EFF7FF;
+	border: none;
+}
+.tt_grid_action_link {
+	
+}
+
+.talent_grid_table tbody tr td {
+	text-align:center;
+	border:1px #99BBE8 dotted; 
+	padding: 1px;
+	color:#333333;
+}
+
+.talent_grid_table_tbody_row_odd {
+	/**background-color: #efefef;*/
+	background-color: #eee;
+}
+.talent_grid_table_tbody_row_even {
+	background-color: #efefff;
+}
+
+.talent_grid_table tfoot tr td {
+	border-top:1px #99BBE8 solid;
+	padding:none;
+}
+.talent_grid_highlight {
+	/**background-color: #dfe8f6; EEE8AA dfe8ff*/
+	background-color: #dfe8f6;
+}
+.talent_grid_highlight td {
+	
+}
+
+/*CSS Digg style pagination 分页栏的样式*/
+.digg {
+	PADDING: 4px 6px 2px 6px; 
+	MARGIN: 0px;
+	height: 20px;
+	background-color:#eff7ff;
+	font-weight: normal;
+	COLOR: #000;
+	background-image: url(./img/blue/Main_list_bottom_Bg.gif);
+}
+.tt_grid_menu_wrapSpan {
+	
+}
+#tt_grid_menu {
+	border:1px solid #fff;
+	background:  url(./img/blue/accordion_expand.png) no-repeat scroll 36px 2px transparent;
+	text-align: left;
+	cursor: pointer;
+	margin-bottom:2px;
+	margin-right: 100px;
+	font-weight:bold;
+	padding: 2px;
+	padding-bottom: 3px;
+}
+#tt_grid_menu:hover
+{
+	TEXT-DECORATION: none;
+	BORDER: #99f 1px solid; 
+}
+#tt_grid_menu span {
+	padding: 4px;
+	padding-right:16px;
+	
+}
+
+.digg a {
+	margin: 0px 1px 0px 1px;
+	PADDING: 1px 3px 1px 3px;
+}
+
+.digg a:link {
+	BORDER: #eff7ff 1px solid;
+	COLOR: #00b;
+	TEXT-DECORATION: none;
+}
+.digg a:hover {
+	BORDER: #99f 1px solid; 
+	COLOR: #000099;
+	background-color:#eef;
+}
+.digg a:active {
+	COLOR: #000; 
+	BORDER: #000099 1px solid;
+}
+.digg .current {
+	BORDER: #66d 1px solid; 
+	PADDING: 1px 5px 1px 5px;
+	FONT-WEIGHT: bold; 
+	MARGIN: 0px 1px 0px 1px;
+	COLOR: #fff; 
+	BACKGROUND-COLOR: #66d;
+}
+.digg .arrow {
+	border: none;
+}
+.digg .first {
+	background:  url(./img/blue/pagination_first.gif) no-repeat scroll 1px 1px transparent;
+	PADDING-LEFT: 16px;
+}
+.digg .pre {
+	background:  url(./img/blue/pagination_prev.gif) no-repeat scroll 2px 1px transparent;
+	PADDING-LEFT: 16px;
+}
+
+.digg .next {
+	background:  url(./img/blue/pagination_next.gif) no-repeat scroll 2px 1px transparent;
+	PADDING-LEFT: 16px;
+}
+.digg .last {
+	background:  url(./img/blue/pagination_last.gif) no-repeat scroll 1px 1px transparent;
+	PADDING-LEFT: 16px;
+}
+
+.digg .record {
+	PADDING-RIGHT: 5px; 
+	PADDING-LEFT: 5px; 
+	PADDING-BOTTOM: 2px; 
+	MARGIN: 0px 0px 0px 0px;
+	PADDING-TOP: 2px;
+	font-weight: bold;
+}
+.digg .separator {
+	margin: 0px 10px 0px 10px;
+	font-weight: bold;
+	color: #009;
+	border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #FFFFFF;
+    padding:0px;
+}
+.tt_separate4btn {
+	margin: 0px 10px 0px 10px;
+	font-weight: bold;
+	color: #009;
+    padding:0px;
+    
+}
+
+.digg select {
+	width: 45px;
+	font-size: 0.8em;
+	height:20px;
+	color: #000099;
+	margin:1px 2px 0px 2px;
+	padding:0px;
+}
+.digg input {
+	width: 45px;
+	font-size: 0.8em;
+	
+	color: #000099;
+	margin:1px 2px 0px 2px;
+	padding:0px;
+}
+
+.digg .goto {
+	padding: 2px 2px 2px 2px;
+}
+
+.tt_grid_editted_row {
+	background-color:#cdffcd;
+}
+.tt_grid_added_row {
+	background-color:#90EE90;
+}
+.tt_grid_deleted_row {
+	background-color: #F2DEDE;
+    border-color: #EED3D7;
+	text-decoration: line-through;
+	color: red;
+}
+
+/**没有记录时的样式
+ */
+.tt_no_record {
+	background-color: #D9EDF7;
+    border-color: #BCE8F1;
+	text-align: center;
+	font-weight: bold;
+	border:1px solid #99BBE8;
+	padding: 4px;
+	color: #3A87AD;
+}
+.tt_no_record span {
+	font-size:12pt;
+	background-image: url(./img/blue/yx.gif);
+	background-repeat: no-repeat;
+	visibility: visible;
+	width:60px;
+	height:24px;
+}
+
+.tt_btn_put_down {
+	background:  url(./img/blue/button_open.gif) no-repeat scroll 3px 1px transparent;
+	line-height:20px;
+	margin: 0px 1px 0px 1px;
+	PADDING: 1px 3px 1px 3px;
+	BORDER: #fff 1px solid;
+	cursor: pointer;
+}
+.tt_btn_pack_up {
+	background:  url(./img/blue/button_close.gif) no-repeat scroll 3px 1px transparent;
+	line-height:20px;
+	margin: 0px 1px 0px 1px;
+	PADDING: 1px 3px 1px 3px;
+	BORDER: #fff 1px solid;
+	cursor: pointer;
+}
+
+.tt_btn_put_down span {
+	padding-left:15px;
+}
+.tt_btn_pack_up span {
+	padding-left:15px;
+}
+
+a.tt_btn_put_down:hover {
+	BORDER: #99f 1px solid; 
+	COLOR: #000099;
+	background-color:#eef;
+	
+}
+a.tt_btn_pack_up:hover {
+	BORDER: #99f 1px solid; 
+	COLOR: #000099;
+	background-color:#eef;
+}

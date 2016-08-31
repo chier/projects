@@ -1,0 +1,75 @@
+#datatable {
+	-webkit-border-radius:.4em;
+	width:100%;
+	text-align:center;
+	border:1px solid #b5bac0;
+	border-radius:.4em;
+	-moz-border-radius:.5em;
+	margin: 0px auto 10px;
+}
+
+#datatable th {
+	text-align:center;
+	height:34px; 
+	font-size:14px; 
+	line-height:34px;
+	background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fbfbfb),color-stop(3%,#e6e8e8),color-stop(100%,#cacccd));
+	background-image:-webkit-linear-gradient(#fbfbfb 0%,#e6e8e8 3%,#cacccd 100%);
+	background-image:-moz-linear-gradient(#fbfbfb 0%,#e6e8e8 3%,#cacccd 100%);
+	background-image:-ms-linear-gradient(#fbfbfb 0%,#e6e8e8 3%,#cacccd 100%);
+	background-image:-o-linear-gradient(#fbfbfb 0%,#e6e8e8 3%,#cacccd 100%);
+	background-image:linear-gradient(#fbfbfb 0%,#e6e8e8 3%,#cacccd 100%);
+}
+
+
+#datatable  td {
+	border-left: 1px solid #b5bac0;
+	border-top: 1px solid #b5bac0; 
+	 height:27px;
+	font-size:12px;
+	padding:0 5px;
+}
+
+
+#datatable tr:hover{ cursor:pointer;background: #dadcdf;-o-transition: all 0.1s ease-in-out;-webkit-transition: all 0.1s ease-in-out;-moz-transition: all 0.1s ease-in-out;-ms-transition: all 0.1s ease-in-out;transition: all 0.1s ease-in-out;    }   
+#datatable td:first-child, #datatable th:first-child {border-left: none;}
+#datatable th:first-child {-moz-border-radius: .4em 0 0 0;-webkit-border-radius: .4em 0 0 0;border-radius: .4em 0 0 0;}
+#datatable th:last-child {-moz-border-radius: 0 .4em 0 0;-webkit-border-radius: 0 .4em 0 0;border-radius: 0 .4em 0 0;}
+#datatable tr:last-child td:first-child {-moz-border-radius: 0 0 0 .4em;-webkit-border-radius: 0 0 0 .4em;border-radius: 0 0 0 .4em;}
+#datatable tr:last-child td:last-child {-moz-border-radius: 0 0 .4em 0;-webkit-border-radius: 0 0 .4em 0;border-radius: 0 0 .4em 0;}
+
+/*
+��Ʊ����ҳ��ʽ
+*/
+#ticketTable {
+	-webkit-border-radius:.4em;
+	width:100%;
+	text-align:center;
+	border:1px solid #b5bac0;
+	border-radius:.4em;
+	-moz-border-radius:.5em;
+	margin: 0px auto 10px;
+}
+
+#ticketTable th {
+	text-align:center;
+	height:34px; 
+	font-size:14px; 
+	line-height:34px;
+	background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fbfbfb),color-stop(3%,#e6e8e8),color-stop(100%,#cacccd));
+	background-image:-webkit-linear-gradient(#fbfbfb 0%,#e6e8e8 3%,#cacccd 100%);
+	background-image:-moz-linear-gradient(#fbfbfb 0%,#e6e8e8 3%,#cacccd 100%);
+	background-image:-ms-linear-gradient(#fbfbfb 0%,#e6e8e8 3%,#cacccd 100%);
+	background-image:-o-linear-gradient(#fbfbfb 0%,#e6e8e8 3%,#cacccd 100%);
+	background-image:linear-gradient(#fbfbfb 0%,#e6e8e8 3%,#cacccd 100%);
+}
+
+
+#ticketTable  td {
+	border-left: 1px solid #b5bac0;
+	border-top: 1px solid #b5bac0; 
+	width:20%;
+	height:27px;
+	font-size:12px;
+	padding:0 5px;
+}

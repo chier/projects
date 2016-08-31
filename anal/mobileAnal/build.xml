@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Id: build.xml,v 1.4 2012/10/08 01:54:35 tangliang Exp $ -->
+
+<project name="tt" default="cp" basedir=".">
+	<property name="base.dir" value="${basedir}" />
+	<property name="src.dir" value="${base.dir}/src" />
+	<property name="lib.dir" value="${base.dir}/WebRoot/WEB-INF/lib/" />
+
+	<property name="build.dir" value="${base.dir}/target" />
+	<property name="build.rootdir" value="${base.dir}/webapps/ROOT" />
+
+	<path id="project.class.path">
+		<pathelement path="${build.dir}/classes" />
+		<pathelement path="${build.dir}/testclasses" />
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<path id="project.testclass.path">
+		<pathelement path="${build.dir}/classes" />
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	
+	<target name="clean">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.dir}/classes" />
+		<mkdir dir="${build.dir}/testclasses" />
+		<mkdir dir="${build.dir}/checkstyle" />
+		<mkdir dir="${build.dir}/junit" />
+		<mkdir dir="${build.dir}/docs" />
+		<mkdir dir="${build.dir}/lib" />
+	</target>
+
+	<target name="compile" depends="init">
+		<copy todir="${build.dir}/classes">
+			<fileset dir="${base.dir}/src" excludes="**/CVS/**" />
+		</copy>
+		<javac encoding="UTF-8" srcdir="${build.dir}/classes" destdir="${build.dir}/classes" debug="on">
+			<compilerarg line="-encoding UTF-8 "/>  
+			<classpath refid="project.class.path" />
+			<include name="**/*.java" />
+			<exclude name="**/CVS/**" />
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile" description="create server-base.jar">
+			<jar jarfile="${base.dir}/WebRoot/WEB-INF/lib/server-base.jar" basedir="${build.dir}/classes">
+				<include name="com/**/*" />
+				<exclude name="**/*.java" />
+			</jar>
+		</target>
+	
+	<target name="cp" depends="jar" >
+		<mkdir dir="${base.dir}/WebRoot/WEB-INF/classes" />
+		<mkdir dir="${base.dir}/WebRoot/WEB-INF/classes/config" />
+		<copy file="${src.dir}/system.properties" todir="${base.dir}/WebRoot/WEB-INF/classes/" />
+		<copy file="${src.dir}/logback.xml" todir="${base.dir}/WebRoot/WEB-INF/classes/" />
+		<copy file="${src.dir}/log4j.properties" todir="${base.dir}/WebRoot/WEB-INF/classes/" />
+		
+		<copy todir="${base.dir}/WebRoot/WEB-INF/classes/config">
+			<fileset dir="${src.dir}/config"></fileset>
+		</copy>
+		
+		<copy todir="${base.dir}/webapps/ROOT">
+			<fileset dir="${base.dir}/WebRoot"></fileset>
+		</copy>
+	</target>
+	
+</project>

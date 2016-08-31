@@ -1,0 +1,10 @@
+[{
+	"name" : "frontConditionSql",
+	"value" : " and (idid = ?)  and (date1>={d '2012-02-25'} and date1<={d '2012-02-25'} ) "
+}, {
+	"name" : "jsonStringOfSqlParameters",
+	"value" : "[{\"name\":\"idid\",\"value\":\"545454\"}]"
+}, {
+	"name" : "qeModelId",
+	"value" : "demoModel"
+}]

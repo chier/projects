@@ -1,0 +1,280 @@
+body {
+	font-family: "Tahoma", "宋体", "Arial", "Verdana";
+	font-size: 9pt;
+	background-color:#fff;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ---------------------------- bootstrap start ------------------------ */
+.alert {
+  padding: 4px 35px 4px 14px;
+  margin-bottom: 18px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.alert, .alert-heading {
+  color: #c09853;
+}
+.alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: 18px;
+}
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.alert-success, .alert-success .alert-heading {
+  color: #468847;
+}
+.alert-danger, .alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+.alert-danger,
+.alert-error,
+.alert-danger .alert-heading,
+.alert-error .alert-heading {
+  color: #b94a48;
+}
+.alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.alert-info, .alert-info .alert-heading {
+  color: #3a87ad;
+}
+.alert-block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.alert-block > p, .alert-block > ul {
+  margin-bottom: 0;
+}
+.alert-block p + p {
+  margin-top: 5px;
+}
+
+.close {
+  float: right;
+  font-size: 9pt;
+  font-weight: bold;
+  line-height: 18px;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.close:hover {
+  color: #000000;
+  text-decoration: none;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  cursor: pointer;
+}
+/* ---------------------------- bootstrap end ------------------------ */
+
+.tt_main {
+	background-color:#eef;
+}
+
+.tt_alert {
+	
+}
+select,input[type~=text]{
+	width:180px;
+}
+
+textarea{
+	width:300px;
+	height:60px;
+}
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  /*
+  background-color: #f5f5f5;
+  border-color: #ddd;
+  cursor: not-allowed;
+  border-color: #ddd;
+  color: #444;
+  background-color: #fefefe;
+  */
+
+  cursor: pointer;
+}
+
+
+
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+a:hover {
+  color: #005580;
+  text-decoration: underline;
+}
+/*top page*/
+.tt_top_title {
+	background-color:#67a7e3;  /*0485f2*/
+	margin:0px;
+	padding:4px 2px 2px 2px;
+	color:#fff;
+	
+	
+}
+
+.tt_top_title a {
+	color: #fee;
+}
+
+.tt_top_title a:hover {
+	color: #f99;
+	text-decoration: underline;
+}
+
+.tt_bottom{
+	background-color: #EEF;
+}
+
+
+/**/
+.tt_page_container {
+	padding:10px 5px 0px 5px;
+}
+
+.tt_query_form {
+	margin: 2px 0px 5px 0px;
+}
+
+
+
+/*------------------- query form start -------------------*/
+.tt_queryTable {
+	width:100%;
+	margin-bottom: 5px;
+	border:1px solid #96C2F1;
+	border-top:none;
+	font-size:9pt;
+	background-color: #eef;
+}
+.tt_queryTable tr td {
+	border:1px solid #96C2F1;
+	border-top:0px solid #96C2F1;
+}
+.tt_queryTable tr th {
+	background-image: url(./img/blue/list_table_Head.gif);
+	text-align: left;
+	color: #15428B;
+	height: 24px;
+	padding: 2px 2px 2px 5px;
+}
+
+.tt_queryTable_label {
+	width:20%;
+	text-align: right;
+	font-size: 12px;
+	color: #1A50AA;
+}
+.tt_queryTable_label label {
+	text-align: right;
+	padding-right:10px;
+	font-size: 12px;
+	color: #1A50AA;
+	text-decoration: none;
+}
+.tt_queryTable_input {
+	width:30%;
+	padding-left:10px;
+}
+.tt_queryTable_btn {
+	text-align:right;
+	padding-right: 10px;
+}
+#pageQuery_tip_id {
+	margin-bottom:0px;
+}
+/*------------------- query form end -------------------*/
+
+/*------------------- crud form start -------------------*/
+.tt_crud_div {
+	padding:20px 4px 0px 4px;
+}
+.tt_crudTable {
+	width:100%;
+}
+.tt_crudTable tr td {
+	border-bottom:1px solid #96C2F1;
+	padding-top:5px;
+}
+.tt_crudTable_label{
+	width:15%;
+	text-align: right;
+	padding-right: 5px;
+	font-size: 12px;
+	color: #1A50AA;
+}
+.tt_crudTable_input{
+	width:35%;
+	padding-left:5px;
+}
+#tt_crudTable_btn  {
+	border-bottom: 0px solid #96C2F1;
+	text-align: right;
+}
+
+/*------------------- crud form end -------------------*/
+
+/**------------------- bottun start -------------------**/
+.warning{
+    background-color:#FAF55F;
+}
+.success{
+    background-color:#57A957;
+    color:white;
+}
+.error{
+    background-color:#C43C35;
+    color:white;
+}
+.notice{
+    background-color:#1B7AE0;
+    color:white;
+}
+/**------------------- bottun end -------------------**/
+
+
+.tt_conditionLabel {
+	text-align:right;
+	height:25px;
+	line-height:25px;
+}
+
+.tt_conditionInput {
+	text-align:left;
+	height:25px;
+	line-height:25px;
+}
+
+.menuContent{
+	background-color:#F0FBEB; /**eef**/
+	overflow-x:auto;
+	overflow-y:auto;
+	width: 400px;
+	heidht: 400px;
+	border: 2px groove #9BDF70;  /**99f**/
+	color: #9BDF70;
+	padding: 0px 0px 4px 2px;
+}
+

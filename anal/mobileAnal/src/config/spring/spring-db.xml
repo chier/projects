@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+    http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.1.xsd"
+	default-autowire="byName" default-lazy-init="true">
+	
+	
+	<!-- 配置常规数据源，平时数据源建议使用此配置 -->
+	<bean id="datasource" abstract="true"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass">
+			<value>${datasource.driverClassName}</value>
+		</property>
+		<property name="acquireIncrement">
+			<value>${c3p0.acquireIncrement}</value>
+		</property>
+		<property name="initialPoolSize">
+			<value>${c3p0.initialPoolSize}</value>
+		</property>
+		<property name="minPoolSize">
+			<value>${c3p0.minPoolSize}</value>
+		</property>
+		<property name="maxIdleTime">
+			<value>${c3p0.maxIdleTime}</value>
+		</property>
+		<property name="idleConnectionTestPeriod">
+			<value>${c3p0.idleConnectionTestPeriod}</value>
+		</property>
+		<property name="maxStatements">
+			<value>${c3p0.maxStatements}</value>
+		</property>
+		<property name="numHelperThreads">
+			<value>${c3p0.numHelperThreads}</value>
+		</property>
+	</bean>
+
+	<!-- raw 原始的数据源 -->
+	<bean id="datasource_s9999" parent="datasource">
+		<property name="maxPoolSize">
+			<value>${c3p0_r.maxPoolSize}</value>
+		</property>
+		<property name="jdbcUrl" value="${datasource.url_s9999_0}" />
+		<property name="user" value="${datasource.username_s9999_0}" />
+		<property name="password" value="${datasource.password_s9999_0}" />
+		<property name="testConnectionOnCheckin">
+			<value>${c3p0.testConnectionOnCheckin}</value>
+		</property>
+		<property name="testConnectionOnCheckout">
+			<value>${c3p0.testConnectionOnCheckout}</value>
+		</property>
+	</bean>
+	
+	<!-- anal 制度数据库 -->
+	<bean id="datasource_anal" parent="datasource">
+		<property name="maxPoolSize">
+			<value>${c3p0_r.maxPoolSize}</value>
+		</property>
+		<property name="jdbcUrl" value="${datasource.url_anal}" />
+		<property name="user" value="${datasource.username_anal}" />
+		<property name="password" value="${datasource.password_anal}" />
+		<property name="testConnectionOnCheckin">
+			<value>${c3p0.testConnectionOnCheckin}</value>
+		</property>
+		<property name="testConnectionOnCheckout">
+			<value>${c3p0.testConnectionOnCheckout}</value>
+		</property>
+	</bean>
+	
+	
+	<!-- 分析 制度数据库 -->
+	<bean id="datasource_analysis" parent="datasource">
+		<property name="maxPoolSize">
+			<value>${c3p0_r.maxPoolSize}</value>
+		</property>
+		<property name="jdbcUrl" value="${datasource.url_analysis}" />
+		<property name="user" value="${datasource.username_analysis}" />
+		<property name="password" value="${datasource.password_analysis}" />
+		<property name="testConnectionOnCheckin">
+			<value>${c3p0.testConnectionOnCheckin}</value>
+		</property>
+		<property name="testConnectionOnCheckout">
+			<value>${c3p0.testConnectionOnCheckout}</value>
+		</property>
+	</bean>
+
+	<!--Hibernate SessionFatory -->
+	<bean id="sessionFactory" abstract="true" lazy-init="default"
+		autowire="default" 
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.jdbc.fetch_size">${hibernate.jdbc.fetch_size}</prop>
+				<prop key="hibernate.jdbc.batch_size">${hibernate.jdbc.batch_size}</prop>
+				<prop key="hibernate.autoReconnect">${hibernate.autoReconnect}</prop>
+			</props>
+		</property>
+		<property name="eventListeners">
+			<map>
+				<entry key="merge">
+					<bean
+						class="org.springframework.orm.hibernate3.support.IdTransferringMergeEventListener" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="sessionfactory_anal" parent="sessionFactory" abstract="true">
+		<property name="annotatedClasses">
+			<list>
+			<!-- 
+				 <value>com.cmcc.anal.framework.model.Workflow</value>
+				<value>com.cmcc.anal.framework.model.log.OperateLog</value>
+				 -->
+				<value>com.cmcc.anal.framework.model.admin.WebAdmin</value>
+				<value>com.cmcc.anal.framework.model.Pilot</value>
+				<value>com.cmcc.anal.framework.model.CaseStatistics</value>
+				<!--
+				<value>com.cmcc.anal.framework.model.model.WebModel</value>
+				<value>com.cmcc.anal.framework.model.role.Role</value>
+				<value>com.cmcc.anal.framework.model.content.ContentInfo</value>
+				<value>com.cmcc.anal.framework.model.content.ContentBody</value>
+				<value>com.cmcc.anal.framework.model.content.ContentAttach</value>
+				<value>com.cmcc.anal.framework.model.datadown.FileShareInfo</value>
+				此处用于增加映射的 pojo类 <value>com.cmcc.framework.model.sysmsg.GwebCustomCrawlmsg</value> -->
+			</list>
+		</property>
+	</bean>
+	<bean id="sessionfactory_anal_w" parent="sessionfactory_anal">
+		<property name="dataSource">
+			<ref local="datasource_anal" />
+		</property>
+	</bean>
+
+	<bean id="anal_w" class="com.cmcc.anal.common.persistence.dao.impl.HibernateEntityDAO">
+		<property name="sessionFactory">
+			<ref local="sessionfactory_anal_w" />
+		</property>
+	</bean>
+
+
+	<bean id="sessionfactory_s9999_s" parent="sessionFactory">
+		<property name="dataSource">
+			<ref local="datasource_s9999" />
+		</property>
+	</bean>
+
+	<bean id="s9999_w" class="com.cmcc.anal.common.persistence.dao.impl.HibernateEntityDAO">
+		<property name="sessionFactory">
+			<ref local="sessionfactory_s9999_s" />
+		</property>
+	</bean>
+	
+	
+	<bean id="sessionfactory_analysis_w" parent="sessionFactory">
+		<property name="dataSource">
+			<ref local="datasource_analysis" />
+		</property>
+	</bean>
+
+	<bean id="analysis_w" class="com.cmcc.anal.common.persistence.dao.impl.HibernateEntityDAO">
+		<property name="sessionFactory">
+			<ref local="sessionfactory_analysis_w" />
+		</property>
+	</bean>
+</beans>

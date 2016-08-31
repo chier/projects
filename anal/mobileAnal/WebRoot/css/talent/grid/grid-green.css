@@ -1,0 +1,137 @@
+/*切换风格时，替换如下几种颜色：009900, 9bdf70, effff7*/
+.talent_grid_table  {
+	font-family: "Tahoma", "宋体", "Arial", "Verdana";
+	font-size: 9pt;
+	line-height: 18px;
+	width:100%;
+	border:1px #9bdf70 solid;
+	border-top: none;
+	border-collapse:collapse;
+}
+
+.talent_grid_table caption {
+	text-align: left;
+	border:1px #9bdf70 solid;
+	font-weight: bold;
+	border-bottom: none;
+	background-color:#effff7;
+	padding: 2px;
+	padding-left: 5px;
+}
+
+.talent_grid_table caption span {
+	float:right;
+}
+
+.talent_grid_table thead  {
+	background-color: #9bdf70; /**#-96c2f1*/
+	display: table-header-group;
+}
+.talent_grid_table thead tr td {
+	border-top:1px #9bdf70 solid;
+	border-bottom:1px #9bdf70 solid;
+	text-align: center;
+	font-weight: bold;
+	padding: 1px;
+	height: 20px;
+	color: #fff;
+}
+
+.talent_grid_table tbody tr td {
+	text-align:center;
+	border:1px #9bdf70 solid; 
+	padding: 1px;
+	display: table-header-group;
+}
+
+.talent_grid_table_tbody_row_odd {
+	background-color: #effff7;
+}
+.talent_grid_table_tbody_row_even {
+	background-color: #ffffff;
+}
+.talent_grid_table_tbody_row_odd:hover {
+	background-color: red;
+}
+.talent_grid_table_tbody_row_even:hover {
+	background-color: red;
+}
+
+.talent_grid_table tfoot tr td {
+	border-top:1px #9bdf70 solid;
+	text-align: right;
+	padding: none;
+}
+
+
+/*CSS Digg style pagination*/
+DIV.digg {
+	PADDING-RIGHT: 3px; 
+	PADDING-LEFT: 3px; 
+	PADDING-BOTTOM: 1px; 
+	PADDING-TOP: 0px; 
+	MARGIN: 0px;
+	TEXT-ALIGN: right;
+	background-color:#effff7;
+	font-weight: normal;
+	COLOR: #009900;
+}
+DIV.digg A {
+	BORDER: #effff7 1px solid; /*BORDER: #9bdf70 1px solid;*/
+	margin: 0px 1px 0px 1px;
+	PADDING: 1px 3px 1px 3px;
+	COLOR: #009900;
+	TEXT-DECORATION: none;
+}
+DIV.digg A:hover {
+	BORDER: #009900 1px solid; 
+	COLOR: #00f;
+	background-color:#fff;
+}
+DIV.digg A:active {
+	COLOR: #000; 
+	BORDER: #009900 1px solid;
+}
+DIV.digg SPAN.current {
+	BORDER: #009900 1px solid; 
+	PADDING: 1px 5px 1px 5px;
+	FONT-WEIGHT: bold; 
+	MARGIN: 0px 1px 0px 1px;
+	COLOR: #fff; 
+	BACKGROUND-COLOR: #009900;
+}
+
+DIV.digg SPAN.disabled {
+	BORDER: #eee 1px solid; 
+	PADDING-RIGHT: 5px; 
+	PADDING-LEFT: 5px; 
+	PADDING-BOTTOM: 2px; 
+	MARGIN: 2px; 
+	COLOR: #ddd; 
+	PADDING-TOP: 2px;
+}
+DIV.digg SPAN.record {
+	PADDING-RIGHT: 5px; 
+	PADDING-LEFT: 5px; 
+	PADDING-BOTTOM: 2px; 
+	MARGIN: 0px 5px 0px 5px;
+	PADDING-TOP: 2px;
+	font-weight: bold;
+}
+DIV.digg SPAN.separator {
+	MARGIN-left: 2px;
+	MARGIN-right: 2px;
+	font-weight: bold;
+}
+DIV.digg select {
+	width: 45px;
+	font-size: 0.8em;
+	height: 18px;
+	color: #009900;
+	margin-top:1px;
+	margin-bottom:0px;
+}
+DIV.digg .arrow {
+	BORDER: #9bdf70 1px solid;
+	padding: 2px 5px 2px 5px;
+}
