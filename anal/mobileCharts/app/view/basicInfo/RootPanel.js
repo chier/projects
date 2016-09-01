@@ -52,6 +52,41 @@ Ext.define("Sencha.view.basicInfo.RootPanel", {
 						},{
 							xtype:'panel2014_1',
 							yearType:2014
+						},
+						{
+							xtype:'panel2015_1',
+							id:'panel2015_1'
+						},
+						{
+							xtype:'panel2015_2',
+							yearType:2015
+						},
+						{
+							xtype:'panel2015_3',
+							yearType:2015
+						},
+						{
+							xtype:'panel2015_4',
+							yearType:2015
+						},{
+							xtype:'panel2016_1',
+							yearType:2016
+						},
+						{
+							xtype:'panel2016_2',
+							yearType:2016
+						},
+						{
+							xtype:'panel2016_3',
+							yearType:2016
+						},
+						{
+							xtype:'panel2016_4',
+							yearType:2016
+						},
+						{
+							xtype:'panel2016_5',
+							yearType:2016
 						}
 						]
 			}

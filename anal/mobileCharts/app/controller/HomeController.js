@@ -229,7 +229,6 @@ Ext.define('Sencha.controller.HomeController', {
 			toBasicInfoIndex();
 			
 			// 获取选中的按钮
-			
 			var _y = true;
 			Ext.getCmp("BasicInfoRootPanel").items.each(function(item,i){
 				if(i != 0){

@@ -180,6 +180,22 @@ background:url(../images/icon.png) 0 -308px no-repeat;width:21px;height:20px;mar
 	-webkit-border-radius: 0 0 0 0;
 }
 
+.timeBar-base-segmentedbutton div.buttonItem:nth-child(3) {
+	border-right: 1px solid #4f545b;
+	border-left: 1px solid #4f545b;
+	border-radius: 0 0 0 0;
+	-moz-border-radius: 0 0 0 0;
+	-webkit-border-radius: 0 0 0 0;
+}
+
+.timeBar-base-segmentedbutton div.buttonItem:nth-child(4) {
+	border-right: 1px solid #4f545b;
+	border-left: 1px solid #4f545b;
+	border-radius: 0 0 0 0;
+	-moz-border-radius: 0 0 0 0;
+	-webkit-border-radius: 0 0 0 0;
+}
+
 .timeBar-base-segmentedbutton div.buttonItem:last-child {
 	border-right: 0;
 	border-left: 1px solid #4f545b;

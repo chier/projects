@@ -121,7 +121,7 @@ public class CaseStatistics extends PersistentObject {
 		this.ctype = ctype;
 	}
 
-	@OneToOne(targetEntity = Pilot.class, cascade = { CascadeType.ALL })
+	@OneToOne(targetEntity = Pilot.class, cascade = { CascadeType.REFRESH})
 	@JoinColumn(name = "pid")
 	public Pilot getPilot() {
 		return pilot;
