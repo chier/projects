@@ -572,12 +572,14 @@ background:url(../images/icon.png) 0 -308px no-repeat;width:21px;height:20px;mar
 	border: 1px solid #fff;
 	height: 75%;
 	width: 100%;
+	/*
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#d8dce2),color-stop(3%,#c1c6cc),color-stop(9%,#dadee4));
 	background-image: -webkit-linear-gradient(#d8dce2 0%,#c1c6cc 3%,#dadee4 9%);
 	background-image: -moz-linear-gradient(#d8dce2 0%,#c1c6cc 3%,#dadee4 9%);
 	background-image: -ms-linear-gradient(#d8dce2 0%,#c1c6cc 3%,#dadee4 9%);
 	background-image: -o-linear-gradient(#d8dce2 0%,#c1c6cc 3%,#dadee4 9%);
 	background-image: linear-gradient(#d8dce2 0%,#c1c6cc 3%,#dadee4 9%);
+	*/
 	border-radius: 1.2em 1.2em 0 0;
 	-moz-border-radius: 1.2em 1.2em 0 0;
 	-webkit-border-radius: 1.2em 1.2em 0 0;

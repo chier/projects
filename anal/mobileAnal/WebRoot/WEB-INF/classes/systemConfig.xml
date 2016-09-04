@@ -175,7 +175,8 @@
 	    <CEN_GROUP name="2012">s%</CEN_GROUP>
 	    <CEN_GROUP name="2013">2013%</CEN_GROUP>
 	    <CEN_GROUP name="2014">2014%</CEN_GROUP>
-	    
+	    <CEN_GROUP name="2015">2015%</CEN_GROUP>
+	    <CEN_GROUP name="2016">2016%</CEN_GROUP>
 	</suveyDataS>
 </systemConfig>
 

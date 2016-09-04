@@ -100,7 +100,14 @@ public class CaseStatisticsService extends GenericDAOImpl {
 			List<Map> mapList = doCleanUpList(csl);
 
 			long allStatTotle = doAllStatTotle(csl); // 上报总数
-			long allPilotTotle = mapList.size(); // 试点总数
+			
+			long allPilotTotle = 0l; // 试点总数
+			String allPilotSQL = "select count(1) from pilot_db where year =  ?";
+			List<Number> poiltCountList = getHibernate_Anal().
+					createSQLQuery(allPilotSQL, year);
+			if(poiltCountList != null && poiltCountList.size() >0){
+				allPilotTotle = poiltCountList.get(0).longValue();
+			}
 
 			long healthTotle = doCtypeTotle(csl, 1); // 健康总数
 			long environmentTotle = doCtypeTotle(csl, 2);// 环境总数

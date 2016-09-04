@@ -4,9 +4,9 @@
  */
 var Global = {
 	maxiNum : 20,
-	//URL:'http://www.micro-view.com:81/mobileAnal/controller/report.talent',
-	 URL:'http://localhost:8080/mobileAnal/controller/report.talent',
-	currentYears:"2013", // 当前年份，默认是2013年
+	URL:'http://www.micro-view.com:81/mobileAnal/controller/report.talent',
+//	 URL:'http://localhost:8080/mobileAnal/controller/report.talent',
+	currentYears:"2016", // 当前年份，默认是2013年
 	DATE : '2010-9-30',
 	ViewId : '用户名+密码', // a67eb045515f4bfdb78f4224a54eb2cd ;  a9edc36a05dd42a6883d21b093b04011
 	SourceId : 'sourceId',
@@ -18,8 +18,8 @@ var Global = {
 	SurveyDataController: null,
 	CaseStatisticsController:null,
 	CaseInfoController:null,
-	caseType:[{"2012":[{"1":"居民健康"},{"2":"环境调查"}]},{"2013":[{"1":"移动采集"},{"2":"DF采集"}]},{"2014":[{"1":"移动采集"},{"2":"DF采集"}]},
-	          {"2015":[{"1":"移动采集"},{"2":"DF采集"}]},{"2016":[{"1":"移动采集"},{"2":"DF采集"}]}],
+	caseType:[{"2012":[{"1":"居民健康"},{"2":"环境调查"}]},{"2013":[{"1":"居民健康"},{"2":"环境调查"}]},{"2014":[{"1":"居民健康"},{"2":"环境调查"}]},
+	          {"2015":[{"1":"居民健康"},{"2":"环境调查"}]},{"2016":[{"1":"居民健康"},{"2":"环境调查"}]}],
 	getCaseType:function(year){
 		var caseType = {};
 		for(var i = 0 ;i < Global.caseType.length;i++){
