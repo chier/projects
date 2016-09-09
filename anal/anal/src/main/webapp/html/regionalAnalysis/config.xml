@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<getYears>http://localhost:8080/anal2015/manage/regionalAnalyis/reportAction!getYears.portal</getYears>
+	<getPilots yearMethod="paramYears">http://localhost:8080/anal2015/manage/regionalAnalyis/reportAction!getPilots.portal</getPilots>
+	<getOptions yearMethod="paramYears" pilotMethod="paramPilotCode">http://localhost:8080/anal2015/manage/regionalAnalyis/reportAction!getOptions.portal</getOptions>
+	<getPilotPlaces yearMethod="paramYears" pilotMethod="paramPilotCode" optionsMethod="paramOptions">http://localhost:8080/anal2015/manage/regionalAnalyis/reportAction!getPilotPlaces.portal</getPilotPlaces>
+	<renderers>
+		<render name="enterprise">
+			<color>0xFF934D</color>
+			<icon>http://localhost:8080/anal2015/html/regionalAnalysis/assets/images/enterprise.png</icon>
+		</render>
+		<render name="water">
+			<color>0x338AFF</color>
+			<icon>http://localhost:8080/anal2015/html/regionalAnalysis/assets/images/water.png</icon>
+		</render>
+		<render name="soil">
+			<color>0xFDCF1A</color>
+			<icon>http://localhost:8080/anal2015/html/regionalAnalysis/assets/images/soil.png</icon>
+		</render>
+		<render name="atmosphere">
+			<color>0x42B7DB</color>
+			<icon>http://localhost:8080/anal2015/html/regionalAnalysis/assets/images/atmosphere.png</icon>
+		</render>
+		<render name="domesticWater">
+			<color>0xB4E718</color>
+			<icon>http://localhost:8080/anal2015/html/regionalAnalysis/assets/images/water.png</icon>
+		</render>
+		<render name="biological">
+			<color>0xA742DB</color>
+			<icon>http://localhost:8080/anal2015/html/regionalAnalysis/assets/images/greenGPS_24.png</icon>
+		</render>
+	</renderers>
+</configuration>

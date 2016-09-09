@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" >
+<beans default-autowire="byName">
+	<bean id="reportAction"
+		class="com.cmcc.framework.controller.action.analysis.ReportAction">
+	</bean>
+	
+	
+	<bean id="pilotDAO"
+		class="com.cmcc.framework.persistence.impl.analysis.PilotDAOImpl">
+	</bean>
+	
+	<bean id="optionDAO"
+		class="com.cmcc.framework.persistence.impl.analysis.OptionDAOImpl">
+	</bean>
+	
+	
+	<bean id="placesDAO"
+		class="com.cmcc.framework.persistence.impl.analysis.PlacesDAOImpl">
+	</bean>
+	
+	<bean id="reportManager"
+		class="com.cmcc.framework.business.impl.analysis.ReportManagerImpl">
+	</bean>
+	
+</beans>

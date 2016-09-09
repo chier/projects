@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<systemConfig>
+
+	<!-- 复制类型 1:表示虚拟挂盘复制 2:表示FTP 复制下载 -->
+	<copyType>1</copyType>
+
+	<!-- 后缀集合 此后缀里面的集不经过验证直接复制下来 -->
+	<suffix>
+		<value>txt</value>
+		<value>bat</value>
+	</suffix>
+
+	<!-- 文件加密钥 必须是48位 三层密码加密 加密文件下会保存为 .tdes 后缀的文件. 解密时，程序自动加载.tdes后缀 -->
+	<key>AD67EA2F3BE6E5ADD368DFE03120B5DF92A8FD8FEC2F0746</key>
+
+	<!-- 压缩文件存储目录 目录下会以日期格式记录-->
+	<zipTargetUrl>d:/zip13</zipTargetUrl>
+
+	<!-- ftp 目录结构 -->
+	<sourceUrl>D:/val3</sourceUrl>
+
+	<!-- 备份目录，将每天发生变化的文件信息放在此目录，以日期格式保存 -->
+	<targetUrl>d:/tar3</targetUrl>
+
+	<!-- 验证目录 即将参照的文信息放在此目录，此目录会与FTP目录保证同步 -->
+	<validationUrl>D:/val4</validationUrl>
+
+	<!-- ftp IP 地址 -->
+	<ftpIp>10.100.103.162</ftpIp>
+	<!-- ftp 服务器接口 -->
+	<ftpPort>8004</ftpPort>
+	<!-- ftp用户 -->
+	<ftpName>admin</ftpName>
+	<!-- ftp密码 -->
+	<ftpPwd>tarcy</ftpPwd>
+	<!-- ftp 多线程下载数量 最多10 -->
+	<ftpThreadNum>5</ftpThreadNum>
+
+	<!-- 删除多少天前的备份记录 -->
+	<delDays>90</delDays>
+
+	<!-- 实施时间 默认是每天 12点 15 开始 -->
+	<executeTime>18:07:00</executeTime>
+	<!-- 定时任务时间间隔 单位是毫秒 24*60*60*1000 86400000 -->
+	<timeperiod>86400000</timeperiod>
+
+</systemConfig>

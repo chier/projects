@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>        
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style type="text/css" media="screen"> 
+            html, body  { height:100%; }
+            body { margin:0; padding:0; overflow:auto; text-align:center; 
+                   background-color: #ffffff; }   
+            object:focus { outline:none; }
+        </style>
+        <script type="text/javascript">
+
+            function getMyApp(appName) {
+                if (navigator.appName.indexOf ("Microsoft") !=-1) {
+                    return window[appName];
+                } else {
+                    return document[appName];
+                }
+            }
+
+            function showsetting() {
+		 var vm = document.getElementById("SimpleChart"); //Chart is object id
+		 vm.ShowChartSetting();
+	    }
+
+	    function getSet()
+            {
+	 	 var vm = document.getElementById("SimpleChart"); //Chart is object id
+		 alert(vm.GetChartSetting());
+	    }
+			
+	    function getByte()
+	    {
+		 var vm = document.getElementById("SimpleChart"); //Chart is object id
+		 alert(vm.GetChartSnapshot());
+	    }
+
+            function refresh() {
+			var array = [];
+			for ( var int = 0; int < 17; int++) {
+				array.push(Math.random()*10000);
+			}
+			var chartData = [{X_Label:"USA",value:array[0],color:0xFF0F00},
+				{X_Label:"China",value:array[1],color:0xFF6600},
+				{X_Label:"Japan",value:array[2],color:0xFF9E01},
+				{X_Label:"Germany",value:array[3],color:0xFCD202},
+				{X_Label:"UK",value:array[4],color:0xF8FF01},
+				{X_Label:"France",value:array[5],color:0xB0DE09},
+				{X_Label:"India",value:array[6],color:0x04D215},
+				{X_Label:"Spain",value:array[7],color:0x0D8ECF},
+				{X_Label:"Netherlands",value:array[8],color:0x0D52D1},
+				{X_Label:"Russia",value:array[9],color:0x2A0CD0},
+				{X_Label:"South Korea",value:array[10],color:0x8A0CCF},
+				{X_Label:"Canada",value:array[11],color:0xCD0D74},
+				{X_Label:"Brazil",value:array[12],color:0x754DEB},
+				{X_Label:"Italy",value:array[13],color:0xDDDDDD},
+				{X_Label:"Australia",value:array[14],color:0x999999},
+				{X_Label:"Taiwan",value:array[15],color:0x333333},
+				{X_Label:"Poland",value:array[16],color:0x000000}];
+				
+			var setStr = "<chart><chartType>column</chartType><chartD>3D</chartD><chartView showTitle='true' showLegend='true'></chartView><chartControl enableCursor='true' enableScrollbar='true'></chartControl></chart>";
+	    
+			/**
+			 * @param title String
+			 * @param legendTitle String
+			 * @param data Array
+			 * @param setting String
+			 *   */
+                        var vm = document.getElementById("SimpleChart");
+                        vm.ChartCreate("","图例（单位：--）"+Math.random(),chartData,setStr);
+			//getMyApp("SimpleChart").ChartCreate("","图例（单位：--）"+Math.random(),chartData,setStr);
+		}
+
+                function FlashReady(a) {
+                    //alert(a);
+                    refresh();
+                }
+
+        </script>
+    </head>
+    <body style="height: 100%;width: 100%">
+        <div style="height: 40;width: 100%;top: 0">
+		<button onclick="showsetting()" style="width: 105;height: 20" type="button">设置图表1</button>
+		<button onclick="getSet()" style="width: 105;height: 20" type="button">调出配置1</button>
+		<button onclick="getByte()" style="width: 115;height: 20" type="button">调出图片数组1</button>
+		<button onclick="refresh()" style="width: 105;height: 20" type="button">更新表数据</button>
+	</div>
+        <div id="flashContent" style="height: 100%;">
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="100%" id="SimpleChart">
+                <param name="movie" value="SimpleChart.swf" />
+                <param name="quality" value="high" />
+                <param name="bgcolor" value="#ffffff" />
+                <param name="allowScriptAccess" value="sameDomain" />
+                <param name="allowFullScreen" value="true" />
+                <embed pluginspage='http://www.adobe.com/go/getflashplayer'
+                    width="100%"
+                    height="100%"
+                    flashvars=''
+                    src="SimpleChart.swf"
+                    name="SimpleChart"
+                    swliveconnect="true"
+                />
+                <!--[if !IE]>-->
+                <object type="application/x-shockwave-flash" data="SimpleChart.swf" width="100%" height="100%">
+                    <param name="quality" value="high" />
+                    <param name="bgcolor" value="#ffffff" />
+                    <param name="allowScriptAccess" value="sameDomain" />
+                    <param name="allowFullScreen" value="true" />
+                <!--<![endif]-->
+                <!--[if gte IE 6]>-->
+                    <p> 
+                        Either scripts and active content are not permitted to run or Adobe Flash Player version
+                        11.1.0 or greater is not installed.
+                    </p>
+                <!--<![endif]-->
+                    <a href="http://www.adobe.com/go/getflashplayer">
+                        <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash Player" />
+                    </a>
+                <!--[if !IE]>-->
+                </object>
+                <!--<![endif]-->
+            </object>
+            </script> 
+        </div>  
+   </body>
+</html>

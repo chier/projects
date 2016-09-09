@@ -1,0 +1,161 @@
+@charset "utf-8";
+/*
+For: 	Fetion news
+Author:	San
+Date:	2009-04-09
+*/
+@import url("reset.css");
+html{
+	height:100%;
+	overflow:hidden;
+}
+body{
+	font-size:12px;
+	text-align:center;
+	height:100%;
+	overflow:auto;
+}
+/* top */
+.top{
+	text-align:left;
+	width:910px;
+	height:130px;
+	margin:0 auto;
+	overflow:hidden;
+}
+.top dl{
+	float:left;
+	width:100%;
+}
+.top dl dt{
+	float:left;
+	width:60%;
+	padding:30px 0 0 90px;
+	_padding:10px 0 0 90px;
+	*padding:10px 0 0 90px!important;
+	font: bold 22px "Microsoft YaHei";
+	color:#fff;
+	 font-size:12px;
+}
+.top dl dd{
+	float:right;
+	width:180px;
+	padding:60px 0 0 0;
+	_padding:40px 0 0 0;
+	*padding:40px 0 0 0 !important;
+	color:#000;
+	 font-size:12px;
+}
+/* tables */
+.tables{
+	text-align:center;
+	width:100%;
+	height:100%;
+	background:#f0fbfd url(../images/bg.png) top center repeat-x;
+}
+.tables thead td{
+	height:130px;
+	background:url(../images/bg_top.png) top center no-repeat;
+	overflow:hidden;
+}
+.footer{
+	height:69px;
+	background:url(../images/bg_body.gif) bottom center repeat-x;
+}
+.footer .copy{
+	text-align:left;
+	text-indent:2em;
+	width:910px;
+	margin:0 auto;
+	line-height:70px;
+	color:#6e7b8e;
+	background:url(../images/logo_fetion.gif) right center no-repeat;
+	font-size:12px;
+}
+.warp{
+	text-align:center;
+	vertical-align:top;
+}
+.main{
+	text-align:left;
+	margin:0 auto;
+	width:910px;
+	
+}
+.main h2{
+	text-align:center;
+	font:20px/40px "SimHei";
+	color:#44536a;
+	word-break : break-all; 
+	overflow:hidden;
+	border-bottom:solid 1px #afb0b4;
+}
+.main .info{
+	line-height:30px;
+	color:#888;
+	text-align:center;
+	white-space: nowrap;
+	font-size:12px;
+}
+.main .content{
+	width:910px;
+	word-break : break-all; 
+}
+.main .content p{
+	padding-top:1em;
+	text-indent:2em;
+}
+/* list */
+.list dl .more{
+	position:absolute;
+	top:0;
+	right:0;
+}
+.list dl dt,.list dl dd{
+	position:relative;
+}
+.list dl dt{
+	margin-bottom:8px;
+	padding-left:15px;
+	height:25px;
+	color:#fff;
+	font: bold 14px/25px "SimHei";
+	background:url(../images/bg_list.gif) left top no-repeat;
+	overflow:hidden;
+}
+.list dl dt .more{
+	font:12px/25px Tahoma;
+	padding-right:8px;
+	background:url(../images/bg_list.gif) right bottom no-repeat;
+}
+.list dl dt .more a:link,.list dl dt .more a:hover,.list dl dt .more a:visited{
+	color:#fff;
+	text-decoration:none;
+}
+.list dl dd{
+	margin:0 15px;
+	padding-left:15px;
+	height:25px;
+	line-height:25px;
+	background:url(../images/ico.gif) left center no-repeat;
+}
+.list dl dd .more{
+	color:#54bbd2;
+}
+/* a */
+a:link{
+	color:#4c4c4c;
+	text-decoration:none;
+}
+a:hover{
+	color:#008abf;
+	text-decoration:underline;
+}
+a:visited{
+	color:#4c4c4c;
+	text-decoration:none;
+}
+a:sctive{
+	background:#ffc;
+	text-decoration:none;
+}

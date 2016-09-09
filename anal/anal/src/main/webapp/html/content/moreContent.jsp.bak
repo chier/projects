@@ -1,0 +1,150 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="/commons/taglibs.jsp"%>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<link href="${base}/css/main.css" rel="stylesheet" type="text/css"	media="all" />
+		
+		<%@ include file="/commons/meta.jsp"%>
+		<style type="text/css">
+			 a:link, a:visited{color:#222;text-decoration:none;outline-style:none;}
+			.content{border:1px solid #DDD;overflow:hidden;margin-left:220px;}
+			.articleList{margin:25px 15px 10px;list-style:none;border:0;padding:0;}
+			.articleList li{margin-bottom:4px;border-bottom:1px dotted #E5E5E5;font-size:14px;background:url(${base}/images/icon.png) no-repeat -490px -208px;overflow:hidden;padding:0 0 8px 20px;}
+			.articleList li:first-child{border-top:1px dotted #E5E5E5;}
+			.articleList li a{float:left;}
+			.articleList li span{float:right;font-size:12px;color:#787878;}
+			.breadcrumb{border-top:2px solid #A3D1F0;margin-bottom:10px;padding-left:12px;height:26px;line-height:26px;border-bottom:1px solid #E1E9F0;background:#F3F3F3 url(${base}/images/sprite.png) no-repeat right -175px;}
+			.breadcrumb a{float:right;margin-right:10px;}
+			
+			
+			/*列表分页*/
+			.tg_pages {text-align:center; display:block; line-height: 30px; float: left; height: 30px; width: 660px; margin-top:12px; padding-bottom:0px;}   
+			.tg_pages li{display:inline;font-size: 14px;}  
+			.tg_pages li a{padding:2px 5px; margin:0px 5px 0px 0px; height: 20px; line-height:20px; border:1px solid #ddd; font-family: Arial, Helvetica, sans-serif;  text-align: center; vertical-align: middle; background-color:#fff; color:#454545;}  
+			.tg_pages a:hover,a.thisclass{ text-decoration:none; border-color:#06c; }
+			.tg_pages a.thisclass{ font-weight:bold; background:#2266BB; color:#fff; } 
+
+			.index_fund_left {float:left;width:200px;height:430px;margin-top:8px;background:url(../webimages/index-chanpin/icon_tab_bg.gif) 233px 0 repeat-y;}
+			.index_fund_left li { float:left; width:200px; height:47px; background-position:center top; background-repeat:no-repeat; cursor:pointer; }
+			.index_fund_left .nav1 { background-image:url(../../../images/content/cp_tag1.png); TEXT-ALIGN:center;line-height:45px; VERTICAL-ALIGN: middle;font-family: Helvetica, 微软雅黑, sans-serif;FONT-SIZE: 18px;}
+			.index_fund_left .active { background-position:center bottom; COLOR: #FFf200;}
+			
+			.b_blue {color:#006eb3;}
+			
+
+			.m_nav{position:relative;z-index:2;}
+			.hd{position:relative;height:30px;background-position:0 0;}
+			.main_nav{margin-top:-1px;}
+			.mod_box h3,
+			.main_nav a{background:url('http://pic.c-ctrip.com/helpcenter/bg_sprites.png') repeat-x;}
+			.main_nav a{display:block;height:35px;line-height:36px;vertical-align:middle;border-top:1px solid #D8EAFA;background-position:0 -94px;overflow:hidden;cursor:pointer;}
+			.main_nav a:hover,.main_nav a.over{background-position:0 -133px;text-decoration:none;}
+			.main_nav a span{display:block;padding-left:30px;*zoom:1;}
+			.main_nav a.on span{background-position:15px -182px;}
+			
+			.main_nav a.off span{background-position:15px -206px;}
+			.main_nav .second_list{padding:8px 0;border-top:1px solid #D8EAFA;}
+			.main_nav .second_list a{height:18px;line-height:18px;margin:0 8px;padding:5px 0 3px 47px;border:1px solid #FFF;background-position:-138px -175px;}
+			.main_nav .second_list a:hover,.main_nav .second_list a.hover{padding:5px 0 3px 47px;color:#F18934;border:1px solid #E7E7E7;background-position:19px -236px;}
+			
+			/* === self_service ===*/
+			.self_service { padding:10px 0; text-align: center; height: 72px; overflow: hidden;}
+			.self_service a {display: -moz-inline-stack; display:inline-block; *zoom:1;*display:inline;padding:0 3px;margin: 2px 0;width:78px;height:20px;background-position:4px -89px;line-height:20px;color:#333;text-align:center;}
+			.self_service a:hover{text-decoration:none;}
+			
+			.mod_box{border:1px solid #DDD;background:#FFF;margin-bottom: 10px;}
+			.mod_box h3{line-height:30px;background-position:0 0;font-weight:bold;color:#FFF;padding-left:10px;}
+			.mod_box h3 .more{padding-right:10px;color:#FFF;}
+
+		</style>
+		<SCRIPT LANGUAGE="JavaScript">
+
+				function f_frameStyleResize(targObj){
+				
+						var targWin = targObj.parent.document.all[targObj.name];
+						
+						if(targWin != null) {
+						
+							var HeightValue = targObj.document.body.scrollHeight
+							
+							if(HeightValue < 600){HeightValue = 600} //不小于600
+						
+							targWin.style.pixelHeight = 645;
+						
+						}
+				
+				}
+				
+				function f_iframeResize(){
+				
+						bLoadComplete = true; f_frameStyleResize(self);
+				
+				}
+				
+				var bLoadComplete = false;
+				
+				window.onload = f_iframeResize;
+
+		</SCRIPT>
+	</head>
+	<body>
+		<div style="width:100%;height:80%;">
+			
+			<div class="mod_box m_nav" style="float:left;width:208px;">
+			<h3>内容信息</h3>
+			<nav class="main_nav" id="main_nav">
+			 							
+                    
+          <c:if test="${not empty typeList}">
+						<ul >
+							<c:forEach var="conType" items="${typeList}">
+								<a href="${base}/manage/contentmanage/content/contentInfoOperator!moreContent.${actionExt}?ctId=${conType.ctId}" id="channel${conType.ctId}"  class="on"><span>${conType.ctName}</span></a>
+                <ul id="ul1" style="display: none;" class="second_list clearfix"></ul>
+						</c:forEach>
+						</ul>
+					</c:if>
+     </nav>
+			</div>
+
+			<div class="content">
+				<div class="breadcrumb">
+					<c:forEach var="conType" items="${typeList}">
+						<c:if test="${conType.ctId == ctId}">${conType.ctName}</c:if>
+					</c:forEach>
+				</div>
+				<c:if test="${not empty infoList}">
+				<ul class="articleList">
+					<c:forEach var="info" items="${infoList}">
+						<li>
+							<a href="${base}/public/common/contentmanager/content/contentInfoView.${actionExt}?cateName=${conType.ctName}&contentId=${info.identifier}&ctId=${ctId}" class="a_blue">${info.title}</a>
+							<span><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${info.releasedate}"/> </span>
+						</li>
+					</c:forEach>
+					
+					</ul>
+					<%@ include file="/commons/page.jsp"%>
+				</c:if>
+				
+				<c:if test="${empty infoList}">
+					<ul class="articleList">
+					<li> 暂无记录 </li> </ul>
+				</c:if>
+			</div>
+		</div>
+	</body>
+</html>
+<SCRIPT LANGUAGE="JavaScript">
+	
+	function goPage(pageNum) {
+		window.location.href = "${base}/manage/contentmanage/content/contentInfoOperator!moreContent.${actionExt}?ctId=${ctId}&page="+pageNum;
+	}
+	function getQuery(name)
+	{
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r!=null) return unescape(r[2]); return null;
+	}
+</SCRIPT>

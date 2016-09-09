@@ -1,0 +1,29 @@
+@charset "utf-8";
+/*
+For:	B/S base frame
+Author:	San
+Date:	2009-08-14
+*/
+html,body{margin:0;padding:0;border:0;height:100%;overflow:hidden}
+.top{position:absolute;left:0;top:0;right:0;height:55px}
+.main{
+	position:absolute;
+	left:-1px;
+	top:55px;
+	bottom:52px;
+	right:0;
+	overflow:auto
+}
+.footer{
+	position:absolute;
+	left:0;
+	bottom:0;
+	right:0;
+	height:45px;
+	visibility: visible;
+}
+/* for ie6 */
+html{_padding:55px 0 52px 0}
+.top{_height:55px;_margin-top:-55px;_position:relative;_top:0;_right:0;_bottom:0;_left:0}
+.main{_height:100%;_position:relative;_top:0;_right:0;_bottom:0;_left:0}
+.footer{ _height:40px;_position:relative;_top:0;_right:0;_bottom:0;_left:0}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" >
+<beans default-autowire="byName">
+
+
+	<bean id="queriesAction"
+		class="com.cmcc.framework.controller.action.queries.QueriesAction">
+	</bean>
+	
+	<bean id="exportAction"
+		class="com.cmcc.framework.controller.action.queries.ExportAction">
+	</bean>
+
+	<bean id="queriesManager"
+		class="com.cmcc.framework.business.impl.queries.QueriesManagerImpl">
+		<property name="dataSource" ref="datasource_anal"></property>
+	</bean>
+</beans>

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+    <head>
+        <title></title>        
+        <meta http-equiv="Content-Type" content="text/html;charset=gbk" />
+        <style type="text/css" media="screen"> 
+            html, body  { height:100%; }
+            body { margin:0; padding:0; overflow:auto; text-align:center; 
+                   background-color: #ffffff; }   
+            object:focus { outline:none; }
+        </style>
+        <script type="text/javascript">
+
+            function thisMovie(movieName) {
+                if (navigator.appName.indexOf("Microsoft") != -1) {
+                    return window[movieName];
+                } else {
+                    return document[movieName];
+                }
+            }
+
+            function showsetting() {
+		 //var vm = document.getElementById("simpleChart"); //Chart is object id
+		 thisMovie("simpleChart").ShowChartSetting();
+	    }
+
+	    function getSet()
+            {
+	 	 //var vm = document.getElementById("simpleChart"); //Chart is object id
+		 alert(thisMovie("simpleChart").GetChartSetting());
+	    }
+			
+	    function getByte()
+	    {
+		 //var vm = document.getElementById("simpleChart"); //Chart is object id
+		 alert(thisMovie("simpleChart").GetChartSnapshot());
+	    }
+            
+            function refresh() {
+
+			var array = [];
+			for ( var int = 0; int < 17; int++) {
+				array.push(Math.random()*10000);
+			}
+			var setStr = "<chart><guides><guide vAxisID='1' defaultColor='0xFF9900' defaultBullet='warning_16.png' value='700' lineColor='0x00ff00' valueColor='0x663399' bullet='warning_16.png' label='警戒线一'></guide><guide vAxisID='2' defaultColor='0xFF9999' defaultBullet='warning_16.png' value='40' lineColor='0x00ff00' valueColor='0x663300' bullet='' label='警戒线二'></guide></guides><chartSeries><series vAxisID='1'><seriesType>column</seriesType><seriesTitle>行政区划代码（合计值）</seriesTitle><seriesColor>0xFF6600</seriesColor><valueField>行政区划代码（合计值）</valueField></series><series vAxisID='2'><seriesType>line</seriesType><seriesTitle>行政区值</seriesTitle><seriesColor>0xFCD202</seriesColor><valueField>行政区值</valueField></series></chartSeries><xAxisField>省</xAxisField><chartD>2D</chartD><chartView showTitle='true' showLegend='true'></chartView><chartControl enableCursor='true' enableScrollbar='true'></chartControl></chart>";
+
+			var chartData = [{"省":"广西","行政区划代码（合计值）":731},{"省":"江苏","行政区划代码（合计值）":703,"行政区值":10.3},{"省":"江西","行政区划代码（合计值）":-481,"行政区值":14.3},{"省":"山东","行政区划代码（合计值）":511,"行政区值":80.3},{"省":"山西","行政区划代码（合计值）":363,"行政区值":49.3},{"省":"云南","行政区划代码（合计值）":871,"行政区值":40.3},{"省":"浙江","行政区划代码（合计值）":763,"行政区值":33.3}];
+
+			/**
+			 * @param title String
+			 * @param legendTitle String
+			 * @param data Array
+			 * @param setting String
+			 *   */
+                        //var vm = document.getElementById("simpleChart");
+                        //vm.ChartCreate("","图例（单位：--）"+Math.random(),chartData,setStr);
+			thisMovie("simpleChart").ChartCreate(chartData,setStr);
+
+
+		}
+
+                function DoubleValueFlashReady(a) {
+                    refresh();
+                    //refresh("simple");
+                }
+
+        </script>
+    </head>
+    <body style="height: 100%;width: 100%">
+        <div style="height: 40;width: 100%;top: 0">
+		<button onclick="showsetting()" style="width: 105;height: 20" type="button">设置图表</button>
+		<button onclick="getSet()" style="width: 105;height: 20" type="button">调出配置</button>
+		<button onclick="getByte()" style="width: 115;height: 20" type="button">调出图片数组</button>
+		<button onclick="refresh()" style="width: 105;height: 20" type="button">更新简单图数据</button>
+	</div>
+        <div id="flashContent" style="height: 100%;">
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="100%" id="simpleChart"
+                    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab">
+                <param name="movie" value="DoubleValueChart.swf" />
+                <param name="quality" value="high" />
+                <param name="bgcolor" value="#ffffff" />
+                <param name="allowScriptAccess" value="always" />
+                <param name="allowFullScreen" value="true" />
+                <!--[if !IE]>-->
+                <embed pluginspage='http://www.adobe.com/go/getflashplayer'
+                    width="100%"
+                    height="100%"
+                    allowScriptAccess="allowDomain"
+                    pluginspage="http://www.macromedia.com/go/getflashplayer"
+                    src="DoubleValueChart.swf"
+                    name="simpleChart"
+                    swliveconnect="true"
+                />
+                <!--<![endif]-->
+            </object>
+        </div>
+   </body>
+</html>

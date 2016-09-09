@@ -1,0 +1,29 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="struts-login" namespace="/public/common/login" extends="struts-interceptor">
+		<!-- 登录 action -->
+		<action name="loginAction" class="loginAction">
+			<result name="success" type="dispatcher">/login.jsp</result>
+			<result name="passwordError" type="dispatcher">/index.jsp</result>
+			<result name="index" type="dispatcher">/html/index.jsp</result>
+			<result name="workflowIndex" type="redirect">/manage/workflow/workflowAction!index.portal</result>
+			<interceptor-ref name="common-params" />
+		</action>
+		
+		<action name="logOutAction" class="logOutAction">
+			<result name="success" type="dispatcher">/index.jsp</result>
+			<interceptor-ref name="common-params" />
+		</action>
+		
+		<!-- 验证码 action -->
+		<action name="piccode" class="piccode">
+			<interceptor-ref name="common-params" />
+		</action>
+		
+		<action name="validate" class="validate">
+			<interceptor-ref name="common-params" />
+		</action>
+	</package>
+</struts>

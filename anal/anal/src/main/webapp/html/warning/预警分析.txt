@@ -1,0 +1,7 @@
+default.jsp			--	预警设置页面
+index.jsp			--	预警分页首页
+reportTable.jsp		--	分析显示flash和table
+saveWarning.jsp		--	保存预警分析页面
+setting_index.jsp	--	转发到预警分析页面
+settingDefault.jsp	--	预警值设置页面
+welcome.jsp			--	欢迎页面

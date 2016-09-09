@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="/commons/taglibs.jsp"%>
+
+<html>
+	<head>
+		<title>即席查询</title>
+		<link href="${base }/css/main.css" rel="stylesheet" type="text/css" />
+		<%@ include file="/commons/meta.jsp"%>
+
+		<script language="javascript">
+			var isShow=true;
+			function changeQueriesLeft(){
+				var leftTab = document.getElementById("leftQueriesTab");
+				var leftImg = document.getElementById("leftQueriesImg");
+				if(isShow == true){
+					leftTab.style.display = "none";
+					isShow=false;
+					leftImg.src="${base}/images/backimg/menu_switch_expand.gif";
+				}else{
+					leftTab.style.display = "";
+					leftTab.style.width="185";
+					isShow=true;
+					leftImg.src="${base}/images/backimg/menu_switch_close.gif";
+				}
+			}
+			</script>
+	</head>
+	<body >
+		<div style="width:100%;height:100%">
+			<table cellpadding="0" cellspacing="0" border="0"
+				style="width:100%;height:100%" >
+				<tr style="vertical-align: top;padding-top: 1;">
+					<td width="210" id="leftQueriesTab">
+						<iframe name="queriesLeft" id="queriesLeft" frameborder="0" scrolling="no"
+							width="100%" height="100%"
+							src="#"></iframe>
+					</td>
+					<td width="12" align="left"
+						style="background: url(${base }/images/bg_switch.gif) repeat-y;"
+						valign="center">
+						<img id="leftQueriesImg"
+							src="${base}/images/backimg/menu_switch_close.gif" width="10"
+							height="70" onclick="changeQueriesLeft();" style="cursor: hand;" />
+					</td>
+					<td id="contentTab" width="778">
+						<iframe name="queriesRight" id="queriesRight" scrolling=no
+							src="#"
+							frameborder="0" width="100%" height="100%"></iframe>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

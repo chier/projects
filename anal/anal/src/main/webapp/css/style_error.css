@@ -1,0 +1,108 @@
+@charset "utf-8";
+html,body{
+	margin:0 auto; 
+	padding:0; 
+	background:#fff; 
+	color:#fff; 
+	font-size:12px; 
+	height:100%;
+}
+h1,h2,h3,h4,h5,h6,p,ul,ol,dl{
+	margin:0 auto; 
+	padding:0; 
+	border:none;
+}
+div,img{
+	margin:0 auto;
+	border:none;
+}
+.clear{
+	clear:both;
+}
+
+.top{
+	width:100%;
+	height:55px;
+	background:url(../images/top-bg.jpg) repeat-x; 
+	position:relative;
+}
+.top .logo{
+	float:left;
+	width:329px;
+	height:55px;
+	background:url(../images/logo.jpg) no-repeat;
+}
+.logout{ 
+	cursor:pointer; 
+	position:absolute; 
+	top:0; 
+	right:30px; 
+	background: url(../images/logout.jpg) no-repeat; 
+	color:#fff; 
+	text-align:center; 
+	width:120px; 
+	height:25px; 
+	line-height:25px; 
+	color:#000;
+}
+.logout a,.logout a:link,.logout a:active,.logout a:visited{ 
+	color:#fff; 
+	padding:0 3px; 
+	text-decoration:none;
+}
+.logout a:hover{ 
+	color:#eee; 
+	text-decoration:none;
+}
+.warp_n{
+	width:100%;
+	height:10px;
+}
+.warp_n .left_frame,.sub_left_frame{
+	float:left;
+	width:190px;
+	height:100%;
+	border:none;
+}
+.warp_n .middle_frame{
+	float:left;
+	width:190px;
+	height:100%;
+	border:none;	
+}
+.warp_n .r_frame{
+	float:right;
+	height:100%;
+	border:none;
+}
+.warp_n .right_frame,sub_right_frame{
+	float:right;
+	height:100%;
+	border:none;
+}
+.warp .r_frame_top{
+	float:right;
+	border:none;
+}
+.warp .r_frame_top{
+	float:right;
+	border:none;
+}
+#footer{
+	bottom:0;
+	left:0;
+	width:100%;
+	height:52px;
+	color:#000;
+	z-index:5;
+	background:url(../images/bg_footer.png) 0 0 repeat-x;
+	color:#64758f;
+	font: 13px/52px "SimSun";
+	overflow:hidden;
+	clear:both;
+}
+#footer .copyright{ 
+	background:url(../images/bg_footer_logo.gif) center right no-repeat; 
+	line-height:56px; 
+	margin:0 26px;
+}

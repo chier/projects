@@ -1,0 +1,150 @@
+@charset "utf-8";
+.box{
+	border:solid 1px #a0bbd6;
+	background:#fff url(../images/bg_box.gif) repeat-x;
+}
+.box input,.box select{
+	vertical-align:middle;
+}
+.box h3{
+	position:relative;
+	height:22px;
+	line-height:22px;
+	font-size:12px;
+	text-indent:9px;
+	margin-bottom:5px;
+}
+.box h3 span{
+	position:absolute;
+	top:0;
+	right:5px;
+	width:11px;
+	height:22px;
+	background:url(../images/ico_close.gif) center no-repeat;
+}
+.box h3 span a{
+	text-decoration:none;
+}
+.box h3 span i{
+	visibility:hidden;
+}
+.box .f-text,.box form textarea{
+	border-width:1px;
+	font-size:13px;
+	padding:2px 2px 1px;
+	width:200px;
+	border:solid 1px #a0bbd8;
+}
+.f-list textarea{
+	overflow:auto;
+}
+.f-list p{
+	clear:both;
+	padding:7px 0;
+}
+.f-list p label{
+	float:left;
+	width:90px;
+	text-align:right;
+	line-height:19px;
+}
+.box-bot{
+	clear:both;
+	padding:8px 0;
+	text-align:center;
+}
+.box-padding{
+	padding:12px;
+}
+.box-border{
+	border:solid 1px #a0bbd8;
+	padding:5px;
+}
+.box-border strong.title{
+	position:relative;
+	top:-14px;
+	left:20px;
+	height:16px;
+	line-height:16px;
+	padding:0 3px;
+	background:#fff;
+}
+.box-table td{
+	vertical-align:top;
+	text-align:center;
+}
+.box-select{
+	text-align: left;
+	width:160px;
+	border:solid 1px #cad9f0;
+	color:#103f69;
+	background:#fff url(../images/bg_box.gif) repeat-x;
+}
+.box-select dt{
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	border-bottom:solid 1px #cad9f0;
+}
+.box-select dd{
+	cursor:default;
+	height:200px;
+	overflow:auto;
+}
+.box-select dd li{
+	line-height:22px;
+	margin:3px 0;
+	padding:0 8px;
+}
+.box-select dd li.alt{
+	background:#e7e8ec;
+}
+.box .so{
+	background:url(../images/ico_so.gif) center left no-repeat;
+	padding-left:16px;
+}
+.box-table td p{
+	padding:5px 0;
+}
+.box-list li{
+	padding:2px 0;
+}
+.box-list li textarea{
+	margin-left:23px;
+	float: left;
+}
+.box-list2 li{
+	padding-left:23px;
+	padding-right:100px;
+	position:relative;
+	height:22px;
+	line-height:22px;
+}
+.box-list2 li span{
+	position:absolute;
+	top:0;
+	right:0;
+	width:100px;	
+}
+.info-border .f-list textarea{
+	float:left;
+}
+.creat-list{
+	clear:both;
+	line-height:24px;
+}
+.creat-list li{
+	float:left;
+	width:49.9%;
+}
+.creat-list label{
+	float:left;
+	width:90px;
+	text-align:right;
+}
+.creat-list .creat-uid{
+	float:left;
+}
+.creat-list .creat-uid p{
+	padding:0 0 6px 0;
+}

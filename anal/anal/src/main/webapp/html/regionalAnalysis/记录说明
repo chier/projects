@@ -1,0 +1,4 @@
+	QueryTask：	//count:Number   executeForCount()
+				//featureSet:FeatureSet  execute()
+				//objectIds:Array  executeForIds()
+				//relatedRecords:Object   executeRelationshipQuery()

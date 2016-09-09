@@ -1,0 +1,33 @@
+.onShow
+{
+	font-size: 12px;
+	line-height:22px; 
+	vertical-align:middle;
+}
+.onFocus
+{
+	padding:0 8px;
+	color:#858585;
+	float:left;
+}
+.onError
+{
+    padding:3px 0 3px 20px;
+	background:url(../images/onError.gif) no-repeat left 3px;
+	color:#ffa011;
+	float:left;
+}
+.onCorrect
+{
+    background:url(../images/onCorrect.gif) no-repeat left 3px;
+    padding:3px 0 3px 20px;
+}
+.onLoad
+{
+    background: url(../images/onLoad.gif) no-repeat left 3px;
+    padding:3px 0 3px 20px;
+} 
+.onNull
+{
+	
+}

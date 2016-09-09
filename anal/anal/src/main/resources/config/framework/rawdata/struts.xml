@@ -1,0 +1,17 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="struts-rawdata" namespace="/manage/rawdata" extends="struts-interceptor">
+		<!-- 模块的Action -->
+		<action name="rawDataAction" class="rawDataAction">
+			<result name="success" type="dispatcher">/html/webadmin/default.jsp</result>
+			<result name="listJrxml" type="dispatcher">/html/rawData/listJrxml.jsp</result>
+			<result name="welcome" 	type="dispatcher">/html/rawData/welcome.jsp</result>
+			<result name="viewPage" type="dispatcher">/html/rawData/viewPage.jsp</result>
+			<interceptor-ref name="common-params"/>
+		</action>
+		
+	
+	</package>
+</struts>

@@ -1,0 +1,412 @@
+/*
+For:	Fetion Base Style
+Author:	San
+Date:	2009-03-10
+*/
+html {
+	border: 0;
+	height: 100%;
+	overflow: hidden;
+	border: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font: 12px/ 120% Arial, Helvetica, sans-serif;
+	background: #f4f5f7 url(../images/bg_footer.png) bottom left repeat-x;
+}
+
+#wrap {
+	position: relative;
+	height: 100%;
+	z-index: 3;
+}
+
+#main {
+	margin: 56px auto 0 auto;
+	padding-bottom: 56px;
+	z-index: 1;
+	position: relative;
+	_top: 56px;
+	_padding-bottom: 160px;
+}
+
+a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.button {
+	height: 23px;
+	padding: 0 5px;
+	background: #5a7393;
+	border: 1px solid #484f69;
+	color: #fff;
+	cursor: pointer;
+}
+
+ul,ol,li,dl,dt,dd,p,img,h1,h2,h3,h4,h5,h6 {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* nav */
+.top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 55px;
+	background: url(../images/top-bg.jpg) repeat-x;
+	z-index: 4;
+}
+
+.top .logo_c {
+	background: url(../images/jltw/logo.jpg) no-repeat;
+	font-size: 12px;
+	color: #FFFFFF;
+	padding-top: 30px;
+	height:25px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 325px;
+	width:150px;
+	float:left;
+}
+
+.top .logo2 {
+	width: 250px;
+	height: 39px;
+	background: url(../images/logo2.jpg) no-repeat;
+	font-size: 12px;
+	color: #FFFFFF;
+	padding-top: 13px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 150px;
+}
+
+.top .midinfo {
+	line-height:25px;
+	color:#fff;
+	float:right;}
+.top .rightnav {
+	height:25px;
+	line-height:25px;
+	margin:0 10px 0 100px;
+	float:right;
+	background:url(../images/top_rightnav_bg.gif);}
+.top .rightnav * {
+	height:25px;}
+.top .rightnav .left {
+	width:8px;
+	float:left;;
+	overflow:hidden;
+	background:url(../images/top_rightnav_left.gif);}
+.top .rightnav .right {
+	width:8px;
+	float:left;;
+	overflow:hidden;
+	background:url(../images/top_rightnav_right.gif);}
+.top .rightnav .mid {
+	float:left;}
+.top .rightnav .mid span {
+	padding:0 8px;
+	color:#000;}
+.top .rightnav .mid a, .top .rightnav .mid a:hover {
+	color:#fff;
+	text-decoration:none;}
+
+.logout {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 45px;
+	background: url(../images/logout.jpg) top center no-repeat;
+	color: #fff;
+	text-align: center;
+	width: 170px;
+	height: 25px;
+	line-height: 25px;
+	color: #000;
+	padding-left:4px;
+}
+.logout1 {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 100px;
+	background: url(../images/logout1.jpg) top center no-repeat;
+	color: #fff;
+	text-align: center;
+	width: 140px;
+	height: 25px;
+	line-height: 25px;
+	color: #000;
+	padding-left:4px;
+}
+
+.welcome {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	color:#fff;
+	height:25px;
+	line-height:25px;
+	padding-left:4px;
+	position:absolute;
+	right:245px;
+	text-align:right;
+	top:0;
+	width:300px;
+}
+
+.welcome3 {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	color:#fff;
+	height:25px;
+	line-height:25px;
+	padding-left:4px;
+	position:absolute;
+	right:445px;
+	text-align:right;
+	top:0;
+	width:300px;
+}
+
+
+.logout2 {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0px;
+	background: url(../images/logout2.jpg) top center no-repeat;
+	color: #fff;
+	text-align: center;
+	width: 340px;
+	height: 25px;
+	line-height: 25px;
+	color: #000;
+	padding-left:4px;
+}
+
+.logout3 {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0px;
+	background: url(../images/logout3.jpg) top center no-repeat;
+	color: #fff;
+	text-align: center;
+	width: 350px;
+	height: 25px;
+	line-height: 25px;
+	color: #000;
+	padding-left:4px;
+}
+.logout2 a:link,.logout2 a:visited {
+	color: #fff;
+	padding: 0 3px;
+	text-decoration: none;
+}
+
+.logout2 a:hover {
+	color: #eee;
+	text-decoration: none;
+}
+
+.logout3 a:link,.logout3 a:visited {
+	color: #fff;
+	padding: 0 3px;
+	text-decoration: none;
+}
+
+.logout3 a:hover {
+	color: #eee;
+	text-decoration: none;
+}
+
+
+.logout a:link,.logout a:visited {
+	color: #fff;
+	padding: 0 3px;
+	text-decoration: none;
+}
+
+.logout a:hover {
+	color: #eee;
+	text-decoration: none;
+}
+.logout1 a:link,.logout1 a:visited {
+	color: #fff;
+	padding: 0 3px;
+	text-decoration: none;
+}
+
+.logout1 a:hover {
+	color: #eee;
+	text-decoration: none;
+}
+
+/* login */
+.warp-login {
+	width: 100%;
+	height: 100%;
+}
+
+.warp-login td {
+	vertical-align: middle;
+	text-align: center;
+}
+
+.login {
+	background: url(../images/jltw/bg_login.jpg) no-repeat;
+	width: 550px;
+	height: 286px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.login .login {
+	background: url(../images/bg_login.gif) no-repeat;
+	width: 563px;
+	height: 299px;
+	margin: 0 auto;
+	position: relative;
+}
+
+ul {
+	text-align: left;
+	padding: 50px 0 0 160px;
+}
+
+.login ul li {
+	clear: left;
+	padding: 8px 0;
+	vertical-align: middle;
+	position: relative;
+	height: 30px;
+	overflow: hidden;
+}
+
+.login .forgetPWD a,.login .forgetPWD a:link,.login .forgetPWD a,active,.login .forgetPWD a:visited,.login .forgetPWD a:hover{
+	 	text-decoration:underline;
+	 	color:#0e416c;
+	}
+
+.login ul li label {
+	float: left;
+	text-align: right;
+	width: 70px;
+	line-height: 24px;
+}
+
+.editpsw {
+	background: #fff;
+	width: 372px;
+	height: 250px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.editpsw dl {
+	text-align: left;
+	padding: 30px 0 0 4px;
+}
+
+.editpsw dl span {
+	margin-left: 8px;
+}
+
+.editpsw dl dt {
+	clear: left;
+	vertical-align: middle;
+	position: relative;
+	height: 30px;
+	overflow: hidden;
+}
+
+.editpsw dl dt label {
+	float: left;
+	text-align: right;
+	width: 60px;
+	line-height: 22px;
+	margin-right: 8px;
+}
+
+.editpsw dl dd {
+	clear: left;
+	height: 20px;
+	line-height: 20px;
+	padding-left: 70px;
+}
+
+.login ul li span,.findpsw ul li span {
+	position: absolute;
+	left: 250px;
+	top: 14px;
+	color: #f00;
+}
+
+.f-text {
+	border: solid 1px #a3a7b2;
+	font: 13px/ 20px Tahoma;
+	height: 20px;
+	overflow: hidden;
+}
+
+/* main-iframe */ /* main-iframe */
+.main-iframe {
+	position: relative;
+	top: 56px;
+	_top: 55px;
+	z-index: 3;
+}
+
+.main-iframe iframe {
+	min-height: 80px;
+}
+
+#close-nav {
+	position: absolute;
+	background: url(../images/nav_switch.gif) center no-repeat;
+	width: 5px;
+	height: 61px;
+	top: 48%;
+	left: 170px;
+	cursor: pointer;
+}
+
+/* footer */
+#footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 98%;
+	height: 52px;
+	color: #000;
+	z-index: 5;
+	background: url(../images/bg_footer.png) 0 0 repeat-x;
+	color: #64758f;
+	font: 13px/ 52px "SimSun";
+	overflow: hidden;
+}
+
+#footer .copyright {
+	background: url(../images/bg_footer_logo.png) center right no-repeat;
+	line-height: 56px;
+	margin: 0 26px;
+}
+#footer .copyright2 {
+	background: url(../images/bg_footer_logo2.png) center right no-repeat;
+	line-height: 56px;
+	margin: 0 26px;
+}
+
+.input_width{width:180px;}

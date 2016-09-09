@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/*
+For:	Fetion user login Style
+Author:	San
+Date:	2009-03-12
+*/
+html {
+	border: 0;
+	height: 110%;
+	overflow: hidden;
+	background: #f4f5f7 url(../images/welcome2.jpg) right bottom no-repeat;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	font-style: italic;
+
+
+	
+}

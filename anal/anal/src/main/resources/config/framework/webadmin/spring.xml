@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" >
+<beans default-autowire="byName">
+
+	<!-- 管理员 业务实现类 -->
+	<bean id="webAdminManager"
+		class="com.cmcc.framework.business.impl.admin.WebAdminManagerImpl">
+	</bean>
+
+	<!-- 管理员 dao 实现类 -->
+	<bean id="webAdminDAO"
+		class="com.cmcc.framework.persistence.impl.admin.WebAdminDAOImpl">
+	</bean>
+
+	<!--查询管理员Action -->
+	<bean id="listWebAdminAction"
+		class="com.cmcc.framework.controller.action.admin.ListWebAdminAction"
+		scope="prototype">
+	</bean>
+
+	<bean id="modifyWebAdminAction"
+		class="com.cmcc.framework.controller.action.admin.ModifyWebAdminAction"
+		scope="prototype">
+	</bean>
+
+
+	<bean id="createWebAdminAction"
+		class="com.cmcc.framework.controller.action.admin.CreateWebAdminAction"
+		scope="prototype">
+	</bean>
+
+	<bean id="removeWebAdminAction"
+		class="com.cmcc.framework.controller.action.admin.RemoveWebAdminAction"
+		scope="prototype">
+	</bean>
+	<!-- 管理员密码 -->
+	<bean id="modifyAdminPwdAction"
+		class="com.cmcc.framework.controller.action.admin.ModifyAdminPwdAction"
+		scope="prototype">
+
+	</bean>
+</beans>

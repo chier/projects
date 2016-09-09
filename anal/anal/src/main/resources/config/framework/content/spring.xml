@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName">
+	<!--内容信息 DAO -->
+	<bean id="contentInfoDAO"
+		class="com.cmcc.framework.persistence.impl.content.ContentInfoDAOHibernateImpl" />
+	<!--内容附件 DAO -->
+	<bean id="contentAttachDAO"
+		class="com.cmcc.framework.persistence.impl.content.ContentAttachDAOHibernateImpl" />
+	<!--内容主体 DAO -->
+	<bean id="contentBodyDAO"
+		class="com.cmcc.framework.persistence.impl.content.ContentBodyHibernateImpl" />
+	<!--内容信息管理 -->
+	<bean id="contentInfoManager"
+		class="com.cmcc.framework.business.impl.content.ContentInfoManagerImpl">
+		<property name="contentInfoDAO">
+			<ref bean="contentInfoDAO" />
+		</property>
+	</bean>
+	<!--内容信息附件管理 -->
+	<bean id="contentAttachManager"
+		class="com.cmcc.framework.business.impl.content.ContentAttachManagerImpl">
+		<property name="contentAttachDAO">
+			<ref bean="contentAttachDAO" />
+		</property>
+	</bean>
+	<!--内容主体管理 -->
+	<bean id="contentBodyManager"
+		class="com.cmcc.framework.business.impl.content.ContentBodyManagerImpl">
+		<property name="contentBodyDAO">
+			<ref bean="contentBodyDAO" />
+		</property>
+	</bean>
+		<!-- 内容管理Action Base类 -->
+	<bean id="contentInfoActionBase"
+		class="com.cmcc.framework.controller.action.content.ContentInfoActionBase"
+		abstract="true" scope="prototype">
+		<property name="contentInfoManager">
+			<ref bean="contentInfoManager" />
+		</property>
+		<property name="contentAttachManager">
+			<ref bean="contentAttachManager" />
+		</property>
+		<property name="contentBodyManager">
+			<ref bean="contentBodyManager" />
+		</property>
+	</bean>
+	<!--内容管理操作操作入口类  -->
+	<bean id="contentInfoOperatorAction"
+		class="com.cmcc.framework.controller.action.content.ContentInfoOperatorAction"
+		parent="contentInfoActionBase" />
+	<!-- 添加新闻内容类 -->
+	<bean id="createContentInfoAction"
+		class="com.cmcc.framework.controller.action.content.CreateContentInfoAction"
+		parent="contentInfoActionBase" />
+	<!-- 修改内容信息操作类 -->
+	<bean id="modifyContentInfoAction"
+		class="com.cmcc.framework.controller.action.content.ModifyContentInfoAction"
+		parent="contentInfoActionBase" />
+	<!-- 后台显示内容信息操作类 -->
+	<bean id="listContentInfosAction"
+		class="com.cmcc.framework.controller.action.content.ListContentInfosAction"
+		parent="contentInfoActionBase" />
+	<!-- 内容附件上传删除操作类 -->
+		<bean id="contentAttachOperatorAction"
+		class="com.cmcc.framework.controller.action.content.ContentAttachOperatorAction"
+		parent="contentInfoActionBase" />
+	<!-- 下载内容附件操作类 
+		<bean id="downloadAttachAction"
+		class="com.cmcc.framework.controller.action.webaction.contentinfo.DownloadAttachAction"
+		parent="contentInfoActionBase" />-->
+		<!--内容信息查看action类  -->
+	<bean id="contentInfoViewAction"
+		class="com.cmcc.framework.controller.action.content.ContentInfoViewAction"
+		parent="contentInfoActionBase" />
+		
+	<!-- fckeditor上传文件 -->
+	<bean id="fckUploadAction"
+		class="com.cmcc.framework.controller.action.content.FckUploadAction"
+		scope="prototype" />
+</beans>

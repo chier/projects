@@ -1,0 +1,45 @@
+
+.treeyangshi{
+/*树的样式*/
+  font:12px normal 宋体
+  margin:0;
+  padding:0;
+}
+.treeyangshi div{ 
+/*树的div样式*/
+  height:16px;
+  border:0px solid red;
+	white-space: nowrap;
+}
+.treeyangshi img{ 
+/*树的div样式*/
+ 
+/*  display:block;*/
+}
+
+
+.treeyangshi a{
+/*未访问*/
+	color:black;
+	text-decoration:none;
+  font:12px normal 宋体;
+  margin-left:0px;
+}
+.treeyangshi a:visited{
+/*访问过*/
+	color:black;
+	text-decoration:none;
+}
+.treeyangshi a:hover{
+/*指针移动到上面的样式，蓝色加下划线*/
+	color:blue;
+/*	text-decoration:underline;*/
+}
+.treeyangshi a:active{
+/*被点击下*/
+}
+
+
+
+
+

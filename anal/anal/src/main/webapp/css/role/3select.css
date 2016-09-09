@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+.Per_sel_ul{padding:4px;}
+.Per_sel_ul li{width:100%; display:block; height:22px; cursor:pointer; *margin-bottom:-2px; text-overflow: ellipsis; -moz-text-overflow: ellipsis;
+overflow:hidden; line-height:17px;}
+/*选中状态 */
+ .Per_sel_ul li.bg{background:#8ACCFB;}
+
+.Per_sel_ul label{padding:0 0 0 16px; cursor:pointer; display:block; width:100%;white-space: nowrap; }
+/*部门选择框样式*/
+.Per_sel_ul label.optionDept{background:url(../images/xzyg_liicon_b.gif) no-repeat left;}
+/*人员选择框样式*/
+.Per_sel_ul label.optionEmp{background:url(../images/xzyg_liicon_p.gif) no-repeat left;}

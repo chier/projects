@@ -1,0 +1,112 @@
+<chart>
+	<guides>
+		<guide vAxisID='1' defaultColor='0xFF9900'
+			defaultBullet='warning_16.png' value='700' lineColor='0x00ff00'
+			valueColor='0x663399' bullet='warning_16.png' label='警戒线一'>
+		</guide>
+		<guide vAxisID='2' defaultColor='0xFF9999'
+			defaultBullet='warning_16.png' value='40' lineColor='0x00ff00'
+			valueColor='0x663300' bullet='' label='警戒线二'>
+		</guide>
+	</guides>
+	<chartSeries>
+		<series vAxisID='1'>
+			<seriesType>column</seriesType>
+			<seriesTitle>行政区划代码（合计值）</seriesTitle>
+			<seriesColor>0xFF6600</seriesColor>
+			<valueField>行政区划代码（合计值）</valueField>
+		</series>
+		<series vAxisID='2'>
+			<seriesType>line</seriesType>
+			<seriesTitle>行政区值</seriesTitle>
+			<seriesColor>0xFCD202</seriesColor>
+			<valueField>行政区值</valueField>
+		</series>
+	</chartSeries>
+	<xAxisField>省</xAxisField>
+	<chartD>2D</chartD>
+	<chartView showTitle='true' showLegend='true'></chartView>
+	<chartControl enableCursor='true' enableScrollbar='true'></chartControl>
+</chart>
+<chart>
+	<guides>
+		<guide vAxisID='1' value='8' lineColor='0x00ff00'
+			valueColor='0x663399'
+			bullet='http://localhost:8080/anal/images/warning_16.png'
+			label='水温测得结果上限'>
+		</guide>
+		<guide vAxisID='2' value='5' lineColor='0x00ff00'
+			valueColor='0x663399'
+			bullet='http://localhost:8080/anal/images/warning_16.png'
+			label='水温测得结果下限'>
+		</guide>
+		<guide value='4' lineColor='0x00ff00' valueColor='0x663399'
+			bullet='http://localhost:8080/anal/images/warning_16.png'
+			label='氨氮检测结果上限'>
+		</guide>
+		<guide value='1' lineColor='0x00ff00' valueColor='0x663399'
+			bullet='http://localhost:8080/anal/images/warning_16.png'
+			label='氨氮检测结果下限'>
+		</guide>
+	</guides>
+	<chartSeries>
+		<series vAxisID='1'>
+			<seriesType>column</seriesType>
+			<seriesTitle>水温测得结果</seriesTitle>
+			<valueField>水温测得结果</valueField>
+		</series>
+		<series vAxisID='2'>
+			<seriesType>line</seriesType>
+			<seriesTitle>氨氮检测结果</seriesTitle>
+			<valueField>氨氮检测结果</valueField>
+		</series>
+	</chartSeries>
+	<chartTitle>图表吿</chartTitle>
+	<xAxisField>区域</xAxisField>
+	<chartD>2D</chartD>
+	<chartView showTitle='true' showLegend='true'></chartView>
+	<chartControl enableCursor='true' enableScrollbar='true'></chartControl>
+</chart>
+
+
+<chart>
+	<guides>
+		<guide vAxisID='1' value='8' lineColor='0x00ff00'
+			defaultColor='0xFF9900' valueColor='0x663399'
+			bullet='http://localhost:8080/anal/images/warning_16.png'
+			label='水温测得结果上限'>
+		</guide>
+		<guide vAxisID='2' value='5' lineColor='0x00ff00'
+			defaultColor='0xFF9900' valueColor='0x663399'
+			bullet='http://localhost:8080/anal/images/warning_16.png'
+			label='水温测得结果下限'>
+		</guide>
+		<guide value='4' lineColor='0x00ff00' valueColor='0x663399'
+			bullet='http://localhost:8080/anal/images/warning_16.png'
+			label='氨氮检测结果上限'>
+		</guide>
+		<guide value='1' lineColor='0x00ff00' valueColor='0x663399'
+			bullet='http://localhost:8080/anal/images/warning_16.png'
+			label='氨氮检测结果下限'>
+		</guide>
+	</guides>
+	<chartSeries>
+		<series vAxisID='1'>
+			<seriesType>column</seriesType>
+			<seriesTitle>水温测得结果</seriesTitle>
+			<seriesColor>0xFF6600</seriesColor>
+			<valueField>水温测得结果</valueField>
+		</series>
+		<series vAxisID='2'>
+			<seriesType>line</seriesType>
+			<seriesTitle>氨氮检测结果</seriesTitle>
+			<seriesColor>0xFCD202</seriesColor>
+			<valueField>氨氮检测结果</valueField>
+		</series>
+	</chartSeries>
+	<chartTitle>图表吿</chartTitle>
+	<xAxisField>区域</xAxisField>
+	<chartD>2D</chartD>
+	<chartView showTitle='true' showLegend='true'></chartView>
+	<chartControl enableCursor='true' enableScrollbar='true'></chartControl>
+</chart>

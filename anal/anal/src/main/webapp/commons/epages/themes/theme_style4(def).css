@@ -1,0 +1,507 @@
+
+/*===themeDef====*/
+/*=========2006-11-2 9:22 By YangZY ===Create====*/
+/*========style.css==============*/
+body{
+color: #333 !important;                                      /*lz 11.14 10:50*//*color: #333;*/                                   /*lz 11.14 16:1*/
+background: #FFF;
+font-size: 1.1em;
+line-height: 1.3em;
+font-family: Tahoma, Verdana, Arial, Helvetica, "Bitstream Vera Sans", sans-serif;
+}
+a:hover{																																																															/*lz 11.14 16:1*/
+	color: #FF6600 !important;            /*lz 11.14 10:20*//*color: #FF6600;*/
+	border-bottom: 1px solid #FF6600;
+}
+
+.liInfo {/*YangZY*/
+	background: url(/portal/modules/customize/themes/themeDef/img/arrowList.gif) no-repeat !important;
+	background-position: 0 5px;
+	margin-bottom: 2px;
+	padding-left: 10px;
+	list-style-type: none;
+}
+
+.liInfo a:hover{/*==BY YangZY 2006-11-9 9:32=new create=*/
+	color: #FF6600 !important;
+}
+
+#navModuleBox{
+	border: 3px solid #EEE !important;/*BY YangZY 2006-11-7 11:51  border: 3px solid #EEE;*/
+	display: none;
+	background-color: #FFF;
+	position: absolute;
+	z-index: 1;
+}
+
+#navModuleBox .feedOptions div{
+	padding: 1px 4px 1px 5px;		/*BY YangZY 2006-11-23 11:38 = padding: 2px 4px 2px 5px;*/
+	font-weight: bold;
+	cursor: pointer;
+	background: #EFF5FF !important;        /*lz 11.8 13:48 color #EFF5FF*/
+}
+#navModuleBox .feedOptions .navEdit .navEditItem {/*BY YangZY 2006-11-23 new create*/
+	border : 1px solid #EFF5FF;
+}
+#navModuleBox .link a:hover{
+	color:#333 !important;;                  /*lz 11.14*//*color:#333;*/
+}
+
+#navModuleBox .frame2 .editOver{/*BY YangZY 2006-11-8 14:30 new create*/
+	background:#D4E4FE !important;
+	color :#000;
+}
+
+#navModuleBox .frame2 .editOut{/*BY YangZY 2006-11-8 14:30 new create*/
+	
+}
+
+#navInfosBox{
+	border: 3px solid #EEE !important; /*lz 11.5 9:45*//*By YangZY 2006-11-7 border: 3px solid #EEE;*/
+	display: none;
+	width: 225px;
+	background-color: #FFF;
+	position: absolute;
+	z-index: 1;
+}
+
+.frame{
+	border: 1px solid #888 !important;/*BY YangZY 2006-11-7 11:54  border: 1px solid #888;*/
+}
+
+.frame2{
+	margin: 2px;
+	background-color:#EFF5FF !important;    /*lz 11.5 9:45*/  /*BY YangZY 2006-11-7 11:55 background-color: #EFF5FF;*/
+	padding: 5px;
+}
+
+#moduleSelection {
+	background: #FFF !important;/*YangZY*/
+	border: 3px solid #EEE !important;
+	margin-right: 7px ;
+}
+
+#moduleSelectionFrame{
+	border: 1px solid #AAA !important;/*YangZY*/
+}
+
+#widgetsList {
+	background: #EFF5FF !important;/*BY YangZY 2006-11-13 9:42*/
+}
+#widgetsList .hideSub{       																																																								/*lz 11.14 16:10*/
+	width: 16px;
+	height: 16px;
+	float: left;
+	background-image: url(/portal/modules/customize/themes/themeDef/img/hideSub.gif) !important; /*background-image: url(img/hideMod.gif);*/
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+}
+#widgetsList .showSub{
+	width: 16px;
+	height: 16px;
+	float: left;
+	background-image: url(/portal/modules/customize/themes/themeDef/img/showSub.gif) !important; /*background-image: url(img/showMod.gif);*/																						/*lz 11.14 16:12*/
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+}
+
+.module{
+	border: 3px solid #EEE !important;/*YangZY*/
+	background: #FFF;
+	margin: 5px;
+}
+.moduleHeader .title{																																																													/*lz 11.14 16:15*/
+	font-weight: bold;
+	padding-left: 4px;
+	line-height: 1.8em;
+	color:  #00368F !important;        				 /*lz 11.14 9:54*//*color: #00368F;*/																																			/*lz 11.14 16:16*/
+	overflow: hidden;
+	display: inline;
+}
+.moduleHeader .title a{
+	color: #00368F !important ;               /*lz 11.14 9:54*/ /*color: #00368F;*/																															/*lz 11.14 16:17*/
+}
+.moduleHeader .title a:hover{
+	color: #F60 !important;               		/*lz 11.14 9:54*/ /*color: #F60;*/																																	/*lz 11.14 16:18*/
+}
+.moduleHeader .title span.unread {        /*lz11.17 11:13*/
+	color : #900 !important;
+}
+.moduleHeader .edit a:hover{
+	color: #F60 !important;               /*lz 11.14 9:54*/ /*color: #F60;*/
+}
+.moduleEdit{
+	border: 3px solid #E1E9F4 !important;/*YangZY*/
+	background: #FFF;
+	margin: 5px;
+}
+
+.moduleFrame{
+	border : 1px solid #79A7E2 !important; /*BY YangZY 2006=11-7 13:53 border : 1px solid #79A7E2;*/
+	overflow: hidden;
+}
+
+.moduleHeader{
+	cursor: move;
+	background: #EFF5FF !important;/*YangZY*/
+	height: 1.8em;
+	min-height: 20px;
+	overflow: hidden;
+}
+
+.moduleHeader .edit a{
+	color: #858585 !important;/*lz 11.10 9:18 #858585*/
+	text-decoration: underline;
+	border-bottom: none;
+}
+
+.moduleHeader .close{
+	float: right;
+	margin: 2px 2px 0px 0px !important;            /*lz 11.9 18:9    2px 2px 0px 0px*/
+	cursor: pointer;
+}
+
+.editContent{
+	display: none;
+	margin:0px 2px 2px 2px;
+	clear:both;
+	background: #EFF5FF !important;/*YangZY*/
+	padding: 10px 0 10px 10px;
+	border-bottom: 1px solid #B9D0ED;
+	border-top: 1px solid #D3E2F4;
+	font-family: Tahoma, Verdana;
+}
+
+.inputClean{
+	padding: 2px 2px 0 2px; /*padding: 2px 2px 0 2px;*/ /*BY YangZY 2006 12:00 del*/
+	color: #333;
+	margin-right: 5px;
+}
+.inputPageTitle{
+	padding: 2px 3px 0 3px;
+	text-align:center;
+	color: #549B3F !important;                     /*lz 11.14 10:14*//*color:#549B3F;*/  																				/*lz 11.14 16:28*/
+	font:17px georgia;
+}
+
+/* Modules styles ----------------------------------------------------------- */
+
+
+/*========nv-top.css========*/
+#topPart {
+	background: #FFF url(/portal/modules/customize/themes/themeDef/img/top.jpg) no-repeat center bottom !important;
+}
+
+/*========m-customize.css============*/
+.customize .part{
+	background-color:#FBFBF6 !important;/*YangZY*/
+	border:1px solid #E2E2D3 !important;/*YangZY*/
+	padding: 1px;
+	margin-bottom:8px;
+}
+
+.customize .partTitle{
+	font-weight:bold;
+	background-color:#E5EEFF !important;/*YangZY*/
+	border-bottom:1px solid #C1D8FF !important;/*YangZY del*/
+	padding:2px 0 2px 4px;
+}
+
+.customize .partContent{
+	padding: 4px;
+	background-color:transparent !important;/*YangZY new create*/
+}
+
+.customize .partTitle .pannelShow {/*BY YangZY new create*/
+	background : url(/portal/modules/customize/themes/themeDef/img/showMod.gif) no-repeat !important;
+}
+
+.customize .partTitle .pannelHide {/*BY YangZY new create*/
+	background : url(/portal/modules/customize/themes/themeDef/img/hideMod.gif) no-repeat !important;
+}
+
+/*========nv-tabs.css==================*/
+.tabContent{
+	clear: both;
+	background: #EFF5FF !important;/*YangZY*/
+	padding: 10px;
+	border-top: 1px solid #EFF5FF;
+}
+#divTabs ul li {
+			list-style-type: none;
+			float: left;
+			/*padding: 3px 8px 5px 8px;*/
+			padding: 3px 5px 3px 5px;/*By lz padding: 6px 10px 3px 10px; 11.16 11:45*/
+			margin: 0;    /* lz margin: 0 2px -1px 0; 11.16 11:46*/
+			
+			/*border: 1px solid #CCC;*//*bad*/
+			border:1px solid #ffffff;  /*lz 11.21 13:31 new*/
+			border-bottom:none;/*lz 11.21 new*/
+			/*background: #f4f4f4;*/ /*lz 11.21*/
+			background:transparent;		/*By lz 11.22 10:20*/
+			color:#777777 !important;	/*By YangZY   lz 2006.11.20 10:27 color: #515151*/
+			text-decoration: none;
+			cursor: pointer;
+			/*height: 1px;*/        /*By lz*/
+			white-space: nowrap;
+		}
+		#divTabs ul li.selected {
+			color:#315ca2 !important;           /*lz11.21 15:12 color: #315ca2;*/
+			/*background:url(img/biaoti1.gif) repeat-x;  *//*lz 11.21 13:23*/
+			background-color: #ECF3FC !important;	/*By background-color: #ECF3FC; 11.21 13:23 lz*/
+			border-top: 1px solid #94b1ec !important;    /*lz 11.21*/
+			/*border-bottom: 1px solid #ECF3FC;*/ /*lz*//*By YangZY 2006-11-7 11:44 del*/
+			border-left: 1px solid #94b1ec !important;   /*lz 11.21*/
+			border-right: 1.5px solid #94b1ec !important;   /*lz 11.21*/
+			/*
+			border: 1px solid #B9D1F0;
+			border-bottom: 0;
+			border-bottom: 1px solid #ECF3FC;*//*By YangZY del*//*del*/
+		}
+	/*add*/
+		#divTabs ul li.dndTarget {
+			border-top-color: #F00;
+			border-left-color: #F00;
+			border-right-color: #F00;		
+		}
+			#divTabs ul li input {
+				margin: 0 0 -4px 0;
+				padding: 1px;
+			}
+			#divTabs ul li.msg {
+				color: #1C60B7;
+				background-color: #F99;
+			}
+
+#divTabsOuter{
+	margin-left: 5px;/*lz 11.23 0px*/
+	padding: 0px; 
+	clear: both;
+	/*border-top: 1px solid #ccc;*/
+	border-top: 1px solid #ECF3FC !important;      /*lz 11.21 13:40 border-bottom: 1px solid #ECF3FC; */
+	
+}
+/*========m-bookmark.css===============*/
+.bookmarks .tags{
+	display: none;
+	background-color:#F2F7FF !important;/*YangZY*/
+	padding: 1px;
+	line-height: 1.4em;
+	border-bottom:1px solid #C1D8FF;
+	border-right:1px solid #C1D8FF;
+	border-top:1px solid #D5E5FF;
+	border-left:1px solid #D5E5FF;
+}
+
+/*========m-feedreader.css=====================*/
+.rssItemList li{
+	margin: 0;
+	padding: 1px 0 1px 10px;
+	line-height: 1em !important;/*YangZY*/
+}
+
+.rssItemList a:link{
+	text-decoration: none;
+	border-bottom: none;
+	color: #000 !important;/*BY YangZY 2006-11-7 11:27 color: #000;*/
+}
+
+.rssItemList a:visited{
+	color: #000;
+	border-bottom: none;
+}
+
+.liInfoEn {/*==By Yang 2006-11-8 9:15=new create=*/
+	background: url(/portal/modules/customize/themes/themeDef/img/arrowList.gif) no-repeat !important;
+	background-position: 0 5px;
+	margin-bottom: 2px;
+	padding-left: 10px;
+	list-style-type: none;
+}
+
+.liInfoEn a:link, .liInfoEn a:visited {/*==By Yang 2006-11-8 9:15=new create=*/
+	color:#777 !important;
+}
+
+
+#feedReader{
+	border: 3px solid #DDD;/*YangZY del*/
+	position: absolute;
+	display: none;
+}
+#feedReaderFrame{
+	border: 1px solid #000 !important;/*YangZY*/
+	scrollbar-arrow-color: buttontext !important;/*YangZY new create*/
+	scrollbar-shadow-color: ThreedDarkShadow !important;/*YangZY new create*/
+	scrollbar-face-color:threedface !important;/*YangZY new create*/
+	scrollbor-highlight-color:scrollbarHighlightColor !important;/*YangZY new create*/
+}
+#feedReader .frame{
+	border-top: 1px solid #FFF !important;/*YangZY*/
+	border-left: 1px solid #FFF !important;/*YangZY*/
+	border-bottom: 1px solid #C4DAFF;
+	border-right: 1px solid #C4DAFF !important;/*YangZY*/
+/*	background-color: #E2EDFF;*/
+	background-color: #E5EFFF !important;/*YangZY*/
+}
+#feedReader .header{
+	font-weight: bold;
+	color: #00368F;
+	font-size: 11px;
+	padding: 4px 2px 4px 8px;
+	background: transparent !important;/*new create*/
+}
+
+#feedReader .tdHeadlines{
+	vertical-align: top;
+	border: 1px solid #C4DAFF !important;/*YangZY del*/
+	border-right: 1px solid #FFF !important;/*YangZY del*/
+	border-bottom: 1px solid #FFF !important;/*YangZY del*/
+	background-color: #FFF;
+}
+
+#feedReaderHeadlinesFrame{
+	border: 1px solid #598BCC !important;/*YangZY*/
+	overflow: auto;
+}
+#feedReaderContentFrame{
+	border: 0.5px solid #598BCC !important;/*YangZY*/
+	overflow: auto;
+}
+
+#feedReaderHeadlinesFrame a{/*mulder 2006-11-9 new create*/                                                      /*11.14 15:19 lz*/
+		display: block;
+		padding:3px 3px 3px 20px;
+		color: #333 !important;      /*color: #333;*/
+		background-image: url(/portal/img/folderSmall.gif);
+		background-repeat: no-repeat;
+		background-position: 4px 4px;
+		border: 0;
+		line-height:1.5em;/*BY lz 2006-11-24 new create*/		
+		border-bottom: 1px solid #ECF0F9;
+	}
+#feedReaderHeadlinesFrame a:hover {
+		background-color: #FFFFE0 !important;         		 /*lz...*//*background-color: #FFFFE0;*/                   /*11.14 15:19 lz*/
+		border-bottom: 1px solid #C3C370 !important; 		 /*lz...*//*border-bottom: 1px solid #C3C370;*/
+	}
+#feedReaderHeadlinesFrame .selected{
+		background-color: #D8FED2 !important;       			 /*lz 11.13 15:53*//*background-color: #D8FED2;*/          /*11.14 15:19 lz*/
+	}
+#feedReaderHeadlinesFrame .read{/*mulder 2006-11-9*/                                                              /*11.14 15:30 lz*/
+		font-weight: normal;
+			color:red !important;					/*lz new*//*color:*/
+	}
+#feedReaderHeadlinesFrame .unread{/*mulder 2006-11-9*/
+		font-weight: bold;
+		color:green !important;                       /* lz 11.13 16:50*//*color:green;*/                              /*11.14 15:32 lz*/
+	}
+#feedReader .title{
+	color: #F60; !important;                          /*lz 11.13 15:*//*color: #F60;*/                                    /*11.14 15:37 lz*/
+	font-size: 14px !important;	 /*font-size: 14px; lz 11.23 17:20*/
+	font-family: Georgia, Verdana;
+	font-weight: bold;
+	padding: 0 0 2px 20px !important;	/* lz 11.23 16:55 padding: 0 0 2px 20px;*/
+	margin-bottom: 10px;
+	background: url(/portal/modules/customize/themes/themeDef/img/folder.gif) no-repeat !important;/*BY YangZY 2006-11-8 11:51*/
+}
+#feedReader .title a{
+	color:#F60 !important;                               /*lz 11.23 16:58*//*color: #F60;*/                              
+}
+#feedReader .title a:hover{ 	/*lz 11.23 17:00 new*/       
+	color:#ffc648 !important;
+	border-bottom:#ffc648;                            
+}
+#feedReader .title .moreLink a{                                                                                       /*11.14 15:37 lz*/
+	color: #98B8e1 !important;                     /*lz 11.13 15:8*//*color: #36C;*/ 
+	border-bottom: 1px solid #36C !important;       /*lz 11.13 15:8*//*border-bottom: 1px solid #36C;*/                   /*11.14 15:44 lz*/
+}
+#feedReader .title .moreLink a:hover{
+	color: #f60 !important;                          /*lz 11.13 15:8*//*color: #F60;*/                                 /*11.14 15:44 lz*/
+	border-bottom: 1px solid #F60!important;       /*lz 11.13 15:8*//*border-bottom: 1px solid #F60;*/                 /*11.14 15:45 lz*/
+} 
+
+#feedReader .title .pubDate {/*BY YangZY 2006-11-13 11:06 new create*/
+	display:inline;
+	margin:0px 10px;
+	color:#808080 !important;                      /*lz 11.13 15:32*//*color:#808080;*/                                     /*11.14 15:45 lz*/
+	font-size:12px;
+}
+#feedReader .feedContent{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	line-height: 1.4em;
+	font-size: 12px;
+	color:#796649 !important;        /*lz 11.13 15:43*//*color: #796649;*/                                             /*11.14 15:52 lz*/
+	padding-left: 15px;
+}
+#feedReader .header .countStatus {  /*new lz 11.13 17:5*/
+	color :#900 !important;		/*BY lz 2006-11-14 *//*color : */                                                       /*11.14 15:52 lz*/
+	padding-top : 3px;
+}
+
+#feedReader .tdContent{
+	vertical-align: top;
+	background: #FFF;
+	border: 1px solid #C4DAFF !important;/*YangZY*/
+	border-right: 1px solid #FFF !important;/*YangZY*/
+	border-bottom: 1px solid #FFF !important;/*YangZY*/
+}
+
+#feedReader .readAll{
+	float:left;
+	border-top: 1px solid #CCC !important;/*YangZY del*/
+	border-left: 1px solid #CCC !important;/*YangZY del*/
+	border-bottom: 1px solid #FFF !important;/*YangZY del*/
+	border-right: 1px solid #FFF !important;/*YangZY del*/
+	cursor: pointer;/*YangZY del*/
+}
+
+#feedReader .readAll div{
+	border: 1px solid #666 !important;
+}/*YangZY del*/
+
+#feedReader .readAll div div{
+	background : #F7F7F7 !important;/*background-color: #F7F7F7;*//*YangZY del*/
+	
+	background-position: 4px 3px !important;/*YangZY del */
+	
+	padding: 1px 4px 1px 4px !important;/*YangZY*/
+	
+	border-top: 1px solid #FFF !important;/*YangZY del*/
+	border-left: 1px solid #FFF !important;/*YangZY del*/
+	border-bottom: 1px solid #CCC !important;/*YangZY del*/
+	border-right: 1px solid #CCC !important;/*YangZY del*/
+}
+
+/*============nv-top.css=======================*/
+
+#pageTitle {
+	margin:0 auto;
+	margin-bottom: 0px; /* moved from #mainTable margin-top */
+	text-align:center;
+	color:#549B3F !important;               /*lz 11.6 13:58*//*BY YangZY 2006-11-7 11:46 color:#549B3F;*/
+	font:17px Georgia !important;          /*lz 11.6 13:58*//*BY YangZY 2006-11-7 11:46 font:17px Georgia;*/
+}
+
+/*============popitem.css========================*/
+
+.PopItem {
+	/*position:absolute;*/
+	width: 300px; 
+	background-color: #ffffe0 !important;/*lz 11.8 17:50 #ffffe0*/
+	border-width: 1px thin;
+	border-color: #00BFFF !important;/*lz  11.8 17:51 #00BFFF*/
+ 	border-style: outset;
+ 	padding : 5px;
+ 	line-height : 16px;
+}
+
+/*===========nv-top.css==========================*/
+#topLinks .addLink{
+	float:left;
+	background: url(/portal/modules/customize/themes/themeDef/img/add.gif) no-repeat 1px 2px !important;/*BY YangZY 2006-11-15 14:41*/
+	padding-left: 14px;
+	font-weight: normal;	
+	height: 16px;
+}
+
+

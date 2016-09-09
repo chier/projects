@@ -1,0 +1,245 @@
+@charset "utf-8";
+/*
+For:	Find PSW
+Author:	San
+Date:	2009-08-14
+*/
+@import url(bs_base.css);
+body{
+	font:normal normal 12px/1.2 "SimSun";
+}
+h3,h4,h5{
+	margin:0;
+}
+ul,ol{
+	margin:0;
+	padding:10px 10px 0 30px;
+	list-style:none;
+}
+ul li,ol li{
+	padding:5px 0;
+	line-height:18px;
+}
+.top{
+	background:url(../images/top-bg.jpg) repeat-x;
+}
+.top .logo{
+	width:329px;
+	height:55px;
+	background:url(../images/logo.jpg) no-repeat;
+}
+.logout{
+	position:absolute;
+	top:0;
+	right:30px;
+	text-align:center;
+	width:120px;
+	height:25px;
+	line-height:25px;
+	background: url(../images/logout.jpg) no-repeat;
+	color:#000;
+}
+.logout a:link,.logout a:visited{
+	color:#fff;
+	padding:0 3px;
+	text-decoration:none;
+}
+.logout a:hover{
+	color:#eee;
+	text-decoration:none;
+}
+.forgetPWD a,.forgetPWD a:link,.forgetPWD a,active,.forgetPWD a:visited,.forgetPWD a:hover{
+	 	text-decoration:underline;
+	 	color:#0e416c;
+}
+.main{
+	text-align:center;
+	padding-top:30px;
+	padding-bottom:30px;
+	background-image: url(../images/bg_find.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+	margin-bottom: 35px;
+	
+}
+
+
+.find-title{
+	font-size:16px;
+	height:73px;
+	line-height:52px;
+	color:#51678c;
+	text-align: center;
+	background-image: url(../images/bg_find_title.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.findpsw{
+	text-align:left;
+	width:528px;
+	overflow:auto;
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	background-image: url(../images/bg_find_bot.gif);
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+.findpsw .find-top{
+	display:block;
+	background: url(../images/bg_find_top.gif) top no-repeat;
+	height:12px;
+	
+}
+.findpsw .find-content{
+	position:relative;
+	padding-top: 0;
+	padding-right: 20px;
+	padding-bottom: 0;
+	padding-left: 20px;
+	margin-bottom: 20px;
+	overflow:auto;
+	min-height:250px;    /*高度最小值设置为：370px*/
+    height:auto !important; /*兼容FF,IE7也支持 !important标签*/
+    height:250px; /*兼容ie6*/
+    overflow:avisible;
+}
+.find-content h4{
+	font-size:12px;
+	font-weight: normal;
+	line-height:25px;
+	color:#999;
+	border-bottom:solid 1px #eee;
+	padding-top: 0;
+	padding-right: 1em;
+	padding-bottom: 0;
+	padding-left: 3em;
+}
+.titile{
+	font-size:12px;
+	font-weight: normal;
+	line-height:25px;
+	color:#999;
+}
+.line{
+	height: 10px;
+	font-size: 2px;
+	line-height: 2px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	background-image: url(../images/line.gif);
+	background-repeat: repeat-x;
+	background-position: 5px;
+}
+.find-content h5{
+	font-size:16px;
+	line-height:45px;
+	color:#9f9dfe;
+}
+.findpsw .find-bot{
+	position:absolute;
+	bottom:20px;
+	width:450px;
+	padding-right: 0;
+	padding-left: 55px;
+	padding-top: 5px;
+	left: 0px;
+}
+.findpsw .find-bot p{
+	padding:0 40px;
+}
+.find-input li span{
+	display:block;
+	color:#999;
+	line-height:30px;
+	padding-left:26px;
+}
+.find-way li{
+	padding-left:25px;
+	margin-top:30px;
+	line-height:22px;
+	background:url(../images/ico_i.gif) left 8px no-repeat;
+}
+input {
+	font-size: 12px;
+	line-height: 19px;
+}
+select {
+	font-size: 12px;
+	line-height: 20px;
+}
+
+.find-input_li_span2{
+	color:#999;
+	line-height:30px;
+	padding-left:26px;
+}
+.find-erro{
+	color:#993300;
+	line-height:25px;
+}
+.find-succeed,.find-error{
+	margin:40px 50px 0 50px;
+	height:90px;
+	text-align:center;
+}
+.find-succeed{
+	background:url(../images/bg_succeed.gif) left top no-repeat;
+}
+.find-error{
+	background:url(../images/bg_succeed.gif) left top no-repeat;
+	color: 9d0c0c;
+}
+/* footer */
+.footer{
+	background:url(../images/bg_footer.png) repeat-x;
+	color:#64758f;
+	font: 13px/52px "Tahoma";
+	float: left;
+	position: absolute;
+	bottom:0px;
+	width:100%;
+	height:52px;
+	line-height:52px;
+	left: auto;
+	top: auto;
+	right: auto;
+}
+.footer .copyright{
+	background:url(../images/bg_footer_logo.gif) center right no-repeat;
+	line-height:52px;
+	margin:0 26px;
+	font-size: 12px;
+}
+/* button */
+.bot4 {
+	border:none;
+	font-size: 12px;
+	height: 23px;
+	line-height: 23px;
+	overflow: hidden;
+	cursor: pointer;
+	width: 65px;
+	margin:0 0.5em;
+	padding:0 0.5px;	
+	color: #fff;
+	background:#FFF url(../images/bot4.gif) no-repeat;
+}
+/* link & font color */
+a.blue:link,a.blue:visited{
+	color:#008aff;
+	text-decoration:underline;
+}
+a.blue:hover{
+	color:*008aff;
+	text-decoration:underline;
+}
+.org{
+	color:#f63;
+}
+.red{
+	color:#9d0c0c;
+}
+.find-input li{clear:both;}
+.find-input .text{float:left; width:100px; height:22px; line-height:22px; }

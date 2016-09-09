@@ -1,0 +1,112 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+@namespace ibs "components.Controls.DockablePanel.ibs.*";
+
+/*.infoSymbolStyle
+{
+	infoPlacement: center;
+	borderThickness: 0;
+	borderColor: #FFFFFF;
+	borderVisible: false;
+	backgroundColor: #00FF00;
+	backgroundAlpha: 0;
+	paddingLeft: 2;
+	paddingRight: 2;
+	paddingTop: 2;
+	paddingBottom: 2;
+}*/
+global {
+	modalTransparencyBlur: 0;/* 模糊度*/
+	modalTransparency: 0.1; /* 透明度*/
+	modalTransparencyColor: #CD900E;/* 背景色*/
+	modalTransparencyDuration: 0;/* 过渡时间*/
+} 
+
+mx|VScrollBar{
+	downArrowUpSkin: Embed(source="/assets/images/downArrow.png");
+	downArrowOverSkin: Embed(source="/assets/images/downArrow.png");
+	downArrowDownSkin: Embed(source="/assets/images/downArrow.png");
+	upArrowUpSkin: Embed(source="/assets/images/upArrow.png");
+	upArrowOverSkin: Embed(source="/assets/images/upArrow.png");
+	upArrowDownSkin: Embed(source="/assets/images/upArrow.png");
+	thumbDownSkin: 
+		Embed(source="/assets/images/thumb.png",
+		scaleGridLeft="7", scaleGridTop="5", 
+		scaleGridRight="8", scaleGridBottom="7");
+	
+	thumbUpSkin: 
+		Embed(source="/assets/images/thumb.png",
+		scaleGridLeft="7", scaleGridTop="5", 
+		scaleGridRight="8", scaleGridBottom="7");
+	
+	thumbOverSkin: 
+		Embed(source="/assets/images/thumb.png",
+		scaleGridLeft="7", scaleGridTop="5", 
+		scaleGridRight="8", scaleGridBottom="7");
+	
+	trackSkin: 
+		Embed(source="/assets/images/scrolltrack.png",
+		scaleGridLeft="7", scaleGridTop="4", 
+		scaleGridRight="8", scaleGridBottom="6" );       
+} 
+
+ibs|IBSDockBar
+{
+	horizontalGap: 0;
+	verticalGap: 0;	
+}
+
+ibs|IBSDockTab
+{
+	color: #154A93;
+	textRollOverColor: #154A93;
+	textSelectedColor: #154A93;
+	disabledColor: #AAB3B3;
+	left: 6;
+	right: 6;
+	top: 1;
+	bottom: 0;
+	skin: ClassReference("DockPanel.com.ccac.ibs.skins.common.IBSDockTabSkin");
+}
+
+.dockablePanel
+{
+	borderSkin: ClassReference("DockPanel.com.ccac.ibs.skins.common.IBSDockablePanelSkin");
+	borderThicknessLeft: 6;
+	borderThicknessRight: 6;
+	borderThicknessTop: 4;
+	borderThicknessBottom: 6;
+	cornerRadius: 0;
+	headerHeight: 23;
+	titleStyleName: dockablePanelTitle;
+	dockButtonPositionX: 5;
+	dockButtonPositionY: 4;
+	dockButtonStyleName: linkButton;
+	resizerAlpha: 0.7;
+	resizerColor: #FF0000;
+	resizerThickness: 4;
+}
+
+.dockablePanelTitle
+{
+	color: #154A93;
+	fontWeight: normal;
+}
+.LoginPopup
+{
+/*	background-color: #34a4ee;*/
+	background-color: #395370; 
+	border-color: #908fb3;
+	border-style: inset;
+	border-thickness: 5;
+	padding-top: 2;
+	padding-bottom: 2; 
+	padding-left: 2; 
+	padding-right: 2;
+}
+s|Button.primary {
+	color: #000000;
+	chrome-color:#ff7400;
+	fontFamily: 黑体;
+}

@@ -1,0 +1,32 @@
+<chart>
+	<guides defaultColor='0xFF9900' defaultBullet='warning_16.png'>
+		<guide value='700' lineColor='0x00ff00' valueColor='0x663399'
+			bullet='warning_16.png' label='警戒线一'>
+		</guide>
+		<guide value='400' lineColor='0x00ff00' valueColor='0x663300'
+			bullet='' label='警戒线二'>
+		</guide>
+	</guides>
+	<dataField>
+		<field>省</field>
+		<field>行政区划代码（合计值）</field>
+		<field>行政区值</field>
+	</dataField>
+	<chartSeries>
+		<series>
+			<seriesType>column</seriesType>
+			<seriesTitle>行政区划代码（合计值）</seriesTitle>
+			<valueField>行政区划代码（合计值）</valueField>
+		</series>
+		<series>
+			<seriesType>line</seriesType>
+			<seriesTitle>行政区值</seriesTitle>
+			<valueField>行政区值</valueField>
+		</series>
+	</chartSeries>
+	<chartTitle>图表名</chartTitle>
+	<xAxisField>省</xAxisField>
+	<chartD>2D</chartD>
+	<chartView showTitle='true' showLegend='true'></chartView>
+	<chartControl enableCursor='true' enableScrollbar='true'></chartControl>
+</chart>

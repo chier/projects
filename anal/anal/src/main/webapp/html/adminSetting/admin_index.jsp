@@ -1,0 +1,315 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="/commons/taglibs.jsp"%>
+
+<html>
+	<head>
+		<title>管理设置</title>
+		<link href="${base }/css/main.css" rel="stylesheet" type="text/css" />
+		<%@ include file="/commons/meta.jsp"%>
+
+		<style>  
+  body   {  
+    -moz-user-select:none;  
+  }  
+  .footLink a,.footLink a:link,.footLink a:hover,.footLink a:visited,.footLink a:active{color:#64758F;}
+  </style>
+		<SCRIPT LANGUAGE="JavaScript">
+
+function f_frameStyleResize(targObj){
+
+		var targWin = targObj.parent.parent.document.all[targObj.parent.name];
+		if(targWin != null) {
+		
+			var HeightValue = targObj.document.body.scrollHeight
+		
+			if(HeightValue < 400){HeightValue = 400} //不小于600
+			
+			targWin.style.pixelHeight = 510;
+			
+			
+		}
+
+}
+
+function f_iframeResize(){
+
+		bLoadComplete = true; f_frameStyleResize(self);
+
+}
+
+var bLoadComplete = false;
+
+window.onload = f_iframeResize;
+
+</SCRIPT>
+	</head>
+	<body>
+
+		<table spry:repeat="norepeat" cellpadding="0" cellspacing="0"
+			border="0"
+			style="background:url(${base}/images/welcom_center.jpg) repeat-y;height:195px;width:100%;">
+			<tbody>
+				<tr height="80px">
+					<td colspan="4" style="padding-left:30px;">
+						<img src="${base}/images/managesetting.png"></img>
+					</td>
+				</tr>
+				<tr height="190px">
+					<td id="contentTab" width="1">
+					</td>
+					<td id="contentTab" width="270" height="90">
+						
+							<div id="yhgl" style="margin-left:70px">
+								<table background="${base}/images/box.jpg" width="238"
+									height="165" border="0">
+									<tbody>
+										<tr>
+											<td width="12%" height="90">
+												&nbsp;
+											</td>
+											<td><a
+							href="${base }/manage/safemanage/webadmin/listWebAdminAction.portal">
+												<img id="leftImg2" src="${base}/images/yhgl.png" width="168"
+													height="74" style="cursor: hand;"></a>
+												</b></font>
+											</td>
+
+										</tr>
+										<tr>
+											<td>
+												&nbsp;
+											</td>
+											<td valign="top">
+												<p>
+													<font color="#999999" size="-1">系统用户增加 用户信息</font><font
+														color="#999999" size="-1">修改 </font>
+												</p>
+												<p>
+													<font color="#999999" size="-1">用户角色设置 </font>
+												</p>
+											</td>
+										</tr>
+
+									</tbody>
+
+								</table>
+						
+						</div>
+
+
+
+					</td>
+					<td id="contentTab" width="270" height="90">
+						
+							<div id="jsgl" style="margin-left:50px;">
+								<table background="${base}/images/box.jpg" width="238"
+									height="165" border="0">
+									<tbody>
+										<tr>
+											<td width="12%" height="90">
+												&nbsp;
+											</td>
+											<td><a
+							href="${base }/manage/rolemanage/role/roleAction!findAllRole.portal">
+												<img id="leftImg3" src="${base}/images/jsgl.png" width="168"
+													height="74" style="cursor: hand"; ></a>
+											</td>
+
+										</tr>
+										<tr>
+											<td>
+												&nbsp;
+											</td>
+											<td valign="top">
+												<font color="#999999" size="-1"> 角色维护管理 角色权限修改<br>
+													访问能力设定</font>
+											</td>
+										</tr>
+
+									</tbody>
+								</table>
+						
+						</div>
+					</td>
+					<td id="contentTab" width="270" height="90">
+						
+
+							<div id="nrgl" style="margin-left:50px;">
+								<table background="${base}/images/box.jpg" width="238"
+									height="165" border="0">
+									<tbody>
+										<tr>
+											<td width="12%" height="90">
+												&nbsp;
+											</td>
+											<td><a
+							href="${base }/manage/contentmanage/content/listContentInfos.portal?groupId=1">
+												<img id="leftImg4" src="${base}/images/nrgl.png" width="168"
+													height="74" style="cursor: hand"; ></a>
+											</td>
+
+										</tr>
+										<tr>
+											<td>
+												&nbsp;
+											</td>
+											<td valign="top">
+												<font color="#999999" size="-1">技术报告 信息公告 政策法规等<br></.>内容管理维护<br>
+												</font>
+											</td>
+										</tr>
+										<tr>
+										</tr>
+
+									</tbody>
+								</table>
+						
+						</div>
+
+					</td>
+					<td id="contentTab" width="214" height="90">
+
+					</td>
+				</tr>
+				<tr height="190px">
+					<td id="contentTab" width="1">
+
+					</td>
+					<td id="contentTab" width="270" height="70">
+						
+						 <div id="xtxx" style="margin-left:70px; margin-top:10px;"><table  background="${base}/images/box.jpg" width="238" height="165" border="0">
+							<tbody>
+								<tr>
+									<td width="12%" height="90">&nbsp;</td>
+                    <td>
+                    	<a	href="${base }/html/adminSetting/admin_index.jsp#">
+                    	<img id="leftImg5" src="${base}/images/xtxx.png" width="168" height="74" style="cursor: hand";>
+                    	</a>
+									</td>
+
+								</tr>
+								<tr>
+								<td>
+									&nbsp;
+								</td>
+								<td valign="top">
+									<font color="#999999" size="-1">服务器运行状态 CPU 内存
+										</p>
+										<p>
+											状况 虚拟机运行状况
+									</font>
+								</td>
+							</tr>
+
+			</tbody>
+		</table>
+		
+		</div>
+		</td>
+		<td id="contentTab" width="270" height="90">
+			
+				<div id="rzck" style="margin-left:50px; margin-top:10px;">
+					<table background="${base}/images/box.jpg" width="238" height="165"
+						border="0">
+						<tbody>
+							<tr>
+								<td width="12%" height="90">
+									&nbsp;
+								</td>
+								<td>
+									<a href="${base }/manage/safemanage/log/listOperLog.portal">
+									<img id="leftImg3" src="${base}/images/rzck.png" width="168"
+										height="74" style="cursor: hand"; >
+										</a>
+								</td>
+
+							</tr>
+							<tr>
+								<td>
+									&nbsp;
+								</td>
+								<td valign="top">
+									<font color="#999999" size="-1"><p>
+											用户操作痕迹 日志条件查询
+										</p>
+										<p>
+											系统事件查询
+										</p> </font>
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+			
+			</div>
+
+		</td>
+		<td id="contentTab" width="270" height="90">
+			
+				<div id="yjsz" style="margin-left:50px; margin-top:10px;">
+					<table background="${base}/images/box.jpg" width="238" height="165"
+						border="0">
+						<tbody>
+							<tr>
+								<td width="12%" height="90">
+									&nbsp;
+								</td>
+								<td>
+									<a href="${base }/html/warning/setting_index.jsp">
+									<img id="leftImg" src="${base}/images/yjsz.png" width="168"
+										height="74" style="cursor: hand"; >
+										</a>
+								</td>
+
+							</tr>
+							<tr>
+								<td>
+									&nbsp;
+								</td>
+								<td valign="top">
+									<font color="#999999" size="-1">系统用户增加 用户信息修改<br>
+										用户密码设置
+										</p>
+									</font>
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+			
+			</div>
+
+		</td>
+		<td id="contentTab" width="214" height="90">
+
+		</td>
+		</tr>
+		<tr></tr>
+		</tbody>
+		</table>
+
+
+
+
+		<script language="JavaScript">
+/*
+var isShow=true;
+function changeLeft(){
+	var leftTab = document.getElementById("leftTab");
+	var leftImg = document.getElementById("leftImg");
+	if(isShow == true){
+		leftTab.style.display = "none";
+		isShow=false;
+		leftImg.src="${base }/images/backimg/menu_switch_expand.gif";
+	}else{
+		leftTab.style.display = "";
+		leftTab.style.width="185";
+		isShow=true;
+		leftImg.src="${base }/images/backimg/menu_switch_close.gif";
+	}
+}
+*/
+</script>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+* {
+	padding: 0;;
+	margin: 0;
+}
+
+a {
+	color: #666666;
+	text-decoration: none
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+body ul,body ol {
+	list-style: none;
+	display: block;
+}
+
+img {
+	border: 0;
+}
+
+body {
+	background-image: url(../images/bj.gif);
+	background-repeat: repeat-x;
+}
+
+.top {
+	margin: 0 auto;
+	width: 753px;
+	height: 103px;
+	padding-top: 10%;
+}
+
+.conter {
+	height: 200px;
+	background: url(../images/1_05.gif) repeat-x;
+	margin-top: 10px;
+}
+
+.conter_bj {
+	background: url(../images/1_06.gif) no-repeat;
+	margin: 0 auto;
+	width: 1400px;
+	height: 200px;
+}
+
+.login_nr {
+	width: 350px;
+	height: 160px;
+	margin: 0 auto;
+	padding-top: 35px;
+}
+
+.nr {
+	font-family: "宋体";
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.bj_login {
+	height: 24px;
+	width: 162px;
+	background: url(../images/2_06.gif) no-repeat;
+}
+
+.nr001 {
+	color: #FFFFFF;
+}
+
+.nr001 a {
+	color: #FFFFFF;
+}
+.STYLE1 {
+	color: #FF0033;
+	font-weight: bold;
+	font-size: 10px;
+}

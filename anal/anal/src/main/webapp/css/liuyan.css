@@ -1,0 +1,75 @@
+.postmsg {
+	BORDER-BOTTOM: #c6cad2 1px solid; BORDER-LEFT: #c6cad2 1px solid; BACKGROUND-COLOR: #fff; BORDER-TOP: #c6cad2 1px solid; BORDER-RIGHT: #c6cad2 1px solid
+}
+.posttip {
+	LINE-HEIGHT: 30px; BACKGROUND-COLOR: #d7e8f5; PADDING-LEFT: 10px; HEIGHT: 30px; COLOR: #0066b2; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.postarea {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; PADDING-TOP: 5px
+}
+.postarea LABEL {
+	FONT-WEIGHT: bold
+}
+.postarea INPUT {
+	BORDER-BOTTOM: #c6cad2 1px solid; BORDER-LEFT: #c6cad2 1px solid; HEIGHT: 15px; BORDER-TOP: #c6cad2 1px solid; BORDER-RIGHT: #c6cad2 1px solid
+}
+TEXTAREA {
+	BORDER-BOTTOM: #c6cad2 1px solid; BORDER-LEFT: #c6cad2 1px solid; WIDTH: 300px; HEIGHT: 100px; BORDER-TOP: #c6cad2 1px solid; BORDER-RIGHT: #c6cad2 1px solid
+}
+.postarea .bt {
+	LINE-HEIGHT: 18px; BACKGROUND-COLOR: #fff; WIDTH: 80px; HEIGHT: 25px
+}
+.bt2 {
+	BORDER-BOTTOM: #3399ff 1px solid; BORDER-LEFT: #3399ff 1px solid; LINE-HEIGHT: 18px; BACKGROUND-COLOR: #fff; WIDTH: 80px; HEIGHT: 25px; BORDER-TOP: #3399ff 1px solid; BORDER-RIGHT: #3399ff 1px solid
+}
+.postarea .bt1 {
+	LINE-HEIGHT: 18px; BACKGROUND-COLOR: #fff; WIDTH: 200px; HEIGHT: 25px
+}
+.msglist {
+	BORDER-BOTTOM: #c6cad2 1px solid; BORDER-LEFT: #c6cad2 1px solid; BACKGROUND-COLOR: #fff; WIDTH: 660px; BORDER-TOP: #c6cad2 1px solid; BORDER-RIGHT: #c6cad2 1px solid
+}
+.msglist .showmsg UL {
+	MARGIN-BOTTOM: 10px
+}
+.msglist .showmsg LI {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.showmsg UL {
+	MARGIN-BOTTOM: 10px
+}
+.showmsg LI {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.showmsg .msgtop {
+	BORDER-BOTTOM: #c6cad2 1px solid; BORDER-LEFT: #c6cad2 1px solid; BACKGROUND-COLOR: #ebf4fa; WIDTH: 630px; COLOR: #0066b2; FONT-SIZE: 12px; BORDER-TOP: #c6cad2 1px solid; BORDER-RIGHT: #c6cad2 1px solid
+}
+.showmsg .msgtop .nickname {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 0px
+}
+.showmsg .msgcont {
+	BORDER-BOTTOM: #c6cad2 1px solid; BORDER-LEFT: #c6cad2 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 5px; WIDTH: 630px; PADDING-RIGHT: 5px; COLOR: #3e505d; BORDER-RIGHT: #c6cad2 1px solid; PADDING-TOP: 0px
+}
+.showmsg .replyaction {
+	MARGIN: 0px 10px; DISPLAY: none
+}
+.showmsg .replyaction .replymsg {
+	WIDTH: 630px
+}
+.showmsg .reply {
+	BORDER-BOTTOM: #c6cad2 1px solid; BORDER-LEFT: #c6cad2 1px solid; PADDING-BOTTOM: 5px; MARGIN: 10px 0px 2px; PADDING-LEFT: 5px; WIDTH: 615px; PADDING-RIGHT: 5px; WHITE-SPACE: normal; BACKGROUND: #eee; COLOR: #0066ff; OVERFLOW: hidden; WORD-BREAK: break-all; BORDER-TOP: #c6cad2 1px solid; BORDER-RIGHT: #c6cad2 1px solid; PADDING-TOP: 5px
+}
+.showmsg .pagenav {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 5px; MARGIN: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.error {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 10px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; FONT-FAMILY: Verdana, Tahoma; FONT-SIZE: 12px; PADDING-TOP: 10px
+}
+.success {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 10px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; FONT-FAMILY: Verdana, Tahoma; FONT-SIZE: 12px; PADDING-TOP: 10px
+}
+.error {
+	BACKGROUND: #a22; COLOR: #fff
+}
+.success {
+	BACKGROUND: #cfc; COLOR: #051
+}

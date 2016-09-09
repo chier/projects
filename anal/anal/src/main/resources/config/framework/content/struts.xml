@@ -1,0 +1,102 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="struts-contentinfo"
+		namespace="/manage/contentmanage/content"
+		extends="struts-interceptor">
+		<!--内容管理操作操作Action -->
+		<action name="contentInfoOperator"
+			class="contentInfoOperatorAction">
+			<result name="editIn" type="dispatcher">
+				/html/content/editcontent.jsp
+			</result>
+			<result name="removeInput" type="redirect">
+				listContentInfos.portal?${nextResult}
+			</result>
+			<result name="viewCatalog" type="dispatcher">
+				/html/content/editCatalog.jsp
+			</result>
+			<result name="indexContent" type="dispatcher">
+				/html/content/indexContent.jsp
+			</result>
+			
+			<result name="indexDataDown" type="dispatcher">
+				/html/content/indexDataDown.jsp
+			</result>
+			<result name="moreContent" type="dispatcher">
+				/html/content/moreContent.jsp
+			</result>
+			<interceptor-ref name="common-model" />
+		</action>
+		<!-- 添加新闻内容Action -->
+		<action name="createContentInfo"
+			class="createContentInfoAction">
+			<result name="success" type="redirect">
+				listContentInfos.portal?${nextResult}
+			</result>
+			<result name="beor" type="dispatcher">
+				/html/content/editcontent.jsp
+			</result>
+			<interceptor-ref name="common-model-token" />
+		</action>
+		<!-- 修改内容信息Action -->
+		<action name="modifyContentInfo"
+			class="modifyContentInfoAction">
+			<result name="success" type="redirect">
+				listContentInfos.portal?${nextResult}
+			</result>
+			<result name="beor" type="dispatcher">
+				/html/content/editcontent.jsp
+			</result>
+			<interceptor-ref name="common-model-token" />
+		</action>
+		<!-- 后台显示内容信息Action -->
+		<action name="listContentInfos"
+			class="listContentInfosAction">
+			<result name="success" type="dispatcher">
+				/html/content/listContent.jsp
+			</result>
+			<result name="goContentOper" type="dispatcher">
+				/html/content/contentoperator.jsp
+			</result>
+			<result name="goweburl" type="redirect">
+				/manage/contentmanage/weburl/weburl!listWebUrl.portal
+			</result>
+			<interceptor-ref name="common-model" />
+		</action>
+		<!-- 内容附件上传删除Action-->
+		<action name="contentAttachOperator"
+			class="contentAttachOperatorAction">
+		</action> 
+		<action name="fckupload" class="fckUploadAction">
+			<interceptor-ref name="common-params-upload" />
+		</action>
+	</package>
+	<package name="struts-common-contentinfo"
+		namespace="/public/common/contentmanager/content"
+		extends="struts-interceptor">
+		<!-- 下载内容附件操作类
+			<action name="downloadAttach" class="downloadAttachAction">
+			<param name="contentType">
+			application/octet-stream;charset=utf8
+			</param>
+			<param name="inputPath">${inputPath}</param>
+			<param name="fileName">${fileName}</param>
+			<result name="success" type="stream">
+			<param name="contentDisposition">
+			attachment;filename="${downloadFileName}"
+			</param>
+			<param name="inputName">targetFile</param>
+			</result>
+			</action>-->
+
+		<!--内容信息查看action类  -->
+		<action name="contentInfoView" class="contentInfoViewAction">
+			<result name="success" type="dispatcher">
+				/html/content/displaywebcontent.jsp
+			</result>
+			<interceptor-ref name="common-model" />
+		</action>
+	</package>
+</struts>

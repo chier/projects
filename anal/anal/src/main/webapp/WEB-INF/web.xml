@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<!-- Spring ApplicationContext配置文件的路径�可使用通配符，多个路径用�,号分隔。此参数用于后面的Spring-Context loader -->
+	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>
+			com.cmcc.common.config.SpringXmlWebApplicationContext
+		</param-value>
+	</context-param>
+
+	<!--Spring ApplicationContext 载入 -->
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+
+	<!--  Container关闭开启的Listener，用来做日志，初始化平台使用的一些环境变量、数据库……。其中数据库主要是检测UserInfo表中是否有loginId为admin的用户。 -->
+	<listener>
+		<listener-class>
+			com.cmcc.common.controller.listener.AppContextListener
+		</listener-class>
+	</listener>
+
+	<!-- 权限过滤器 -->
+	<filter>
+		<filter-name>rightsFilter</filter-name>
+		<filter-class>
+			com.cmcc.common.controller.filter.RightsFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>rightsFilter</filter-name>
+		<url-pattern>*.portal</url-pattern>
+	</filter-mapping>
+	<!-- struts2过滤器 -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>
+			com.cmcc.common.config.Struts2FilterDispatcher
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.portal</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>Connector</servlet-name>
+		<servlet-class>
+			net.fckeditor.connector.ConnectorServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Connector</servlet-name>
+		<url-pattern>
+			/js/fckeditor/editor/filemanager/connectors/*
+		</url-pattern>
+	</servlet-mapping>
+
+	<!-- end of FCK Editor's 文件 上传Servlet-->
+	<jsp-config>
+		<taglib>
+			<taglib-uri>fckeditor</taglib-uri>
+			<taglib-location>/WEB-INF/FCKeditor.tld</taglib-location>
+		</taglib>
+		<!--  taglib>
+			<taglib-uri>oscache</taglib-uri>
+			<taglib-location>/WEB-INF/lib/oscache-2.4.1.jar</taglib-location>
+			</taglib>
+			
+			<taglib>
+			<taglib-uri>fckeditor</taglib-uri>
+			<taglib-location>/WEB-INF/FCKeditor.tld</taglib-location>
+			</taglib>-->
+		<jsp-property-group>
+			<description>configuration JSP</description>
+			<display-name>JSPcongiuration</display-name>
+			<url-pattern>/jsp/*</url-pattern>
+			<!-- 在JSP里使用EL语言 如果是TRUE表示不可用 -->
+			<el-ignored>false</el-ignored>
+		</jsp-property-group>
+	</jsp-config>
+
+	<!-- 编码过滤器 -->
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>
+			com.cmcc.common.controller.filter.CharacterEncodingFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>login.html</welcome-file>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+
+	<error-page>
+		<exception-type>
+			com.cmcc.common.exception.BusinessException
+		</exception-type>
+		<location>/commons/error/error.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>
+			com.cmcc.common.exception.BusinessException
+		</exception-type>
+		<location>/commons/error/error.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.lang.RuntimeException</exception-type>
+		<location>/commons/error/error.jsp</location>
+	</error-page>
+	<servlet>
+		<servlet-name>UploadServlet</servlet-name>
+		<servlet-class>
+			com.cmcc.common.util.file.servlet.UploadServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UploadServlet</servlet-name>
+		<url-pattern>/servlet/UploadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>upload</display-name>
+		<servlet-name>upload</servlet-name>
+		<servlet-class>com.cmcc.common.util.file.servlet.AttachUploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>upload</servlet-name>
+		<url-pattern>/servlet/attachUploadServlet/*</url-pattern>
+	</servlet-mapping>
+</web-app>

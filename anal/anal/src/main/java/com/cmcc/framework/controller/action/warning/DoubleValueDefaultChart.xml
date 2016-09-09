@@ -1,0 +1,20 @@
+<chart>
+	<chartSeries>
+		<series>
+			<seriesType>line</seriesType>
+			<seriesTitle>行政区划代码（合计值）</seriesTitle>
+			<seriesColor>0xFF6600</seriesColor>
+			<valueField>行政区划代码（合计值）</valueField>
+		</series>
+		<series>
+			<seriesType>line</seriesType>
+			<seriesTitle>行政区值</seriesTitle>
+			<seriesColor>0xFCD202</seriesColor>
+			<valueField>行政区值</valueField>
+		</series>
+	</chartSeries>
+	<xAxisField>省</xAxisField>
+	<chartD>2D</chartD>
+	<chartView showTitle='true' showLegend='true'></chartView>
+	<chartControl enableCursor='true' enableScrollbar='true'></chartControl>
+</chart>

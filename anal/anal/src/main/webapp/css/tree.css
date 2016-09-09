@@ -1,0 +1,15 @@
+/*
+For:	Fetion Tree Style
+Author:	San
+Date:	2009-03-12
+*/
+html{border:0;height:100%;overflow:hidden; border:0;}
+body{margin:0;padding:0;height:100%;font:12px/120% Arial, Helvetica, sans-serif; background:url(../images/bg_tree.gif) repeat-y; text-align:left;}
+ul,ol,li,dl,dt,dd,p,img,h1,h2,h3,h4,h5,h6{ border:0; margin:0; padding:0; list-style:none;}
+.tree-nav li{ position:relative; min-height:22px; _height:22px; line-height:22px;}
+	.tree-nav ul li{ padding-left:8px;}
+		.tree-nav ul li ul li{ padding-left:15px;}
+			.tree-nav ul li ul li ul li{ padding-left:15px;}
+.tree-nav li em,.tree-nav li .close{ cursor:pointer; float:left; line-height:22px; height:22px; width:36px;}
+.tree-nav li em{ background:url(../images/tree_ico.gif) 0 center no-repeat;}
+.tree-nav li .close{ background:url(../images/tree_ico.gif) -150px center no-repeat;}

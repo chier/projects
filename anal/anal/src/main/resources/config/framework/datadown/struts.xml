@@ -1,0 +1,16 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="struts-datadown" namespace="/manage/datadown" extends="struts-interceptor">
+		<!-- 模块的Action -->
+		<action name="dataDownAction" class="dataDownAction">
+			<result name="indexDataDown" type="dispatcher">/html/dataDown/indexDataDown.jsp</result>
+			<result name="indexFileShare" type="dispatcher">/html/dataDown/indexFileShare.jsp</result>
+			<result name="tableFileShare" type="dispatcher">/html/dataDown/tableFileShare.jsp</result>
+			<result name="toAddFileShare" type="dispatcher">/html/dataDown/addFileShare.jsp</result>
+			<interceptor-ref name="common-params-upload"/>
+			<interceptor-ref name="common-params"/>
+		</action>
+	</package>
+</struts>

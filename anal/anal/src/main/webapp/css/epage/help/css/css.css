@@ -1,0 +1,64 @@
+@charset "utf-8";
+/*
+For: 	Fetion news
+Author:	San
+Date:	2009-04-09
+*/
+@import url("reset.css");
+html{
+	height:100%;
+	overflow:hidden;
+	background:#f0fbfd url(../images/bg.png) top center repeat-x;
+}
+body{
+	font-size:12px;
+	height:100%;
+	background:url(../images/bg_body.gif) bottom center repeat-x;
+	overflow:auto;
+}
+.top{
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.top dl{
+	width:910px;
+	height:110px;
+	background:url(../images/bg_top.jpg) top 2px no-repeat;
+}
+.top dl dt{
+	float:left;
+	width:300px;
+	padding:35px 0 0 110px;
+	font: bold 22px "Microsoft YaHei";
+	color:#fff;
+}
+.top dl dd{
+	float:right;
+	width:180px;
+	padding:65px 0 0 0;
+	color:#000;
+}
+/* main-iframe */
+.main-iframe{ position:relative; top:110px;_top:110px; z-index:3;}
+.main-iframe iframe{ min-height:400px;}
+/* footer */
+.footer{
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:98%;
+	height:69px;
+	color:#000;
+	z-index:5;
+	background:url(../images/bg_body.gif) bottom center repeat-x;
+	color:#64758f;
+	font: 13px/52px "SimSun";
+	overflow:hidden;
+}
+.footer .copy{
+	background:url(../images/logo_fetion.gif) right center no-repeat;
+	line-height:70px;
+	margin:0 26px;
+}

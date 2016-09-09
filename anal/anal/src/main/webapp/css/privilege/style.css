@@ -1,0 +1,42 @@
+/*
+For:	Fetion Base Style
+Author:	San
+Date:	2009-03-10
+*/
+html{border:0;height:100%;overflow:hidden; border:0;}
+body{margin:0;padding:0;height:100%;font:12px/120% Arial, Helvetica, sans-serif;background:#f4f5f7 url(../images/bg_footer.png) bottom left repeat-x;}
+#wrap{position:relative;height:100%;overflow:auto;overflow-x:hidden;z-index:3;}
+#main{margin:56px auto 0 auto; padding-bottom:56px; z-index:1; position:relative; _top:56px; _padding-bottom:160px;}
+a:hover{text-decoration:underline;cursor:pointer;}
+.button{height:23px;padding:0 5px; background:#5a7393; border:1px solid #484f69; color:#fff;cursor:pointer;}
+ul,ol,li,dl,dt,dd,p,img,h1,h2,h3,h4,h5,h6{ border:0; margin:0; padding:0; list-style:none;}
+/* nav */
+.top{ position:absolute; top:0; left:0;width:100%;height:55px;background:url(../images/top-bg.jpg) repeat-x; z-index:4;}
+.top .logo{width:329px;height:55px;background:url(../images/logo.jpg) no-repeat;}
+.logout{ cursor:pointer; position:absolute; top:0; right:30px; background: url(../images/logout.jpg) no-repeat; color:#fff; text-align:center; width:120px; height:25px; line-height:25px; color:#000;}
+	.logout a:link,.logout a:visited{ color:#fff; padding:0 3px; text-decoration:none;}
+	.logout a:hover{ color:#eee; text-decoration:none;}
+/* login */
+.warp-login{ width:100%; height:100%;}
+	.warp-login td{ vertical-align: middle; text-align:center;}
+.login{ background: url(../images/bg_login.gif) no-repeat; width:563px; height:299px; margin:0 auto; position:relative;}
+	.login ul{ text-align:left; padding:50px 0 0 160px;}
+		.login ul li{ clear:left; padding:8px 0; vertical-align:middle; position:relative; height:30px; overflow:hidden;}
+		.login ul li label{ float:left; text-align:right; width:70px; line-height:24px;}
+.editpsw{ background:#f7f7f7; width:372px; height:250px; margin:0 auto; position:relative; border:solid 1px #ccc;}
+	.editpsw dl{ text-align:left; padding:30px 0 0 4px;}
+		.editpsw dl span{margin-left:8px;}
+		.editpsw dl dt{ clear:left;vertical-align:middle; position:relative; height:30px; overflow:hidden;}
+			.editpsw dl dt label{ float:left; text-align:right; width:60px; line-height:22px;margin-right:8px;}
+		.editpsw dl dd{ clear:left; height:20px; line-height:20px; padding-left:12px;}
+
+.login ul li span,.findpsw ul li span{ position:absolute; left:250px; top:14px; color:#f00;}
+.f-text{ border:solid 1px #a3a7b2; font:13px/20px Tahoma; height:20px; overflow:hidden;}
+/* main-iframe */
+/* main-iframe */
+.main-iframe{ position:relative; top:0;_top:1px; z-index:3;}
+	.main-iframe iframe{ min-height:500px;}
+#close-nav{ position:absolute; background:url(../images/nav_switch.gif) center no-repeat; width:5px; height:61px; top:48%; left:170px; cursor:pointer;}
+/* footer */
+#footer{position:fixed;bottom:0;left:0;width:98%;height:52px;color:#000;z-index:5;background:url(../images/bg_footer.png) 0 0 repeat-x;color:#64758f;font: 13px/52px "SimSun";overflow:hidden;}
+#footer .copyright{ background:url(../images/bg_footer_logo.gif) center right no-repeat; line-height:56px; margin:0 26px;}

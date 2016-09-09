@@ -1,0 +1,13 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="struts-warning" namespace="/manage/warning" extends="struts-interceptor">
+		<action name="warningAction" class="warningAction">
+			<result name="success" type="dispatcher">/html/warning/default.jsp</result>
+			<result name="settingDefault" type="dispatcher">/html/warning/settingDefault.jsp</result>
+			<result name="reportTable" type="dispatcher">/html/warning/reportTable.jsp</result>
+			<interceptor-ref name="common-params"/>
+		</action>
+	</package>
+</struts>
