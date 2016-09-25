@@ -24,11 +24,11 @@ Ext.define("Sencha.view.surveyData.RootPanel", {
 					},
 					displayField : 'surName',
 					title:'调查数据',
-					style : 'margin:15px 5px 15px 5px;',
+					style : 'margin:15px 5px 15px 5px;text-align:left;',
 					width : '30%',
 					cls : 'detail_box1',
 					scrollable : true,
-					height : 610,
+					height : 680,
 						// html : ' one 这是综合分析首页。位于 ComprehensiveRootPanel'
 					listeners: {
 						leafitemtap: function(item, list, index, c) {
@@ -42,7 +42,7 @@ Ext.define("Sencha.view.surveyData.RootPanel", {
 				}, {
 					xtype : 'panel',
 					width : '66%',
-					height : 620,
+					height : 680,
 					layout : {
 						type : 'vbox'
 					},
@@ -52,7 +52,7 @@ Ext.define("Sencha.view.surveyData.RootPanel", {
 								xtype : 'SurveyDataRightTabPanel',
 								style : 'margin-top:10px;margin-bottom:0px;margin-left:14px;',
 								width : '97%',
-								height : 576,
+								height : 626,
 								id : 'SurveyDataRightTabPanel'
 							}]
 				}]

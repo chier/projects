@@ -17,7 +17,6 @@ Ext.define("Sencha.view.basicInfo.Panel2014_1", {
 			        	'<li style="list-style-type:none;"><div class="li_yuan01"></div>重金属污染</li>'+
 			            '<li style="list-style-type:none;"><div class="li_yuan02"></div>有机物污染</li>'+
 			            '<li style="list-style-type:none;"><div class="li_yuan03"></div>复合污染</li>'+
-			            '<li style="list-style-type:none;"><div class="li_yuan04"></div>重金属、有机物污染</li>'+
 			        '</ul>'+
 			    '</div>'+
 //			    '<h1 class=mapl_orange style="margin: 161px 0px 0px 674px;font-size:12px;"><a  href="#">内蒙古 </a></h1>'+

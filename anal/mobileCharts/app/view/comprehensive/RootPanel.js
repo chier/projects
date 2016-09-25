@@ -24,11 +24,11 @@ Ext.define("Sencha.view.comprehensive.RootPanel", {
 			},
 			displayField : 'comName',
 			title : '综合分析',
-			style : 'margin:15px 5px 15px 5px;',
+			style : 'margin:15px 5px 15px 5px;text-align:left;',
 			width : '30%',
 			cls : 'detail_box1',
 			scrollable : true,
-			height : 610,
+			height : 670,
 			// html : ' one 这是综合分析首页。位于 ComprehensiveRootPanel'
 			listeners : {
 				leafitemtap : function(item, list, index, c) {
@@ -46,7 +46,7 @@ Ext.define("Sencha.view.comprehensive.RootPanel", {
 		}, {
 			xtype : 'panel',
 			width : '66%',
-			height : 620,
+			height : 670,
 			layout : {
 				type : 'vbox'
 			},
@@ -67,7 +67,7 @@ Ext.define("Sencha.view.comprehensive.RootPanel", {
 				xtype : 'comprehensiveDataList',
 				style : 'background:#f0f0f0;margin-top:0px;margin-bottom:0px;margin-left:14px;',
 				width : '96%',
-				height : 325
+				height : 375
 			}]
 		}]
 	}

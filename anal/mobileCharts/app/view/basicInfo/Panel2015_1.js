@@ -8,7 +8,7 @@ Ext.define("Sencha.view.basicInfo.Panel2015_1", {
 	config : {
 		yearType:2015,
 		items:[{
-			cls:'map_2012',
+			cls:'map_2015',
 			html:
 			      '<h1 style="font-size: 38px;font-family: \'微软雅黑\';">2015年试点调查地区污染及行业类型</h1>'+
 			      '<div class="fenl">'+

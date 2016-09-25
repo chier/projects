@@ -18,6 +18,7 @@ Ext.define("Sencha.view.basicInfo.RootPanel", {
 						{
 							xtype:'panel2012_1',
 							id:'panel2012_1'
+							
 						},
 						{
 							xtype:'panel2012_2',

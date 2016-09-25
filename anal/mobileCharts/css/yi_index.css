@@ -35,7 +35,7 @@
 
 
 .map_2014 {
-	background: url(../images/map2014.png) no-repeat left top;
+	background: url(../images/2014map.png) no-repeat left top;
 	background-size:1000px 595px;
 	float: left;
 	width: 1000px;
@@ -43,6 +43,30 @@
 }
 
 .map_2014 h1 {
+	display: block; font-weight: normal; position: absolute; 
+}
+
+.map_2015 {
+	background: url(../images/2015map.png) no-repeat left top;
+	background-size:1000px 595px;
+	float: left;
+	width: 1000px;
+	height: 595px;
+}
+
+.map_2015 h1 {
+	display: block; font-weight: normal; position: absolute; 
+}
+
+.map_2016 {
+	background: url(../images/2016map.png) no-repeat left top;
+	background-size:1000px 595px;
+	float: left;
+	width: 1000px;
+	height: 595px;
+}
+
+.map_2016 h1 {
 	display: block; font-weight: normal; position: absolute; 
 }
 
@@ -190,7 +214,7 @@ a.z {
 	width:10px; height:10px; border:1px #05435f solid; 
 	border-radius:25px;
 	-moz-border-radius:25px; /* Old Firefox */ 
-	background-color: #05435f;
+	background-color: #50b7c1;
 	float:left;
 	margin-top:5px;
 }

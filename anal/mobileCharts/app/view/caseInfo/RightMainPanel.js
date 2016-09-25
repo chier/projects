@@ -22,7 +22,7 @@ Ext.define("Sencha.view.caseInfo.RightMainPanel", {
 			xtype : 'caseInfoDataList',
 			style : 'background:#f0f0f0;margin-top:0px;margin-bottom:0px;margin-left:14px;',
 			width : '96%',
-			height : 325
+			height : 375
 		}]
 	}
 });

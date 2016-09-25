@@ -47,8 +47,8 @@ Ext.define("Sencha.view.caseStatistics.LeftBottomPanel", {
 								width : 300,
 								height : 40,
 //								id : 'bumenxiangqing',
-								style : 'margin-top:20px;',
-								html : '<div style="height:35px;line-height:35px;"><em class="icon_3"></em><span class="f_left">试点详情</span></div>',
+								style : 'margin-top:125px;',
+								html : '<div style="height:35px;line-height:35px;"><div><em class="icon_3"></em></div><div><span>试点详情</span></div></div>',
 								cls : 'btn_con2 f_left',
 								handler : function() {
 									console.info("试点详情，方法点击");

@@ -9,7 +9,7 @@ Ext.define("Sencha.view.basicInfo.Panel2016_1", {
 //		padding:'0 0 0 110',
 		yearType:2016,
 		items:[{
-			cls:'map_2013',
+			cls:'map_2016',
 			html:
 			      '<h1 style="font-size: 36px; margin: 30px 0px 0px 200px; font-family: \'微软雅黑\';">2016年试点调查地区污染及行业类型</h1>'+
 			      '<div class="fenl">'+
@@ -17,7 +17,6 @@ Ext.define("Sencha.view.basicInfo.Panel2016_1", {
 			        	'<li style="list-style-type:none;"><div class="li_yuan01"></div>重金属污染</li>'+
 			            '<li style="list-style-type:none;"><div class="li_yuan02"></div>有机物污染</li>'+
 			            '<li style="list-style-type:none;"><div class="li_yuan03"></div>复合污染</li>'+
-			            '<li style="list-style-type:none;"><div class="li_yuan04"></div>重金属、有机物污染</li>'+
 			        '</ul>'+
 			    '</div>'+
 //			    '<h1 class=mapl_orange style="margin: 161px 0px 0px 674px;font-size:12px;"><a  href="#">内蒙古 </a></h1>'+

@@ -25,7 +25,7 @@ Ext.define("Sencha.view.caseInfo.RootPanel", {
 										xtype : 'panel',
 										cls : 'con_box',
 										// height : '100%',
-										height : 650,
+										height : 680,
 										width : '100%',
 										layout : {
 											type : 'hbox'
@@ -33,7 +33,7 @@ Ext.define("Sencha.view.caseInfo.RootPanel", {
 										items : [{
 													xtype : 'caseInfoLeftMain',
 													width : '30%',
-													height : 610
+													height : 680
 
 												}, {
 													xtype : 'spacer',
@@ -41,7 +41,7 @@ Ext.define("Sencha.view.caseInfo.RootPanel", {
 													width : 22
 												}, {
 													xtype : 'caseInfoRightMain',
-													height : 620,
+													height : 680,
 													width : '66%'
 												}]
 									}]

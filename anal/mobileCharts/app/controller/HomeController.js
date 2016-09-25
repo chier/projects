@@ -169,14 +169,14 @@ Ext.define('Sencha.controller.HomeController', {
 		this.getButtomTimeButn().add({
 			scope : this,
 			id : 'baseicInfo',
-			text : '试点基本情况',
+			text : '基本情况',
 			 handler : 'doData'
 		});
 		
 		this.getButtomTimeButn().add({
 			scope : this,
 			id : 'caseInfo',
-			text : '上报情况统计',
+			text : '上报统计',
 			 handler : 'doData'
 		});
 		this.getButtomTimeButn().add({
@@ -233,10 +233,23 @@ Ext.define('Sencha.controller.HomeController', {
 			Ext.getCmp("BasicInfoRootPanel").items.each(function(item,i){
 				if(i != 0){
 					if(Global.currentYears == item["_yearType"]){
+//						item.enable();
+//						item.setHidden(false);
+//						console.info(item);
 						if(_y){
 							Ext.getCmp("BasicInfoRootPanel").setActiveItem(item);
 							_y = false;
 						}
+					}else{
+//						var myPanel = Ext.create('panel2012_2', {
+//						});
+//
+//						Ext.getCmp("BasicInfoRootPanel").items.add([myPanel]);
+						
+//						item.clearListeners( )
+						// item.destroy(); // 消毁之后 没办法回复，不行
+//						item.disable();
+//						item.setHidden(true);
 					}
 				}
 				
@@ -635,11 +648,11 @@ Ext.define('Sencha.controller.HomeController', {
 				dataIndex : 'date',
 				width : '40%'
 			}, {
-				header : '机+酒总量',
+				header : '总量',
 				dataIndex : 'orders',
 				width : '20%'
 			}, {
-				header : '机+酒总额',
+				header : '总数',
 				dataIndex : 'total',
 				width : '40%'
 			}]);

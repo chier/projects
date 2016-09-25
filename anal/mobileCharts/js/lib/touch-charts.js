@@ -23712,7 +23712,7 @@ Ext.define('Ext.chart.interactions.ItemInfo', {
                 {
                     docked: 'top',
                     xtype: 'toolbar',
-                    title: 'Item Detail'
+                    title: '提  示'
                 }
             ]
         }

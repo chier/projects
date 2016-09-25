@@ -228,7 +228,7 @@ Ext.define('Sencha.controller.SurveyDataController', {
 				name : _itemTitle.itemCode,
 				type : 'string'
 			};
-			if (i < 7) {
+			if (i < 8) {
 				_columns[i] = {
 					header : _itemTitle.itemName,
 					dataIndex : _itemTitle.itemCode,

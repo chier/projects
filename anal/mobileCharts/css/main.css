@@ -711,6 +711,11 @@ background:url(../images/icon.png) 0 -308px no-repeat;width:21px;height:20px;mar
 	-webkit-border-radius:0;
 }
 
+.detail_box1 div.x-list-item-label span{
+	margin-left:80px;
+	
+}
+
 .more_button_dd span.x-button-label{
 	display:inline;
 }
