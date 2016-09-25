@@ -10,6 +10,7 @@ public class MainActivity extends DroidGap {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		super.setIntegerProperty("loadUrlTimeoutValue", 10000);
 		super.onCreate(savedInstanceState);
 //		setContentView(R.layout.activity_main);
 		super.loadUrl("file:///android_asset/www/indexData.html");

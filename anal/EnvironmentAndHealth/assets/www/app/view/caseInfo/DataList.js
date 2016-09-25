@@ -35,7 +35,7 @@ Ext.define('Sencha.view.caseInfo.DataList', {
 				dataIndex : 'environmentTotal',
 				width:'20%'
 			}, {
-				header : '总额 ',
+				header : '总数',
 				dataIndex : 'total',
 				width:'20%'
 			}]

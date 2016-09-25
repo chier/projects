@@ -1,5 +1,5 @@
 /**
- * 上报情况统计业务类
+ * 上报统计业务类
  */
 Ext.define('Sencha.controller.CaseStatisticsController', {
 	extend : 'Sencha.controller.BaseController',

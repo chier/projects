@@ -47,7 +47,8 @@
         <activity
             android:name="com.pica.environmentandhealth.MainActivity"
             android:label="@string/app_name" 
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale">
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

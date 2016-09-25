@@ -2,16 +2,16 @@
  * 试点基本情况2012年的第一页
  * 
  */
-Ext.define("Sencha.view.basicInfo.Panel2014_1", {
+Ext.define("Sencha.view.basicInfo.Panel2016_1", {
 	extend : 'Ext.Panel',
-    xtype : 'panel2014_1',
+    xtype : 'panel2016_1',
 	config : {
 //		padding:'0 0 0 110',
-		yearType:2014,
+		yearType:2016,
 		items:[{
-			cls:'map_2014',
+			cls:'map_2016',
 			html:
-			      '<h1 style="font-size: 36px; margin: 30px 0px 0px 200px; font-family: \'微软雅黑\';">2014年试点调查地区污染及行业类型</h1>'+
+			      '<h1 style="font-size: 36px; margin: 30px 0px 0px 200px; font-family: \'微软雅黑\';">2016年试点调查地区污染及行业类型</h1>'+
 			      '<div class="fenl">'+
 			    	'<ul style="list-style-type:none;">'+
 			        	'<li style="list-style-type:none;"><div class="li_yuan01"></div>重金属污染</li>'+
@@ -41,7 +41,7 @@ Ext.define("Sencha.view.basicInfo.Panel2014_1", {
 //			    '<h1 class=mapl_orange style="margin: 490px 0px 0px 684px;font-size:12px;"><a href="#">广西 </a></h1>'+
 			    '<div class="clear"></div>'+
 			    '<div class="map_con">'+
-			    	'<p>“专项调查”2014年。</p>'+
+			    	'<p>“专项调查”预调查工作自2016年5月开始，至2016年12月结束。</p>'+
 			    '</div>'
 			     
 		}]

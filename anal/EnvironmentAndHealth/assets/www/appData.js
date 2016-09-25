@@ -4,8 +4,9 @@
  */
 var Global = {
 	maxiNum : 20,
-	URL:'http://115.29.100.230:80/mobileAnal/controller/report.talent',
-//	URL:'http://127.0.0.1:8080/mobileAnal/controller/report.talent',
+//	URL:'http://www.micro-view.com:81/mobileAnal/controller/report.talent',
+	URL:'http://59.42.176.107:8809/mobileAnal/controller/report.talent',
+	 //URL:'http://localhost:8080/mobileAnal/controller/report.talent',
 	currentYears:"2013", // 当前年份，默认是2013年
 	DATE : '2010-9-30',
 	ViewId : '用户名+密码', // a67eb045515f4bfdb78f4224a54eb2cd ;  a9edc36a05dd42a6883d21b093b04011
@@ -18,7 +19,8 @@ var Global = {
 	SurveyDataController: null,
 	CaseStatisticsController:null,
 	CaseInfoController:null,
-	caseType:[{"2012":[{"1":"居民健康"},{"2":"环境调查"}]},{"2013":[{"1":"移动采集"},{"2":"DF采集"}]},{"2014":[{"1":"移动采集"},{"2":"DF采集"}]}],
+	caseType:[{"2012":[{"1":"居民健康"},{"2":"环境调查"}]},{"2013":[{"1":"居民健康"},{"2":"环境调查"}]},{"2014":[{"1":"居民健康"},{"2":"环境调查"}]},
+	          {"2015":[{"1":"居民健康"},{"2":"环境调查"}]},{"2016":[{"1":"居民健康"},{"2":"环境调查"}]}],
 	getCaseType:function(year){
 		var caseType = {};
 		for(var i = 0 ;i < Global.caseType.length;i++){
@@ -72,7 +74,7 @@ Ext.application({
 	// home 目录下
 	'home.HomeMain','home.TopPanel','home.TopTimeBar','home.TopTimePanel',
 	//basicInfo 目录 试点基本信息目录下
-	'basicInfo.RootPanel','basicInfo.Panel2012_1','basicInfo.Panel2012_2','basicInfo.Panel2012_3','basicInfo.Panel2012_4','basicInfo.Panel2013_1','basicInfo.Panel2013_2','basicInfo.Panel2013_3','basicInfo.Panel2013_4','basicInfo.Panel2013_5','basicInfo.Panel2014_1',
+	'basicInfo.RootPanel','basicInfo.Panel2012_1','basicInfo.Panel2012_2','basicInfo.Panel2012_3','basicInfo.Panel2012_4','basicInfo.Panel2013_1','basicInfo.Panel2013_2','basicInfo.Panel2013_3','basicInfo.Panel2013_4','basicInfo.Panel2013_5','basicInfo.Panel2014_1','basicInfo.Panel2015_1','basicInfo.Panel2015_2','basicInfo.Panel2015_3','basicInfo.Panel2015_4','basicInfo.Panel2016_1','basicInfo.Panel2016_2','basicInfo.Panel2016_3','basicInfo.Panel2016_4','basicInfo.Panel2016_5',
 	// caseStatistics 目录 上报情况统计目录下
 	'caseStatistics.RootPanel','caseStatistics.LeftMainPanel', 'caseStatistics.LeftTopPanel', 'caseStatistics.LeftBottomPanel1', 'caseStatistics.LeftBottomPanel2', 'caseStatistics.LeftBottomPanel', 'caseStatistics.RightPanel', 'caseStatistics.RightTopPanel', 'caseStatistics.LineChart', 'caseStatistics.BarChart', 'caseStatistics.DataList',
 	// caseInfo 目录， 试点详情目录

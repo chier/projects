@@ -4,7 +4,7 @@ Ext.define("Sencha.view.caseInfo.LeftButtonPanel", {
 	config : {
 		//layout : 'fit',
 		width : '100%',
-		height : 290,
+		height : 408,
 //		cls : 'detail_box1',
 		scrollable : {
 			direction : 'vertical',

@@ -120,7 +120,6 @@ background:url(../images/icon.png) 0 -308px no-repeat;width:21px;height:20px;mar
 }
 .timeBar-base-segmentedbutton {
 	float: left;
-	width: 267px;
 	height: 31px;
 	border: 1px solid #1a1d22;
 	border-radius: .4em;
@@ -181,6 +180,22 @@ background:url(../images/icon.png) 0 -308px no-repeat;width:21px;height:20px;mar
 	-webkit-border-radius: 0 0 0 0;
 }
 
+.timeBar-base-segmentedbutton div.buttonItem:nth-child(3) {
+	border-right: 1px solid #4f545b;
+	border-left: 1px solid #4f545b;
+	border-radius: 0 0 0 0;
+	-moz-border-radius: 0 0 0 0;
+	-webkit-border-radius: 0 0 0 0;
+}
+
+.timeBar-base-segmentedbutton div.buttonItem:nth-child(4) {
+	border-right: 1px solid #4f545b;
+	border-left: 1px solid #4f545b;
+	border-radius: 0 0 0 0;
+	-moz-border-radius: 0 0 0 0;
+	-webkit-border-radius: 0 0 0 0;
+}
+
 .timeBar-base-segmentedbutton div.buttonItem:last-child {
 	border-right: 0;
 	border-left: 1px solid #4f545b;
@@ -210,6 +225,44 @@ background:url(../images/icon.png) 0 -308px no-repeat;width:21px;height:20px;mar
 	width: 86px;
 }
 .timeBar-base-segmentedbutton div.buttonItem.nav_on:nth-child(2) {
+	-webkit-box-shadow: 0 1px 1px rgba(255,255,255,0.5);
+	-moz-box-shadow: 0 1px 1px rgba(255,255,255,0.5);
+	box-shadow: 0 1px 1px rgba(255,255,255,0.5);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.0,#ffe582),color-stop(0.4,#fccf2e),color-stop(0.8,#fea620),color-stop(1.0,#ffbb4f));
+	background-image: -webkit-linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+	background-image: -moz-linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+	background-image: -ms-linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+	background-image: -o-linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+	background-image: linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+	-webkit-box-shadow: inset 0 1px 1px rgba(255,254,251,1);
+	-moz-box-shadow: inset 0 1px 1px rgba(2255,254,251,1);
+	box-shadow: inset 0 1px 1px rgba(255,254,251,1);
+	color: #000;
+	text-shadow: 0 1px 1px #fff;
+	border-left: 1px solid #1a1d22;
+	border-right: 1px solid #1a1d22;
+	width: 85px;
+}
+.timeBar-base-segmentedbutton div.buttonItem.nav_on:nth-child(3) {
+	-webkit-box-shadow: 0 1px 1px rgba(255,255,255,0.5);
+	-moz-box-shadow: 0 1px 1px rgba(255,255,255,0.5);
+	box-shadow: 0 1px 1px rgba(255,255,255,0.5);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.0,#ffe582),color-stop(0.4,#fccf2e),color-stop(0.8,#fea620),color-stop(1.0,#ffbb4f));
+	background-image: -webkit-linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+	background-image: -moz-linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+	background-image: -ms-linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+	background-image: -o-linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+	background-image: linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+	-webkit-box-shadow: inset 0 1px 1px rgba(255,254,251,1);
+	-moz-box-shadow: inset 0 1px 1px rgba(2255,254,251,1);
+	box-shadow: inset 0 1px 1px rgba(255,254,251,1);
+	color: #000;
+	text-shadow: 0 1px 1px #fff;
+	border-left: 1px solid #1a1d22;
+	border-right: 1px solid #1a1d22;
+	width: 85px;
+}
+.timeBar-base-segmentedbutton div.buttonItem.nav_on:nth-child(4) {
 	-webkit-box-shadow: 0 1px 1px rgba(255,255,255,0.5);
 	-moz-box-shadow: 0 1px 1px rgba(255,255,255,0.5);
 	box-shadow: 0 1px 1px rgba(255,255,255,0.5);
@@ -519,12 +572,14 @@ background:url(../images/icon.png) 0 -308px no-repeat;width:21px;height:20px;mar
 	border: 1px solid #fff;
 	height: 75%;
 	width: 100%;
+	/*
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#d8dce2),color-stop(3%,#c1c6cc),color-stop(9%,#dadee4));
 	background-image: -webkit-linear-gradient(#d8dce2 0%,#c1c6cc 3%,#dadee4 9%);
 	background-image: -moz-linear-gradient(#d8dce2 0%,#c1c6cc 3%,#dadee4 9%);
 	background-image: -ms-linear-gradient(#d8dce2 0%,#c1c6cc 3%,#dadee4 9%);
 	background-image: -o-linear-gradient(#d8dce2 0%,#c1c6cc 3%,#dadee4 9%);
 	background-image: linear-gradient(#d8dce2 0%,#c1c6cc 3%,#dadee4 9%);
+	*/
 	border-radius: 1.2em 1.2em 0 0;
 	-moz-border-radius: 1.2em 1.2em 0 0;
 	-webkit-border-radius: 1.2em 1.2em 0 0;
@@ -654,6 +709,11 @@ background:url(../images/icon.png) 0 -308px no-repeat;width:21px;height:20px;mar
 	border-bottom:none;
 	border-radius: 0;
 	-webkit-border-radius:0;
+}
+
+.detail_box1 div.x-list-item-label span{
+	margin-left:80px;
+	
 }
 
 .more_button_dd span.x-button-label{

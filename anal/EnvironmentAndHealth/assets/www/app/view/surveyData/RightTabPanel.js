@@ -92,7 +92,7 @@ Ext.define("Sencha.view.surveyData.RightTabPanel", {
 						id : 'primevalDataButton',
 						cls : 'btn_con3',
 						style : 'margin-bottom:0px;width:108px;height:16px;',
-						html : '<div class="f_right" style="min-width:6.0em;font-size:16px;color:#888888;">原始数据</div>',
+						html : '<div class="f_right" style="min-width:6.0em;font-size:16px;color:#888888;text-shadow:rgba(0, 0, 0, 0.5) 0 -0.08em 0;">原始数据</div>',
 						handler : function() {
 							var surveyDataGridView = Ext
 									.getCmp("surveyDataGridView");
@@ -164,7 +164,7 @@ Ext.define("Sencha.view.surveyData.RightTabPanel", {
 						id : 'infoDataButton',
 						cls : 'btn_con3',
 						style : 'margin-bottom:0px;width:108px;height:16px;',
-						html : '<div  class="f_right" style="min-width:6.0em;font-size:16px;color:#888888;">详细数据</div>',
+						html : '<div  class="f_right" style="min-width:6.0em;font-size:16px;color:#888888;text-shadow:rgba(0, 0, 0, 0.5) 0 -0.08em 0;">详细数据</div>',
 						handler : function() {
 
 							var surveyDataGridView = Ext

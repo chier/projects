@@ -326,7 +326,7 @@ function toFlightDetail() {
 				});
 	}
 
-	document.getElementById("logo_title").innerText = "机票详情";
+//	document.getElementById("logo_title").innerText = "机票详情";
 
 }
 

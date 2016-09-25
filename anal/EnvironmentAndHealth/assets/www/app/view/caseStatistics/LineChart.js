@@ -26,7 +26,8 @@ Ext.define('Sencha.view.caseStatistics.LineChart', {
 			listeners : {
 				show : function(interaction, item, panel) {
 					var storeItem = item.storeItem;
-					panel.setHtml(['<ul><li><b>试点: </b>' + storeItem.get('pname') + '</li>', '<li><b>上报数值: </b> ' + item.value[1] + '</li></ul>'].join(''));
+					panel.setHtml(['<ul><li><b>试点: </b>' + storeItem.get('pname') + '</li>',
+					               '<li><b>上报数值: </b> ' + item.value[1] + '</li></ul>'].join(''));
 				}
 			}
 		}],
