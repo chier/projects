@@ -2,6 +2,8 @@ package com.cmcc.anal.framework.service;
 
 import java.io.ByteArrayInputStream;
 import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.sf.json.JSONObject;
 
+import org.apache.commons.lang.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -232,13 +235,26 @@ public class ComprehensiveService extends GenericDAOImpl {
 			for(int i=0;i<ol.size();i++){
 				objs = ol.get(i);
 				model = new MapModel();
-				model.setKey(objs[0] == null ? "" : objs[0].toString());
-				model.setValue(objs[1] == null ? "" : objs[1].toString());
+				model.setKey(decimalFormat(objs[0]));
+				model.setValue(decimalFormat(objs[1]));
 				list.add(model);
 			}
 		}
 		
 		return list;
+	}
+	
+	
+	public String decimalFormat(Object obj){
+		DecimalFormat format = new DecimalFormat("0.00");
+		if(obj == null || StringUtils.isBlank(obj.toString())){
+			return "";
+		}
+		if(obj.toString().indexOf(".") != -1){
+			String a = format.format(new BigDecimal(obj.toString()));
+			return a;
+		}
+		return obj.toString();
 	}
 	
 	public static void main(String []args){

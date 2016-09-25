@@ -29,12 +29,7 @@ import net.sf.jasperreports.engine.util.JRSaver;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.json.JSONObject;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.CharUtils;
-import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import org.springframework.orm.hibernate3.SessionFactoryUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -82,7 +77,7 @@ import com.cmcc.anal.framework.model.SurveyDataModel;
 @Component
 @Transactional
 public class SurveyDataService extends GenericDAOImpl {
-	private static Logger logger = LoggerFactory
+	private static Logger logger = Logger
 			.getLogger(SurveyDataService.class);
 
 	/**
@@ -115,12 +110,15 @@ public class SurveyDataService extends GenericDAOImpl {
 			}
 			
 			List<SurveyDataModel> l = null; //this.findByYears(0);
-			l = this.findByCen_Object(years);
+//			l = this.findByCen_Object(years);
+			// 2016.9.24 修改  zhangzlg 不再读取S9999的cen_obje表，改读  anal的structure_db
+			l = findStructure(years);
+			
 			if(l.size() == 0){
 				WebUtils.outputJsonResponseVo(response, op, 0, "OK", "", callback);
 			}else{
-				String strCodes = findCen_Object_NameByCen_Group(l);
-				findByCen_object_table_rel(l,strCodes);
+//				String strCodes = findCen_Object_NameByCen_Group(l);
+//				findByCen_object_table_rel(l,strCodes);
 	//			WebUtils.outputJsonResponseVo(response, op, 0, "OK", "[{\"text\":\"父类\",\"items\":[{\"text\":\"Asia\",\"items\":[{\"text\":\"Japan\",\"items\":[{\"text\":\"Acura\",\"leaf\":true},{\"text\":\"Honda\",\"leaf\":true},{\"text\":\"Infiniti\",\"leaf\":true},{\"text\":\"Mitsubishi\",\"leaf\":true},{\"text\":\"Nissan\",\"leaf\":true},{\"text\":\"Scion\",\"leaf\":true},{\"text\":\"Subaru\",\"leaf\":true},{\"text\":\"Toyota\",\"leaf\":true}]},{\"text\":\"Korea\",\"items\":[{\"text\":\"Hyundai\",\"leaf\":true},{\"text\":\"Kia\",\"leaf\":true}]}]},{\"text\":\"United Kingdom\",\"items\":[{\"text\":\"Aston Martin\",\"leaf\":true},{\"text\":\"Bentley\",\"leaf\":true},{\"text\":\"TVR\",\"leaf\":true},{\"text\":\"Land Rover\",\"leaf\":true}]},{\"text\":\"Europe\",\"items\":[{\"text\":\"Germany\",\"items\":[{\"text\":\"Audi\",\"leaf\":true},{\"text\":\"BMW\",\"leaf\":true},{\"text\":\"Opel\",\"leaf\":true},{\"text\":\"Porsche\",\"leaf\":true},{\"text\":\"Volkswagen\",\"leaf\":true}]},{\"text\":\"France\",\"items\":[{\"text\":\"Citro?n\",\"leaf\":true},{\"text\":\"Renault\",\"leaf\":true},{\"text\":\"Peugeot\",\"leaf\":true}]}]},{\"text\":\"United States\",\"items\":[{\"text\":\"Buick\",\"leaf\":true},{\"text\":\"Cadillac\",\"leaf\":true},{\"text\":\"Chevrolet\",\"leaf\":true},{\"text\":\"Chrysler\",\"leaf\":true},{\"text\":\"Ford\",\"leaf\":true},{\"text\":\"Jeep\",\"leaf\":true},{\"text\":\"Oldsmobile\",\"leaf\":true},{\"text\":\"Saturn\",\"leaf\":true},{\"text\":\"Tesla\",\"leaf\":true}]}]}]", callback);
 				
 				WebUtils.outputJsonResponseVo(response, op, 0, "OK", l, callback);
@@ -201,7 +199,7 @@ public class SurveyDataService extends GenericDAOImpl {
 			logger.info("tableCode = " + tblCode + " |code=" + code + "");
 
 			String jrxmPath = findJrxmlinfoByTableCode(tblCode);
-			logger.debug(jrxmPath);
+			logger.info(jrxmPath);
 //			String html = "我想要怎么显示就延长显示" + jrxmPath;
 			//			
 			// Map map = this.findById(comId);
@@ -212,6 +210,107 @@ public class SurveyDataService extends GenericDAOImpl {
 		}
 	}
 
+	/**
+	 * 2016.9.24 修改  zhangzlg 不再读取S9999的cen_obje表，改读  anal的structure_db
+	 * mobileCharts 调查数据的左侧列表数
+	 * @param years
+	 * @return
+	 * @throws Exception
+	 * @author zhangzhanliang
+	 */
+	public List<SurveyDataModel> findStructure(int years) throws Exception{
+		List<SurveyDataModel> l = new ArrayList<SurveyDataModel>();
+		Integer sid = this.topSid(years);
+		if(sid == -1){
+			return l;
+		}
+		queryMiddleItems(l,sid,null);
+		return l;
+	}
+	
+	/**
+	 * 查询最顶层数据
+	 * @param years
+	 * @return
+	 * @author zhangzhanliang
+	 */
+	private Integer topSid(int years){
+		String topSQL = "select sid from structure_db where sname = '"
+				+ years + "年'";
+		List<Integer> topList = this.getHibernate_Anal()
+				.createSQLQuery(topSQL);
+		if(topList == null || topList.size() == 0){
+			return -1;
+		}
+		Integer sid = topList.get(0);
+		return sid;
+	}
+	
+	/**
+	 * 查询最底层结构
+	 * @param tableCodes
+	 * @return
+	 * @author zhangzhanliang
+	 */
+	private List<SurveyDataModel> queryBottomItems(String tableCodes){
+		List<SurveyDataModel> items = new ArrayList<SurveyDataModel>();
+		String [] codes = tableCodes.split(",");
+		String tableSQL = "select TBL_CODE,TBL_NAME from logical_table " +
+				"where TBL_CODE in(";
+		for(int i =0;i<codes.length;i++){
+			tableSQL += "'" + codes[i] + "'";
+			if(i != codes.length -1){
+				tableSQL +=",";
+			}
+		}
+		tableSQL += ")";
+		List<Object[]> tableList = this.getHibernate_S9999()
+				.createSQLQuery(tableSQL);
+		
+		for(Object[] tableMap : tableList){
+			SurveyDataModel tableModel = new SurveyDataModel();
+			tableModel.setLeaf(true);
+			tableModel.setSurId(tableMap[0].toString());
+			tableModel.setSurName(tableMap[1].toString());
+			items.add(tableModel);
+		}
+		return items;
+	}
+	
+	
+	private List<SurveyDataModel>  queryMiddleItems(
+			List<SurveyDataModel> topList,Integer parentId,List<SurveyDataModel> itemList){
+		String parentSQL = "select sname,tableCodes,sid from structure_db " +
+				"where spid = '"+parentId+"'";
+		List<Object[]> parentList = this.getHibernate_Anal()
+				.createSQLQuery(parentSQL);
+		SurveyDataModel topModel = null;
+		for(Object[] parMap : parentList){
+			topModel = new SurveyDataModel();
+			topModel.setSurName(parMap[0].toString());
+			topModel.setLeaf(false);
+			topModel.setSurId(parMap[2].toString());
+			if(parMap[1] != null){
+				String tableCodes = parMap[1].toString();
+				List<SurveyDataModel> items = this.queryBottomItems(tableCodes);
+				topModel.setItems(items);
+			}else{
+				// 当 tableCodes = null 的时候,表示该结构是目录
+				Integer pId = Integer.valueOf(parMap[2].toString());
+				List<SurveyDataModel> subItemList = new ArrayList<SurveyDataModel>();
+				queryMiddleItems(topList,pId,subItemList);
+				topModel.setItems(subItemList);
+			}
+			if(itemList == null ){
+				topList.add(topModel);
+			}else{
+				itemList.add(topModel);
+			}
+		}
+		return topList;
+	}
+	
+	
 	/**
 	 * 查询 cen_object 表的CEN_GROUP信息
 	 * @param years
@@ -457,7 +556,6 @@ public class SurveyDataService extends GenericDAOImpl {
 		long totalresult = 0;
 		if (r != null && r.size() > 0) {
 			totalresult = Long.valueOf(r.get(0).toString());
-			;
 		}
 		if (totalresult < 1) {
 			totalresult = 0;
@@ -478,14 +576,16 @@ public class SurveyDataService extends GenericDAOImpl {
 			bu.append(" where ");
 			bu.append(sv);
 		}
-		if (logger.isDebugEnabled())
-			logger.debug(bu.toString());
-		List<Object[]> tableList = getHibernate_S9999().sqlQuery(bu.toString(),
-				page);
-
-		tableObject[0] = tableList; // 表信息
-		tableObject[1] = page; // 页数
-
+		if (logger.isInfoEnabled())
+			logger.info(bu.toString());
+		try{
+			List<Object[]> tableList = getHibernate_S9999().sqlQuery(bu.toString(),
+					page);
+			tableObject[0] = tableList; // 表信息
+			tableObject[1] = page; // 页数
+		}catch(Exception e){
+			logger.error(e.getMessage(),e);
+		}
 		return tableObject;
 	}
 
@@ -497,10 +597,10 @@ public class SurveyDataService extends GenericDAOImpl {
 	 */
 	public String findJrxmlinfoByTableCode(String tableCode) {
 		// Plate009/
-		String node_name = tableCode.replaceAll("late", "");
+		String node_name = tableCode;
 		try {
-			String hql = "select jrfilepath from jrxmlinfo where node_name like '"
-					+ node_name + "%'";
+			String hql = "select jrfilepath from jrxmlinfo where tableCode = '"
+					+ node_name + "'";
 			;
 			List<String> l = this.getHibernate_Anal().createSQLQuery(hql);
 			if (l != null && l.size() > 0) {

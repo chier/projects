@@ -53,6 +53,7 @@ import com.cmcc.anal.framework.model.CaseStatistics;
 @Component
 @Transactional
 public class CaseInfoService extends GenericDAOImpl {
+	
 	private static Logger logger = LoggerFactory
 			.getLogger(CaseInfoService.class);
 

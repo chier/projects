@@ -51,6 +51,8 @@ public class Pilot extends PersistentObject {
 	private Date dmlTime;// 删除管理员时间
 
 	private Short dmlflog;// 管理员操作记录
+	
+	private String shartName;// 简称
 
 	public Pilot() {
 		super();
@@ -127,5 +129,16 @@ public class Pilot extends PersistentObject {
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
+	
+	@Column(name = "shortName")
+	public String getShartName() {
+		return shartName;
+	}
+
+	public void setShartName(String shartName) {
+		this.shartName = shartName;
+	}
+	
+	
 
 }

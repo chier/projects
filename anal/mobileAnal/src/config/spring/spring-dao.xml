@@ -12,7 +12,7 @@
 	default-autowire="byName" default-lazy-init="true">
 
 	<!-- 管理员 dao 实现类 -->
-	<bean id="IWebAdminDAO"
+	<bean id="webAdminDAO"
 		class="com.cmcc.anal.framework.persistence.impl.WebAdminDAOImpl">
 	</bean>
 </beans>

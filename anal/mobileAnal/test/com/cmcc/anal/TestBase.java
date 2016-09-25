@@ -48,6 +48,7 @@ public class TestBase {
 	public static void setUpBeforeClass() {
 		
 		ctx= new ClassPathXmlApplicationContext("/config/applicationContext.xml");
+		Global._ctx = ctx;
 	}
 
 	protected static Object getBean(String beanName) {

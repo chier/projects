@@ -24,8 +24,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cmcc.anal.common.util.HttpClientUtils;
 import com.cmcc.anal.common.util.WebUtils;
-import com.talent.platform.core.json.JsonWrap;
-import com.talent.platform.web.vo.AjaxRespPojo;
 /**
  * 
  *  http请求的业务类 拦截 /common/httpclient/的请求 再返回到相对应的页面 页面存储位置在 /WEB-INF/views

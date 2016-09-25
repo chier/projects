@@ -210,7 +210,7 @@ public class CaseStatisticsService extends GenericDAOImpl {
 				pilotMap.put(cs.getPilot().getIdentifier(), cs.getPilot());
 				Map map = new HashMap();
 				map.put("pid", cs.getPilot().getIdentifier());
-				map.put("pname", cs.getPilot().getPname());
+				map.put("pname", cs.getPilot().getShartName());
 				map.put("pCount", 0);
 				map.put("createTime", cs.getPilot().getCreateTime());
 				doMapData(csl, map);
