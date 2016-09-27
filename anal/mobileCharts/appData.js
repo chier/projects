@@ -84,7 +84,9 @@ Ext.application({
 	//surveyData 以下是调查数据目录
 	'surveyData.RootPanel','surveyData.RightTabPanel','surveyData.DataList','surveyData.GridView','surveyData.DataRootPanel',
 	// comprehensive 综合分析目录
-	'comprehensive.RootPanel','comprehensive.RightTopPanel','comprehensive.DataList','comprehensive.LineChart','comprehensive.BarChart'
+	'comprehensive.RootPanel','comprehensive.RightTopPanel','comprehensive.DataList','comprehensive.LineChart','comprehensive.BarChart',
+	// Pollutant 污染物分析
+	'pollutant.RootPanel','pollutant.TopPilotPanel'
 	],
 	// 数据模板
 	models : [
@@ -98,24 +100,25 @@ Ext.application({
 	],
 	// 业务类
 	controllers : [
-		'HomeController','ComprehensiveController','SurveyDataController','CaseStatisticsController','CaseInfoController'
+		'HomeController','ComprehensiveController','SurveyDataController','CaseStatisticsController','CaseInfoController','PollutantController'
 		//'BaseController', 'DeptIndexController', 'DeptMoreController', 'DeptInfoController', 'Main'
-	],
-	//组件加载完后执行方法
-	launch : function() {
-		// 页面占位隐藏
-		document.getElementById("div_index").setAttribute("style", "display:none");;
-		Ext.Viewport.add(Ext.create('Sencha.view.home.HomeMain'));
+],
+//组件加载完后执行方法
+launch : function() {
+	// 页面占位隐藏
+	document.getElementById("div_index").setAttribute("style", "display:none");;
+	Ext.Viewport.add(Ext.create('Sencha.view.home.HomeMain'));
 //		Ext.Viewport.add(Ext.create('Sencha.view.login.Login'));
-		
-		
-		// 相关业务类，存储到全局中
-		Global.HomeController = this.getApplication().getController('HomeController');
-		Global.ComprehensiveController = this.getApplication().getController('ComprehensiveController');
-		Global.SurveyDataController = this.getApplication().getController('SurveyDataController');
-		
-		Global.CaseStatisticsController = this.getApplication().getController('CaseStatisticsController');
-		Global.CaseInfoController = this.getApplication().getController('CaseInfoController');
-	}
+// 	Ext.Viewport.add(Ext.create('Sencha.view.pollutant.RootPanel'));
+
+
+	// 相关业务类，存储到全局中
+	Global.HomeController = this.getApplication().getController('HomeController');
+	Global.ComprehensiveController = this.getApplication().getController('ComprehensiveController');
+	Global.SurveyDataController = this.getApplication().getController('SurveyDataController');
+
+	Global.CaseStatisticsController = this.getApplication().getController('CaseStatisticsController');
+	Global.CaseInfoController = this.getApplication().getController('CaseInfoController');
+}
 });
 

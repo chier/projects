@@ -55,7 +55,12 @@ Ext.define("Sencha.view.home.HomeMain", {
 										xtype:'CaseInfoRootPanel',
 										height:768,
 										id:'CaseInfoRootPanel'
-									}]
+									},{
+										xtype:'PollutantRootPanel',
+										height:768,
+										id:'PollutantRootPanel'
+									}
+								]
 						}]
 			}
 

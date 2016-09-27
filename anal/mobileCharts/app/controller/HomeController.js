@@ -191,6 +191,13 @@ Ext.define('Sencha.controller.HomeController', {
 			text : '综合分析',
 			 handler : 'doData'
 		});
+
+		this.getButtomTimeButn().add({
+			scope : this,
+			id : 'pollutant',
+			text : '污染物分析',
+			handler : 'doData'
+		});
 		
 		// 选中某个按钮
 		Ext.getCmp('buttomTimeButn').items.each(function(item,i) {
@@ -227,7 +234,7 @@ Ext.define('Sencha.controller.HomeController', {
 		// 进入 试点基本情况面板
 		if(button.id == "baseicInfo"){
 			toBasicInfoIndex();
-			
+
 			// 获取选中的按钮
 			var _y = true;
 			Ext.getCmp("BasicInfoRootPanel").items.each(function(item,i){
@@ -274,7 +281,12 @@ Ext.define('Sencha.controller.HomeController', {
 			toComprehensiveIndex();
 			Global.ComprehensiveController.initList();
 		}
-		
+
+		// 进入污染物分析
+		if(button.id == "pollutant"){
+			// alert("污染物分析");
+			toPollutantIndex();
+		}
 	},
 	
 	

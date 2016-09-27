@@ -16,7 +16,6 @@ Ext.define("Sencha.view.home.TopPanel", {
 		items : [{
 			xtype : 'HomeTopTimeBar',
 			docked : 'top'
-
 		}, {
 			xtype : 'HomeTopTimePanel',
 			id : 'time1'
