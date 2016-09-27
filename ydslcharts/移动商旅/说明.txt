@@ -1,0 +1,33 @@
+library
+	框架包的目录。
+源码
+	移动商旅的源码
+文档
+	当时查的一些文档资料。
+	
+
+
+
+1.现网环境 地址： http://221.179.176.194:81/ydslcharts/index.html
+
+	这是现网的地址，一般是写在安装包里面的。
+	最好使用chrome和safari 二种浏览器打开。	
+2.	资料：
+		主页：          http://www.sencha.com/
+		Sencha 中文站： http://extjs.org.cn/
+		Ext 中文网：    http://ajaxjs.com/
+		CF西西的专栏 	http://blog.csdn.net/xiaoguang44     
+		CF西西的专栏	http://blog.cfxixi.com/category/sencha-touch-2.aspx?
+		威老			http://www.cnblogs.com/weilao/     
+	博客：
+		Sencha touch 开发指南	http://www.oschina.net/question/5189_28609
+		用 Sencha Touch 构建移动 web 应用程序	http://www.oschina.net/question/129540_45015
+		
+
+3. 源码：
+	  公司内部	svn://192.168.9.14/project/product/HTML5/SRC/project/lanchao/ydslcharts
+	  
+	  
+	
+		
+		
