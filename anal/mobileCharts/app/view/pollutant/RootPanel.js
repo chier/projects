@@ -182,7 +182,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 												{
 
 													xtype : 'button',
-													width : '100%',
+													width : '60%',
 													cls : 'btn_con3',
 													// pressed : isPressed,
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
@@ -190,7 +190,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 												},
 												{
 													xtype : 'button',
-													width : '100%',
+													width : '60%',
 													cls : 'btn_con3',
 													// pressed : isPressed,
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
@@ -198,7 +198,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 												},
 												{
 													xtype : 'button',
-													width : '100%',
+													width : '60%',
 													cls : 'btn_con3',
 													// pressed : isPressed,
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
@@ -206,7 +206,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 												},
 												{
 													xtype : 'button',
-													width : '100%',
+													width : '60%',
 													cls : 'btn_con3',
 													// pressed : isPressed,
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
@@ -214,7 +214,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 												},
 												{
 													xtype : 'button',
-													width : '100%',
+													width : '60%',
 													cls : 'btn_con3',
 													// pressed : isPressed,
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
@@ -234,7 +234,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 											items: [
 												{
 													xtype : 'button',
-													width : '100%',
+													width : '60%',
 													cls : 'btn_con3',
 													// pressed : isPressed,
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
@@ -242,7 +242,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 												},
 												{
 													xtype : 'button',
-													width : '100%',
+													width : '60%',
 													cls : 'btn_con3',
 													// pressed : isPressed,
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
@@ -250,7 +250,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 												},
 												{
 													xtype : 'button',
-													width : '100%',
+													width : '60%',
 													cls : 'btn_con3',
 													// pressed : isPressed,
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
@@ -258,7 +258,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 												},
 												{
 													xtype : 'button',
-													width : '100%',
+													width : '60%',
 													cls : 'btn_con3',
 													// pressed : isPressed,
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>

@@ -33,7 +33,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PollutantController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RootPanel.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/view/pollutant/RootPanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="184" column="63" selection-start-line="184" selection-start-column="63" selection-end-line="184" selection-end-column="63" />
+              <folding>
+                <marker date="1475082172214" expanded="true" signature="1110:1147" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="1436:1473" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="1776:1813" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="2117:2154" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="2460:2497" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="2804:2841" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="3145:3182" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="3486:3523" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="3828:3865" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="4170:4207" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="4512:4549" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="4855:4892" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="6250:6287" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="6622:6659" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="6993:7030" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="7366:7403" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="7737:7774" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="8373:8410" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="8744:8781" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="9115:9152" ph="..." />
+                <marker date="1475082172214" expanded="true" signature="9486:9523" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PollutantController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controller/PollutantController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="241">
@@ -102,16 +134,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controller/BaseController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="200" column="45" selection-start-line="200" selection-start-column="45" selection-end-line="200" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="HomeController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controller/HomeController.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -158,7 +180,6 @@
         <option value="$PROJECT_DIR$/app/view/pollutant/TopPilotBar.js" />
         <option value="$PROJECT_DIR$/app/view/pollutant/TopPilotPanel.js" />
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/app/view/pollutant/RootPanel.js" />
         <option value="$PROJECT_DIR$/app/store/CaseInfoChartStore.js" />
         <option value="$PROJECT_DIR$/app/model/PollutantChartModel.js" />
         <option value="$PROJECT_DIR$/app/view/pollutant/LineChart.js" />
@@ -168,6 +189,7 @@
         <option value="$PROJECT_DIR$/app/view/pollutant/RightTabPanel.js" />
         <option value="$PROJECT_DIR$/app/controller/CaseInfoController.js" />
         <option value="$PROJECT_DIR$/app/controller/PollutantController.js" />
+        <option value="$PROJECT_DIR$/app/view/pollutant/RootPanel.js" />
       </list>
     </option>
   </component>
@@ -454,19 +476,19 @@
       <workItem from="1474985775058" duration="511000" />
       <workItem from="1474986435397" duration="1371000" />
       <workItem from="1474987907201" duration="7931000" />
-      <workItem from="1475075106778" duration="6815000" />
+      <workItem from="1475075106778" duration="7021000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17467000" />
+    <option name="totallyTimeSpent" value="17673000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20684524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20684524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34150326" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
@@ -742,36 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/pollutant/RootPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="147" column="36" selection-start-line="147" selection-start-column="36" selection-end-line="147" selection-end-column="36" />
-          <folding>
-            <marker date="1475077693087" expanded="true" signature="1110:1147" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="1436:1473" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="1776:1813" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="2117:2154" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="2460:2497" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="2804:2841" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="3145:3182" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="3486:3523" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="3828:3865" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="4170:4207" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="4512:4549" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="4855:4892" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="6251:6288" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="6624:6661" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="6996:7033" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="7370:7407" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="7742:7779" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="8379:8416" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="8751:8788" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="9123:9160" ph="..." />
-            <marker date="1475077693087" expanded="true" signature="9495:9532" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../html5/mobile-tools/sencha-touch/touch-charts-2.0.0-beta/examples/Line/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -973,6 +965,36 @@
         <state relative-caret-position="241">
           <caret line="140" column="35" selection-start-line="140" selection-start-column="35" selection-end-line="140" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/pollutant/RootPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="184" column="63" selection-start-line="184" selection-start-column="63" selection-end-line="184" selection-end-column="63" />
+          <folding>
+            <marker date="1475082172214" expanded="true" signature="1110:1147" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="1436:1473" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="1776:1813" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="2117:2154" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="2460:2497" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="2804:2841" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="3145:3182" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="3486:3523" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="3828:3865" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="4170:4207" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="4512:4549" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="4855:4892" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="6250:6287" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="6622:6659" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="6993:7030" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="7366:7403" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="7737:7774" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="8373:8410" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="8744:8781" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="9115:9152" ph="..." />
+            <marker date="1475082172214" expanded="true" signature="9486:9523" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
