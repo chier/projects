@@ -138,6 +138,9 @@ background:url(../images/icon.png) 0 -308px no-repeat;width:21px;height:20px;mar
 	padding: 0;
 	margin: 0;
 }
+.time-base-segmentedbutton div.x-layout-hbox{
+	margin-left:0px;
+}
 .timeBar-base-segmentedbutton div.buttonItem {
 	margin: 0;
 	color: #fff;

@@ -188,6 +188,24 @@ function toSurveyIndex() {
 	}
 }
 
+/**
+ * 调查数据首页
+ */
+function toPollutantIndex() {
+	var mainPanel = Ext.getCmp("rootMain");
+	var main_2 = Ext.getCmp("PollutantRootPanel");
+	console.info(main_2);
+	if (Ext.os.is.Android) {
+		mainPanel.setActiveItem(main_2);
+	} else {
+		mainPanel.animateActiveItem(main_2, {
+			type : 'slide',
+			direction : 'right'
+		});
+	}
+	// alert("toPollutantIndex");
+}
+
 function toSurveyDataIndex() {
 	var mainPanel = Ext.getCmp("rootMain");
 	var main_2 = Ext.getCmp("SurveyDataRootPanel");
