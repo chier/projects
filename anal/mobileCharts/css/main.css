@@ -1209,15 +1209,16 @@ background:url(../images/icon.png) 0 -308px no-repeat;width:21px;height:20px;mar
 	border-radius: 1.5em;
 	-moz-border-radius: 1.5em;
 	-webkit-border-radius: 1.5em;
-	background-image: -webkit-gradient(linear,left top,left bottom,from(#abafb4), to(#d9dce1));
-	background-image: -webkit-linear-gradient(#abafb4,#d9dce1);
-	background-image: -moz-linear-gradient(#abafb4,#d9dce1);
-	background-image: -ms-linear-gradient(#abafb4,#d9dce1);
-	background-image: -o-linear-gradient(#abafb4,#d9dce1);
-	background-image: linear-gradient(#abafb4,#d9dce1);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.0,#ffe582),color-stop(0.4,#fccf2e),color-stop(0.8,#fea620),color-stop(1.0,#ffbb4f));
+    background-image: -webkit-linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+    background-image: -moz-linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+    background-image: -ms-linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+    background-image: -o-linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
+    background-image: linear-gradient(#ffe582,#fccf2e,#fea620,#ffbb4f);
 	font-size: 14px;
 	text-shadow: 0 1px 1px #fff;
 }
+
 .left_box2 {
 	width: 146px;
 	padding: 25px 10px;

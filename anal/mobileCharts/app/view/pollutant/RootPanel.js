@@ -147,9 +147,18 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 							},
 							items:[{
 								xtype:'panel',
-								html:'图表显示部分',
-								style:'border:1px solid rgb(218, 243, 14)',
-								height:'300px'
+								// html:'图表显示部分',
+								// style:'border:1px solid rgb(218, 243, 14)',
+								height:'300px',
+								items:[
+									{
+										xtype : 'pollutantRightTabPanel',
+										style : 'margin-top:10px;margin-bottom:0px;margin-left:14px;',
+										width : '97%',
+										height : 260,
+										id : 'pollutantRightTabPanel'
+									}
+								]
 							},{
 								xtype:'panel',
 								height:'200px',
