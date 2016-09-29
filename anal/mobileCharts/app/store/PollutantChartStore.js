@@ -1,14 +1,13 @@
-Ext.define('Sencha.store.CaseInfoChartStore', {
+Ext.define('Sencha.store.PollutantChartStore', {
     extend  : 'Ext.data.Store',
-    requires: ['Sencha.model.CaseInfoChartModel'],
+    requires: ['Sencha.model.PollutantChartModel'],
     config:{
-    	model   : 'Sencha.model.CaseInfoChartModel',
-    	autoLoad    : false,
-    	storeId : 'CaseInfoChartStore',
+    	model   : 'Sencha.model.PollutantChartModel',
+    	autoLoad    : true,
+    	storeId : 'PollutantChartStore',
         proxy: {
         },
-        fields: ['createTime', 'pname', 'pid', 'pCount'],
-        fields: [
+        data: [
             {
                 "createTime" : "20131231172253",
                 "pname" : "河北",

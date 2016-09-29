@@ -19,6 +19,7 @@ var Global = {
 	SurveyDataController: null,
 	CaseStatisticsController:null,
 	CaseInfoController:null,
+	PollutantController:null,
 	caseType:[{"2012":[{"1":"居民健康"},{"2":"环境调查"}]},{"2013":[{"1":"居民健康"},{"2":"环境调查"}]},{"2014":[{"1":"居民健康"},{"2":"环境调查"}]},
 	          {"2015":[{"1":"居民健康"},{"2":"环境调查"}]},{"2016":[{"1":"居民健康"},{"2":"环境调查"}]}],
 	getCaseType:function(year){
@@ -86,17 +87,19 @@ Ext.application({
 	// comprehensive 综合分析目录
 	'comprehensive.RootPanel','comprehensive.RightTopPanel','comprehensive.DataList','comprehensive.LineChart','comprehensive.BarChart',
 	// Pollutant 污染物分析
-	'pollutant.RootPanel','pollutant.TopPilotPanel'
+	'pollutant.RootPanel','pollutant.TopPilotPanel','pollutant.RightTabPanel','pollutant.LineChart'
 	],
 	// 数据模板
 	models : [
 		'ComprehensiveModel','MapModel','CaseStatModel','CaseInfoPicModel','CaseInfoChartModel','CaseInfoListModel','SurveyItemTitlsModel','Cars',
-		'ProxyModel', 'DeptInfoModel', 'DeptDetailListModel', 'DeptAreaModel', 'DataModelForIndexTable', 'flight.AirLinePieProxyModel', 'flight.ArrivedPieProxyModel', 'flight.CabinPieProxyModel', 'flight.ProxyModel', 'flight.FlightTableModel', 'hotel.StarPieProxyModel', 'hotel.CityPieProxyModel', 'hotel.HotelTableModel', 'hotel.ProxyModel'
+		'ProxyModel', 'DeptInfoModel', 'DeptDetailListModel', 'DeptAreaModel', 'DataModelForIndexTable', 'flight.AirLinePieProxyModel', 'flight.ArrivedPieProxyModel', 'flight.CabinPieProxyModel', 'flight.ProxyModel', 'flight.FlightTableModel', 'hotel.StarPieProxyModel', 'hotel.CityPieProxyModel', 'hotel.HotelTableModel', 'hotel.ProxyModel',
+		'PollutantChartModel'
 		],
 	// 数据源
 	stores : [
 		'ComprehensiveStore','MapStore','CaseStatStore','CaseInfoPicStore','CaseInfoChartStore','CaseInfoListStore','SurveyItemTitlsStore',
-		'ProxyStore', 'DeptInfoStore', 'DeptDetailListStore', 'DeptAreaStore', 'SaleDataStoreForIndexTable', 'flight.AirLinePieProxyStore', 'flight.ArrivedPieProxyStore', 'flight.CabinPieProxyStore', 'flight.FlightDataStoreForTable', 'flight.FlightOrdsProxyStore', 'flight.FlightTotalProxyStore', 'flight.CancelOrdsProxyStore', 'hotel.StarPieProxyStore', 'hotel.CityPieProxyStore', 'hotel.HotelDataStoreForTable', 'hotel.HotelTotalProxyStore', 'hotel.HotelOrdsProxyStore'
+		'ProxyStore', 'DeptInfoStore', 'DeptDetailListStore', 'DeptAreaStore', 'SaleDataStoreForIndexTable', 'flight.AirLinePieProxyStore', 'flight.ArrivedPieProxyStore', 'flight.CabinPieProxyStore', 'flight.FlightDataStoreForTable', 'flight.FlightOrdsProxyStore', 'flight.FlightTotalProxyStore', 'flight.CancelOrdsProxyStore', 'hotel.StarPieProxyStore', 'hotel.CityPieProxyStore', 'hotel.HotelDataStoreForTable', 'hotel.HotelTotalProxyStore', 'hotel.HotelOrdsProxyStore',
+		'PollutantChartStore'
 	],
 	// 业务类
 	controllers : [
@@ -119,6 +122,7 @@ launch : function() {
 
 	Global.CaseStatisticsController = this.getApplication().getController('CaseStatisticsController');
 	Global.CaseInfoController = this.getApplication().getController('CaseInfoController');
+	Global.PollutantController =  this.getApplication().getController('PollutantController');
 }
 });
 
