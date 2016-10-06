@@ -42,15 +42,15 @@ Ext.define("Sencha.view.pollutant.RightTabPanel", {
 			// width : '100%'
 		}, {
 			title : '<div style="min-width:6.0em;line-height:24px;font-size:16px;"><span>列表</span></div>',
-			xtype : 'panel',
+			xtype : 'pollutantDataList',
             itemId:'1',
 			cls : 'tab-border-background',
 			style : 'background:#f0f0f0;',
-			id : 'pollutantPanel',
-            html:'列表',
-			items : [{
-
-            }]
+			id : 'pollutantDataList',
+            //html:'列表',、
+            //items : [{
+            //
+            //}]
 		}],
 		listeners : {
 			bottomchange:function( a, value, oldValue, eOpts ){

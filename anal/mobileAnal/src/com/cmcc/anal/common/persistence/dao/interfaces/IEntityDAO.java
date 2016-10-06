@@ -13,6 +13,7 @@ package com.cmcc.anal.common.persistence.dao.interfaces;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -374,6 +375,7 @@ public interface IEntityDAO<T> {
 	 */
 	List sqlQuery(String sql,final Page page,Class clazz,Object... params);
 	
+	List<Map> createMapSQLQuery(String sql, Object... values);
 	
 	List createSQLQuery(String sql, Object... values);
 	

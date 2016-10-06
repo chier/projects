@@ -1451,3 +1451,13 @@ background:url(../images/icon.png) 0 -308px no-repeat;width:21px;height:20px;mar
 #indexSaleTitle .x-tab .x-tab-normal .x-tab-active{
 	min-width:7.0em;
 }
+
+.c-button-pressing{
+	border:1px solid #7f7f7f;
+	background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fffefb),color-stop(6%,#ffe582),color-stop(41%,#fccf2e),color-stop(76%,#fea620),color-stop(100%,#ffbb4f));
+	background-image:-webkit-linear-gradient(#fffefb 0%,#ffe582 6%,#fccf2e 41%,#fea620 76%,#ffbb4f 100%);
+	background-image:-moz-linear-gradient(#fffefb 0%,#ffe582 6%,#fccf2e 41%,#fea620 76%,#ffbb4f 100%);
+	background-image:-ms-linear-gradient(#fffefb 0%,#ffe582 6%,#fccf2e 41%,#fea620 76%,#ffbb4f 100%);
+	background-image:-o-linear-gradient(#fffefb 0%,#ffe582 6%,#fccf2e 41%,#fea620 76%,#ffbb4f 100%);
+	background-image:linear-gradient(#fffefb 0%,#ffe582 6%,#fccf2e 41%,#fea620 76%,#ffbb4f 100%);
+}

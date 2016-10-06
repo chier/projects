@@ -27,6 +27,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
+import org.hibernate.criterion.CriteriaSpecification;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.MatchMode;
@@ -906,6 +907,30 @@ public class HibernateEntityDAO<T> extends HibernateDaoSupport implements
 				});
 		return result;
 	}
+	
+	public List createMapSQLQuery(final String sql, final Object... values) {
+
+		return (List) getHibernateTemplate().execute(new HibernateCallback() {
+			public Object doInHibernate(Session s) throws HibernateException,
+					SQLException {
+
+				List list;
+				try {
+					SQLQuery query = s.createSQLQuery(sql);
+					for (int i = 0; i < values.length; i++) {
+						query.setParameter(i, values[i]);
+					}
+					query.setResultTransformer(CriteriaSpecification.ALIAS_TO_ENTITY_MAP);
+					
+					list = query.list();
+					
+				} finally {
+					releaseSession(s);
+				}
+				return list;
+			}
+		});
+	}
 
 	public List createSQLQuery(final String sql, final Object... values) {
 
@@ -919,9 +944,7 @@ public class HibernateEntityDAO<T> extends HibernateDaoSupport implements
 					for (int i = 0; i < values.length; i++) {
 						query.setParameter(i, values[i]);
 					}
-					
 					list = query.list();
-					
 				} finally {
 					releaseSession(s);
 				}

@@ -2,17 +2,17 @@ Ext.define('Sencha.model.PollutantChartModel', {
 			extend : 'Ext.data.Model',
 			config : {
 				fields : [{
-					name : 'createTime',
+					name : 'surveyyear',
 					type : 'string'
 				}, {
-					name : 'pname',
+					name : 'sampletype',
 					type : 'string'
 				}, {
-					name : 'pid',
-					type : 'int'
+					name : 'DETECTINDEX',
+					type : 'string'
 				}, {
-					name : 'pCount',
-					type : 'int'
+					name : 'TESTRESULTS',
+					type : 'float'
 				}]
 			}
 		});

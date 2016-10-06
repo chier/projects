@@ -25,6 +25,7 @@ import com.cmcc.anal.framework.service.CaseInfoService;
 import com.cmcc.anal.framework.service.CaseStatisticsService;
 import com.cmcc.anal.framework.service.ComprehensiveService;
 import com.cmcc.anal.framework.service.LoginService;
+import com.cmcc.anal.framework.service.PollutantService;
 import com.cmcc.anal.framework.service.SurveyDataService;
 import com.talent.platform.core.json.JsonWrap;
 
@@ -77,8 +78,13 @@ public class ReportController {
 	
 	@Resource(name = "caseStatisticsService")
 	private CaseStatisticsService caseStatisticsService;
+	
+	
 	@Resource(name = "caseInfoService")
 	private CaseInfoService caseInfoService;
+	
+	@Resource(name = "pollutantService")
+	private PollutantService pollutantService;
 	
 	
 	@RequestMapping(value = URL_ACCOUNT_REPORT)
@@ -142,9 +148,9 @@ public class ReportController {
 			else if (jsonRequestVo.getOp().indexOf("CaseInfo") != -1) {
 				caseInfoService.report(jsonRequestVo, jsonResponseVo,
 						request, response, modelMap);
+			}else if(jsonRequestVo.getOp().indexOf("Pollutant") != -1){
+				pollutantService.report(jsonRequestVo, jsonResponseVo, request, response, modelMap);
 			}
-			
-			
 			else {
 				jsonResponseVo.setCode(-1);
 				jsonResponseVo.setMsg("请求参数错误！");

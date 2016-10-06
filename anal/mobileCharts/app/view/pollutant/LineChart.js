@@ -20,22 +20,24 @@ Ext.define('Sencha.view.pollutant.LineChart', {
 		 left : {}
 		 }
 		 },*/
-		{
-			type : 'iteminfo',
-			listeners : {
-				show : function(interaction, item, panel) {
-					var storeItem = item.storeItem;
-					panel.setHtml(['<ul><li><b>试点: </b>' + storeItem.get('pname') + '</li>', '<li><b>上传数量: </b> ' + item.value[1] + '</li></ul>'].join(''));
-				}
-			}
-		}],
+			//{
+			//	type : 'iteminfo',
+			//	listeners : {
+					//show : function(interaction, item, panel) {
+					//	var storeItem = item.storeItem;
+					//	console.info(item);
+					//	panel.setHtml(['<ul><li><b>样品类别: </b>' +  item.value[0] + '</li>', '<li><b>上传数量: </b> ' + item.value[1] + '</li></ul>'].join(''));
+					//}
+				//}
+			//}
+		],
 		axes : [{
 			type : 'Numeric',
 			//id   : 'indexNumeric',
 			//grid : true,
 			minimum : 0,
 			position : 'left',
-			fields : ['pCount'],
+			fields : ['TESTRESULTS'],
 			grid : {
 				odd : {
 					opacity : 2,
@@ -57,7 +59,7 @@ Ext.define('Sencha.view.pollutant.LineChart', {
 		}, {
 			type : 'Category',
 			position : 'bottom',
-			fields : ['pname'],
+			fields : ['sampletype'],
 			//grid : true,
 			title : ''
 		}],
@@ -70,11 +72,11 @@ Ext.define('Sencha.view.pollutant.LineChart', {
 			fill : false, //雾
 			smooth : true,
 			label : {
-				field : 'pCount'
+				field : 'TESTRESULTS'
 			},
 			axis : 'left',
-			xField : 'pname',
-			yField : 'pCount'
+			xField : 'sampletype',
+			yField : 'TESTRESULTS'
 		}]
 	}
 });

@@ -1,10 +1,10 @@
-Ext.define('Sencha.store.PollutantChartStore', {
+Ext.define('Sencha.store.PollutantTableStore', {
     extend  : 'Ext.data.Store',
     requires: ['Sencha.model.PollutantChartModel'],
     config:{
     	model   : 'Sencha.model.PollutantChartModel',
     	autoLoad    : false,
-    	storeId : 'PollutantChartStore',
+    	storeId : 'PollutantTableStore',
         proxy: {
         }
     }

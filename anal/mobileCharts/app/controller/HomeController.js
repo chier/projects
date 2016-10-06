@@ -284,7 +284,7 @@ Ext.define('Sencha.controller.HomeController', {
 
 		// 进入污染物分析
 		if(button.id == "pollutant"){
-			// alert("污染物分析");
+			 //alert("污染物分析");
 			toPollutantIndex();
 			Global.PollutantController.initList();
 		}
