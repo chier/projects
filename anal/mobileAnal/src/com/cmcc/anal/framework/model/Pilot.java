@@ -53,7 +53,13 @@ public class Pilot extends PersistentObject {
 	private Short dmlflog;// 管理员操作记录
 	
 	private String shartName;// 简称
-
+	
+	private String statunitcode;// 行政区划代码
+	
+	private Integer year; // 年份
+	
+	private String statunitcodeshort; //行政区划代码简码
+	
 	public Pilot() {
 		super();
 	}
@@ -137,6 +143,33 @@ public class Pilot extends PersistentObject {
 
 	public void setShartName(String shartName) {
 		this.shartName = shartName;
+	}
+	
+	@Column(name = "statunitcode")
+	public String getStatunitcode() {
+		return statunitcode;
+	}
+
+	public void setStatunitcode(String statunitcode) {
+		this.statunitcode = statunitcode;
+	}
+
+	@Column(name = "year")
+	public Integer getYear() {
+		return year;
+	}
+
+	public void setYear(Integer year) {
+		this.year = year;
+	}
+
+	@Column(name = "statunitcodeshort")
+	public String getStatunitcodeshort() {
+		return statunitcodeshort;
+	}
+
+	public void setStatunitcodeshort(String statunitcodeshort) {
+		this.statunitcodeshort = statunitcodeshort;
 	}
 	
 	

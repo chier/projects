@@ -4,10 +4,10 @@
  */
 var Global = {
 	maxiNum : 20,
-//	URL:'http://www.micro-view.com:81/mobileAnal/controller/report.talent',
-	URL:'http://59.42.176.107:8809/mobileAnal/controller/report.talent',
-	 //URL:'http://localhost:8080/mobileAnal/controller/report.talent',
-	currentYears:"2013", // 当前年份，默认是2013年
+	URL:'http://www.micro-view.com:81/mobileAnal/controller/report.talent',
+//	 URL:'http://192.168.1.121:8080/mobileAnal/controller/report.talent',
+//	 URL:'http://127.0.0.1:8080/mobileAnal/controller/report.talent',
+	currentYears:"2014", // 当前年份，默认是2013年
 	DATE : '2010-9-30',
 	ViewId : '用户名+密码', // a67eb045515f4bfdb78f4224a54eb2cd ;  a9edc36a05dd42a6883d21b093b04011
 	SourceId : 'sourceId',
@@ -19,6 +19,7 @@ var Global = {
 	SurveyDataController: null,
 	CaseStatisticsController:null,
 	CaseInfoController:null,
+	PollutantController:null,
 	caseType:[{"2012":[{"1":"居民健康"},{"2":"环境调查"}]},{"2013":[{"1":"居民健康"},{"2":"环境调查"}]},{"2014":[{"1":"居民健康"},{"2":"环境调查"}]},
 	          {"2015":[{"1":"居民健康"},{"2":"环境调查"}]},{"2016":[{"1":"居民健康"},{"2":"环境调查"}]}],
 	getCaseType:function(year){
@@ -84,38 +85,44 @@ Ext.application({
 	//surveyData 以下是调查数据目录
 	'surveyData.RootPanel','surveyData.RightTabPanel','surveyData.DataList','surveyData.GridView','surveyData.DataRootPanel',
 	// comprehensive 综合分析目录
-	'comprehensive.RootPanel','comprehensive.RightTopPanel','comprehensive.DataList','comprehensive.LineChart','comprehensive.BarChart'
+	'comprehensive.RootPanel','comprehensive.RightTopPanel','comprehensive.DataList','comprehensive.LineChart','comprehensive.BarChart',
+	// Pollutant 污染物分析
+	'pollutant.RootPanel','pollutant.TopPilotPanel','pollutant.RightTabPanel','pollutant.LineChart','pollutant.DataList','pollutant.RightBottomButtonPanel'
 	],
 	// 数据模板
 	models : [
 		'ComprehensiveModel','MapModel','CaseStatModel','CaseInfoPicModel','CaseInfoChartModel','CaseInfoListModel','SurveyItemTitlsModel','Cars',
-		'ProxyModel', 'DeptInfoModel', 'DeptDetailListModel', 'DeptAreaModel', 'DataModelForIndexTable', 'flight.AirLinePieProxyModel', 'flight.ArrivedPieProxyModel', 'flight.CabinPieProxyModel', 'flight.ProxyModel', 'flight.FlightTableModel', 'hotel.StarPieProxyModel', 'hotel.CityPieProxyModel', 'hotel.HotelTableModel', 'hotel.ProxyModel'
+		'ProxyModel', 'DeptInfoModel', 'DeptDetailListModel', 'DeptAreaModel', 'DataModelForIndexTable', 'flight.AirLinePieProxyModel', 'flight.ArrivedPieProxyModel', 'flight.CabinPieProxyModel', 'flight.ProxyModel', 'flight.FlightTableModel', 'hotel.StarPieProxyModel', 'hotel.CityPieProxyModel', 'hotel.HotelTableModel', 'hotel.ProxyModel',
+		'PollutantChartModel'
 		],
 	// 数据源
 	stores : [
 		'ComprehensiveStore','MapStore','CaseStatStore','CaseInfoPicStore','CaseInfoChartStore','CaseInfoListStore','SurveyItemTitlsStore',
-		'ProxyStore', 'DeptInfoStore', 'DeptDetailListStore', 'DeptAreaStore', 'SaleDataStoreForIndexTable', 'flight.AirLinePieProxyStore', 'flight.ArrivedPieProxyStore', 'flight.CabinPieProxyStore', 'flight.FlightDataStoreForTable', 'flight.FlightOrdsProxyStore', 'flight.FlightTotalProxyStore', 'flight.CancelOrdsProxyStore', 'hotel.StarPieProxyStore', 'hotel.CityPieProxyStore', 'hotel.HotelDataStoreForTable', 'hotel.HotelTotalProxyStore', 'hotel.HotelOrdsProxyStore'
+		'ProxyStore', 'DeptInfoStore', 'DeptDetailListStore', 'DeptAreaStore', 'SaleDataStoreForIndexTable', 'flight.AirLinePieProxyStore', 'flight.ArrivedPieProxyStore', 'flight.CabinPieProxyStore', 'flight.FlightDataStoreForTable', 'flight.FlightOrdsProxyStore', 'flight.FlightTotalProxyStore', 'flight.CancelOrdsProxyStore', 'hotel.StarPieProxyStore', 'hotel.CityPieProxyStore', 'hotel.HotelDataStoreForTable', 'hotel.HotelTotalProxyStore', 'hotel.HotelOrdsProxyStore',
+		'PollutantChartStore','PollutantTableStore'
 	],
 	// 业务类
 	controllers : [
-		'HomeController','ComprehensiveController','SurveyDataController','CaseStatisticsController','CaseInfoController'
+		'HomeController','ComprehensiveController','SurveyDataController','CaseStatisticsController','CaseInfoController','PollutantController'
 		//'BaseController', 'DeptIndexController', 'DeptMoreController', 'DeptInfoController', 'Main'
-	],
-	//组件加载完后执行方法
-	launch : function() {
-		// 页面占位隐藏
-		document.getElementById("div_index").setAttribute("style", "display:none");;
-//		Ext.Viewport.add(Ext.create('Sencha.view.home.HomeMain'));
-		Ext.Viewport.add(Ext.create('Sencha.view.login.Login'));
-		
-		
-		// 相关业务类，存储到全局中
-		Global.HomeController = this.getApplication().getController('HomeController');
-		Global.ComprehensiveController = this.getApplication().getController('ComprehensiveController');
-		Global.SurveyDataController = this.getApplication().getController('SurveyDataController');
-		
-		Global.CaseStatisticsController = this.getApplication().getController('CaseStatisticsController');
-		Global.CaseInfoController = this.getApplication().getController('CaseInfoController');
-	}
+],
+//组件加载完后执行方法
+launch : function() {
+	// 页面占位隐藏
+	document.getElementById("div_index").setAttribute("style", "display:none");;
+	Ext.Viewport.add(Ext.create('Sencha.view.home.HomeMain'));
+//		Ext.Viewport.add(Ext.create('Sencha.view.login.Login'));
+// 	Ext.Viewport.add(Ext.create('Sencha.view.pollutant.RootPanel'));
+
+
+	// 相关业务类，存储到全局中
+	Global.HomeController = this.getApplication().getController('HomeController');
+	Global.ComprehensiveController = this.getApplication().getController('ComprehensiveController');
+	Global.SurveyDataController = this.getApplication().getController('SurveyDataController');
+
+	Global.CaseStatisticsController = this.getApplication().getController('CaseStatisticsController');
+	Global.CaseInfoController = this.getApplication().getController('CaseInfoController');
+	Global.PollutantController =  this.getApplication().getController('PollutantController');
+}
 });
 

@@ -105,13 +105,22 @@ public class PollutantService extends GenericDAOImpl {
 				Object o = jsonRequestVo.getData();
 				JSONObject obj = JSONObject.fromObject(o);
 				int year = obj.getInt("years");	//年份
-				String strSampletypes = obj.getString("sampletypes");
+				String strSampletypes = obj.getString("sampletypes");//样品类别
 				strSampletypes = new String(strSampletypes.getBytes("ISO8859-1"),"UTF8");
 				String[] arrStr = strSampletypes.split(",");
 				List sampletypes = new ArrayList();
 				for(int i=0;i<arrStr.length;i++){
 					sampletypes.add(arrStr[i]);
 				}
+				
+//				String strPilots = obj.getString("pilots");//试点行政区划代码
+//				strPilots = new String(strPilots.getBytes("ISO8859-1"),"UTF8");
+//				String[] arrPilots = strPilots.split(",");
+//				List pilots = new ArrayList();
+//				for(int i=0;i<arrPilots.length;i++){
+//					pilots.add(arrStr[i]);
+//				}
+				
 				String detectIndex = obj.getString("detectIndex"); // 污染物集合
 				detectIndex = new String(detectIndex.getBytes("ISO8859-1"),"utf8");
 				
@@ -144,20 +153,21 @@ public class PollutantService extends GenericDAOImpl {
 	 */
 	private List<Pilot> findPilotByYear(int year){
 		List<Pilot> pList = null;
-		String jqSQL = "SELECT pilotcode from t_jg_datastorage where SURVEYYEAR = '" + year + "'";
+		String jqSQL = "SELECT STATUNITCODE from t_jg_detectstorage where SURVEYYEAR = '" + year + "' " +
+				"AND STATUNITCODE IS NOT NULL GROUP BY STATUNITCODE";
 		List<String> jqList = this.getHibernate_Anal().createSQLQuery(jqSQL);
 		if(jqList == null || jqList.size() == 0){
 			return new ArrayList<Pilot>();
 		}
 		
-		String pHQL = "FROM Pilot WHERE identifier IN (";
+		String pHQL = "FROM Pilot WHERE year = " + year + " and statunitcodeshort IN (";
 		for(int i=0;i<jqList.size();i++){
-			pHQL += jqList.get(i);
+			pHQL += "'"+jqList.get(i).substring(0, 2)+"'";
 			if(i != jqList.size() -1){
 				pHQL += ",";
 			}
 		}
-		pHQL += ")";
+		pHQL += ") ";
 		pList = this.getHibernate_Anal().createQuery(pHQL);
 		return pList;
 	}
@@ -168,11 +178,11 @@ public class PollutantService extends GenericDAOImpl {
 	 * @param pilots
 	 * @return
 	 */
-	private List<Map> findSampletype(int year,List pilots){
-		String sql = "select ID,SAMPLETYPE from t_jg_datastorage where SURVEYYEAR = '" 
-				+ year + "' and pilotcode in (";
+	private List<Map> findSampletype(int year,List<String> pilots){
+		String sql = "select ID,FID,SAMPLETYPE from t_jg_detectstorage where SURVEYYEAR = '" 
+				+ year + "' and STATUNITCODESHORT in (";
 		for(int i=0;i<pilots.size();i++){
-			sql += "'"+pilots.get(i)+"'";
+			sql += "'"+pilots.get(i).substring(0, 2)+"'";
 			if(i != pilots.size() -1){
 				sql += ",";
 			}
@@ -210,8 +220,6 @@ GROUP BY sampletype
 	 * @return
 	 */
 	private List<Map> findDetectChartsData(int year,List sampletypes,String detectIndex,String algorithm){
-		
-		
 		String sql = "select surveyyear,sampletype,DETECTINDEX," + algorithm + "(TESTRESULTS) AS  TESTRESULTS " +
 				"from t_jg_detectstorage where surveyyear = '" + year + "' and sampletype in (";
 		for(int i=0;i<sampletypes.size();i++){
