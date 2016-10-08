@@ -22,7 +22,11 @@ Ext.define('Sencha.view.pollutant.DataList', {
 				header : '年份',
 				dataIndex : 'SURVEYYEAR',
 				width : '20%'
-			},
+			}, {
+					header : '省份',
+					dataIndex : 'pilotShortName',
+					width : '20%'
+				},
 			{
 				header : '样品类别',
 				dataIndex : 'SAMPLETYPE',
@@ -30,10 +34,10 @@ Ext.define('Sencha.view.pollutant.DataList', {
 			}, {
 				header : '污染物',
 				dataIndex : 'DETECTINDEX',
-				width : '40%'
+				width : '20%'
 			}, {
 				header : '污染值',
-				dataIndex : 'TESTRESULTS',
+				dataIndex : 'TESTRESULTSNUM',
 				width : '20%'
 			}
 			]

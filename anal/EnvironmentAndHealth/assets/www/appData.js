@@ -110,8 +110,8 @@ Ext.application({
 launch : function() {
 	// 页面占位隐藏
 	document.getElementById("div_index").setAttribute("style", "display:none");;
-	Ext.Viewport.add(Ext.create('Sencha.view.home.HomeMain'));
-//		Ext.Viewport.add(Ext.create('Sencha.view.login.Login'));
+//	Ext.Viewport.add(Ext.create('Sencha.view.home.HomeMain'));
+		Ext.Viewport.add(Ext.create('Sencha.view.login.Login'));
 // 	Ext.Viewport.add(Ext.create('Sencha.view.pollutant.RootPanel'));
 
 

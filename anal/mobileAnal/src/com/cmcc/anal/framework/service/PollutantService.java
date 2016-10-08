@@ -90,13 +90,14 @@ public class PollutantService extends GenericDAOImpl {
 				int year = obj.getInt("years");	//年份
 				String strSampletypes = obj.getString("sampletypes");
 //				String pilots = obj.getString("pilots"); // 试点集合
+//				strSampletypes = new String(strSampletypes.getBytes("ISO8859-1"),"UTF-8");
 				String[] arrStr = strSampletypes.split(",");
 				List sampletypes = new ArrayList();
 				for(int i=0;i<arrStr.length;i++){
 					sampletypes.add(arrStr[i]);
 				}
 				// 查询出所有的试点信息
-				List<Map> list = findDetect(sampletypes);
+				List<Map> list = findDetect(year,sampletypes);
 				WebUtils.outputJsonResponseVo(response, op, 0, "OK", list,
 						callback);
 			}
@@ -106,30 +107,30 @@ public class PollutantService extends GenericDAOImpl {
 				JSONObject obj = JSONObject.fromObject(o);
 				int year = obj.getInt("years");	//年份
 				String strSampletypes = obj.getString("sampletypes");//样品类别
-				strSampletypes = new String(strSampletypes.getBytes("ISO8859-1"),"UTF8");
+//				strSampletypes = new String(strSampletypes.getBytes("ISO8859-1"),"UTF8");
 				String[] arrStr = strSampletypes.split(",");
 				List sampletypes = new ArrayList();
 				for(int i=0;i<arrStr.length;i++){
 					sampletypes.add(arrStr[i]);
 				}
 				
-//				String strPilots = obj.getString("pilots");//试点行政区划代码
+				String strPilots = obj.getString("pilots");//试点行政区划代码
 //				strPilots = new String(strPilots.getBytes("ISO8859-1"),"UTF8");
-//				String[] arrPilots = strPilots.split(",");
-//				List pilots = new ArrayList();
-//				for(int i=0;i<arrPilots.length;i++){
-//					pilots.add(arrStr[i]);
-//				}
+				String[] arrPilots = strPilots.split(",");
+				List pilots = new ArrayList();
+				for(int i=0;i<arrPilots.length;i++){
+					pilots.add(arrPilots[i]);
+				}
 				
 				String detectIndex = obj.getString("detectIndex"); // 污染物集合
-				detectIndex = new String(detectIndex.getBytes("ISO8859-1"),"utf8");
+//				detectIndex = new String(detectIndex.getBytes("ISO8859-1"),"utf8");
 				
 				String algorithm = obj.getString("algorithm");//统计函数
 				
 				
 				// 查询出所有的试点信息
-				List<Map> chartsList = findDetectChartsData(year,sampletypes,detectIndex,algorithm);
-				List<Map> tableList = this.findDetectTableData(year, sampletypes, detectIndex);
+				List<Map> chartsList = findDetectChartsData(year,sampletypes,pilots,detectIndex,algorithm);
+				List<Map> tableList = this.findDetectTableData(year, sampletypes,pilots, detectIndex);
 				logger.info("chartsList.size = " + chartsList.size() + "|tableList.size() = " + tableList.size());
 				Map result = new HashMap();
 				result.put("chartsList", chartsList);
@@ -141,7 +142,6 @@ public class PollutantService extends GenericDAOImpl {
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 		}
-
 	}
 	
 	/**
@@ -197,30 +197,30 @@ public class PollutantService extends GenericDAOImpl {
 	 * @param sampletypes
 	 * @return
 	 */
-	private List<Map> findDetect(List sampletypes){
-		String sql = "select ID,DETECTINDEX,UNITS from t_jg_detectstorage where fid in ( ";
+	private List<Map> findDetect(int year,List sampletypes){
+		String sql = "select ID,DETECTINDEX,UNITS from t_jg_detectstorage where SURVEYYEAR=" + year +" AND SAMPLETYPE in ( ";
 		for(int i=0;i<sampletypes.size();i++){
 			sql += "'" + sampletypes.get(i) + "'";
 			if(i != sampletypes.size() -1){
 				sql +=",";
 			}
 		}
-		sql += ") group by DETECTINDEX";
+		sql += ") AND DETECTINDEX IS NOT NULL AND DETECTINDEX<>''  group by DETECTINDEX";
 		List<Map> list = this.getHibernate_Anal().createMapSQLQuery(sql);
 		return list;
 	}
 	
 	/**
 	 * 污染物的报表数据
-	 * SELECT surveyyear,sampletype,DETECTINDEX,MAX(TESTRESULTS) AS  TESTRESULTS FROM t_jg_detectstorage WHERE surveyyear = '2013' AND sampletype IN ('废气','环境空气','废气','环境空气') AND detectIndex='苯并 (k）荧蒽'
+	 * SELECT surveyyear,sampletype,DETECTINDEX,MAX(TESTRESULTSNUM) AS  TESTRESULTSNUM FROM t_jg_detectstorage WHERE surveyyear = '2013' AND sampletype IN ('废气','环境空气','废气','环境空气') AND detectIndex='苯并 (k）荧蒽'
 GROUP BY sampletype
 	 * @param year	年份
 	 * @param sampletypes	样品类别
 	 * @param detectIndex	污染物名称
 	 * @return
 	 */
-	private List<Map> findDetectChartsData(int year,List sampletypes,String detectIndex,String algorithm){
-		String sql = "select surveyyear,sampletype,DETECTINDEX," + algorithm + "(TESTRESULTS) AS  TESTRESULTS " +
+	private List<Map> findDetectChartsData(int year,List sampletypes,List pilots,String detectIndex,String algorithm){
+		String sql = "select surveyyear,sampletype,DETECTINDEX,STATUNITCODESHORT, " + algorithm + "(TESTRESULTSNUM) AS  TESTRESULTSNUM " +
 				"from t_jg_detectstorage where surveyyear = '" + year + "' and sampletype in (";
 		for(int i=0;i<sampletypes.size();i++){
 			sql += "'"+sampletypes.get(i)+"'";
@@ -229,25 +229,40 @@ GROUP BY sampletype
 			}
 		}
 		sql += ") and detectIndex='" + detectIndex + "'";
-		sql += " GROUP BY sampletype";
+		sql += " and STATUNITCODESHORT in (";
+		for(int i=0;i<pilots.size();i++){
+			sql += "'"+pilots.get(i).toString().substring(0, 2) +"'";
+			if(i != pilots.size()-1){
+				sql +=",";
+			}
+		}
+		sql+= ")";
+		
+		sql += " GROUP BY STATUNITCODESHORT";
 		
 		List<Map> list = this.getHibernate_Anal().createMapSQLQuery(sql);
+		
+		for(Map map : list){
+			String pHQL = "FROM Pilot WHERE year = " + year + " and statunitcodeshort = '" + map.get("STATUNITCODESHORT") +"'";
+			List<Pilot> pList = this.getHibernate_Anal().createQuery(pHQL);
+			map.put("pilotShortName", pList.get(0).getShartName());
+		}
 		return list;
 	}
 	
 	/**
 	 * 污染物的详细数据
-	 * SELECT surveyyear,sampletype,DETECTINDEX,MAX(TESTRESULTS) AS  TESTRESULTS FROM t_jg_detectstorage WHERE surveyyear = '2013' AND sampletype IN ('废气','环境空气','废气','环境空气') AND detectIndex='苯并 (k）荧蒽'
+	 * SELECT surveyyear,sampletype,DETECTINDEX,MAX(TESTRESULTSNUM) AS  TESTRESULTSNUM FROM t_jg_detectstorage WHERE surveyyear = '2013' AND sampletype IN ('废气','环境空气','废气','环境空气') AND detectIndex='苯并 (k）荧蒽'
 GROUP BY sampletype
 	 * @param year	年份
 	 * @param sampletypes	样品类别
 	 * @param detectIndex	污染物名称
 	 * @return
 	 */
-	private List<Map> findDetectTableData(int year,List sampletypes,String detectIndex){
+	private List<Map> findDetectTableData(int year,List sampletypes,List pilots,String detectIndex){
 		
 		
-		String sql = "select surveyyear,sampletype,DETECTINDEX,TESTRESULTS " +
+		String sql = "select surveyyear,sampletype,DETECTINDEX,TESTRESULTSNUM,STATUNITCODESHORT " +
 				"from t_jg_detectstorage where surveyyear = '" + year + "' and sampletype in (";
 		for(int i=0;i<sampletypes.size();i++){
 			sql += "'"+sampletypes.get(i)+"'";
@@ -256,9 +271,22 @@ GROUP BY sampletype
 			}
 		}
 		sql += ") and detectIndex='" + detectIndex + "'";
+		sql += " and STATUNITCODESHORT in (";
+		for(int i=0;i<pilots.size();i++){
+			sql += "'"+pilots.get(i).toString().substring(0, 2) +"'";
+			if(i != pilots.size()-1){
+				sql +=",";
+			}
+		}
+		sql+= ")";
 //		sql += " GROUP BY sampletype";
-		
 		List<Map> list = this.getHibernate_Anal().createMapSQLQuery(sql);
+
+		for(Map map : list){
+			String pHQL = "FROM Pilot WHERE year = " + year + " and statunitcodeshort = '" + map.get("STATUNITCODESHORT") +"'";
+			List<Pilot> pList = this.getHibernate_Anal().createQuery(pHQL);
+			map.put("pilotShortName", pList.get(0).getShartName());
+		}
 		return list;
 	}
 }

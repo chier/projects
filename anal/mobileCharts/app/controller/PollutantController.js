@@ -47,7 +47,7 @@ Ext.define('Sencha.controller.PollutantController', {
         Global.PollutantController.config.pilots = [];
         Global.PollutantController.config.sampletypes = [];
         Global.PollutantController.config.sampletypesStr = [];
-        Global.PollutantController.config.detect = '';
+        //Global.PollutantController.config.detect = '';
         Global.PollutantController.config.algorithm = 'count';
 
         // 删除样品类别
@@ -110,7 +110,7 @@ Ext.define('Sencha.controller.PollutantController', {
                 _code : result.data[i].statunitcode,
                 text: result.data[i].shartName,
                 cls:_cls,
-                pressed: false
+                pressed: _isPressed
             });
         }
         Global.PollutantController.ajaxGetSampletype();
@@ -234,7 +234,7 @@ Ext.define('Sencha.controller.PollutantController', {
         var the_param = '{"op":"Pollutant.getDetect","source_id":"'
             + Global.SourceId + '","view_id":"' + Global.ViewId
             + '","data":{"years":' + Global.currentYears + ',"sampletypes":"'
-                + Global.PollutantController.config.sampletypes.join(",") +'"}}';
+                + Global.PollutantController.config.sampletypesStr.join(",") +'"}}';
         Ext.data.JsonP.request({
             url : Global.URL,
             callbackKey : 'callback',
@@ -265,14 +265,31 @@ Ext.define('Sencha.controller.PollutantController', {
         var _barNum;
         var _isPressed = true;
         var _cls = "c-button-pressing";
+        var _isIn = false;
 
         for (var i =0; i < result.data.length; i++) {
-            if(i != 0){
-                _isPressed = false;
-                _cls = "";
+            if (Global.PollutantController.config.detect == result.data[i].DETECTINDEX) {
+                _isIn = true;
+            }
+        }
+
+        for (var i =0; i < result.data.length; i++) {
+            if(_isIn){
+                if (Global.PollutantController.config.detect == result.data[i].DETECTINDEX) {
+                    _isPressed = true;
+                    _cls = 'c-button-pressing';
+                }else{
+                    _isPressed = false;
+                    _cls = "";
+                }
             }else{
-                //Global.PollutantController.config.detect.push(result.data[i].DETECTINDEX);
-                Global.PollutantController.config.detect = result.data[i].DETECTINDEX;
+                if(i != 0 && Global.PollutantController.config.detect != result.data[i].DETECTINDEX){
+                    _isPressed = false;
+                    _cls = "";
+                }else{
+                    //Global.PollutantController.config.detect.push(result.data[i].DETECTINDEX);
+                    Global.PollutantController.config.detect = result.data[i].DETECTINDEX;
+                }
             }
             _barNum = (i + 1) % 7 == 0 ? 1 : (i + 1) % 7;
 
@@ -354,7 +371,8 @@ Ext.define('Sencha.controller.PollutantController', {
             + '","data":{"years":' + Global.currentYears + ',"sampletypes":"'
             + Global.PollutantController.config.sampletypesStr.join(",") +'","detectIndex":"'
             + Global.PollutantController.config.detect +  '","algorithm":"'+
-            Global.PollutantController.config.algorithm+'","pilots":"' + Global.PollutantController.config.pilots.join(",") + '"}}';
+            Global.PollutantController.config.algorithm+'","pilots":"' +
+            Global.PollutantController.config.pilots.join(",") + '"}}';
         Ext.data.JsonP.request({
             url : Global.URL,
             callbackKey : 'callback',
@@ -384,8 +402,8 @@ Ext.define('Sencha.controller.PollutantController', {
         var store = Ext.getStore("PollutantChartStore");
         store.removeAll();
         store.setData(result.data.chartsList);
-        store.insert(0,{"DETECTINDEX":"","SAMPLETYPE":"","TESTRESULTS":"","SURVEYYEAR":""});
-        store.insert(result.data.chartsList.length + 1,{"DETECTINDEX":"","SAMPLETYPE":"","TESTRESULTS":"","SURVEYYEAR":""});
+        store.insert(0,{"DETECTINDEX":"","SAMPLETYPE":"","TESTRESULTS":"","SURVEYYEAR":"","pilotShortName":""});
+        store.insert(result.data.chartsList.length + 1,{"DETECTINDEX":"","SAMPLETYPE":"","TESTRESULTS":"","SURVEYYEAR":"","pilotShortName":""});
 
 
         //var storeData = Ext.getStore("PollutantChartStore");

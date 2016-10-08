@@ -110,7 +110,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 													_myPressed : true,
 													_codeValue:'count',
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
-													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">计数(count)</div>',
+													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">计数(Count)</div>',
 													handler: function (button) {
 														Ext.getCmp("algorithmPanelId").items.each(function(item) {
 															console.info(item);
@@ -137,7 +137,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 													_myPressed : false,
 													_codeValue:'sum',
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
-													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">总数(sum)</div>',
+													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">总数(Sum)</div>',
 													handler: function (button) {
 														Ext.getCmp("algorithmPanelId").items.each(function(item) {
 															//console.info(item);
@@ -165,7 +165,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 													_codeValue:'max',
 													// pressed : isPressed,
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
-													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">最大(max)</div>',
+													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">最大(Max)</div>',
 													handler: function (button) {
 														Ext.getCmp("algorithmPanelId").items.each(function(item) {
 															console.info(item);
@@ -193,7 +193,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 													_codeValue:'min',
 													// pressed : isPressed,
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
-													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">最小(min)</div>',
+													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">最小(Min)</div>',
 													handler: function (button) {
 														Ext.getCmp("algorithmPanelId").items.each(function(item) {
 															console.info(item);
@@ -221,7 +221,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 													_myPressed : false,
 													_codeValue:'avg',
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
-													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">平均(avg)</div>',
+													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">平均(Avg)</div>',
 													handler: function (button) {
 														Ext.getCmp("algorithmPanelId").items.each(function(item) {
 															console.info(item);

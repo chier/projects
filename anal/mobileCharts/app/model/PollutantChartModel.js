@@ -11,7 +11,10 @@ Ext.define('Sencha.model.PollutantChartModel', {
 					name : 'DETECTINDEX',
 					type : 'string'
 				}, {
-					name : 'TESTRESULTS',
+					name:'pilotShortName',
+					type:'string'
+				},{
+					name : 'TESTRESULTSNUM',
 					type : 'int'
 				}]
 			}

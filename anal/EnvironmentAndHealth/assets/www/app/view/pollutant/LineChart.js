@@ -37,7 +37,7 @@ Ext.define('Sencha.view.pollutant.LineChart', {
 			//grid : true,
 			minimum : 0,
 			position : 'left',
-			fields : ['TESTRESULTS'],
+			fields : ['TESTRESULTSNUM'],
 			grid : {
 				odd : {
 					opacity : 2,
@@ -59,7 +59,7 @@ Ext.define('Sencha.view.pollutant.LineChart', {
 		}, {
 			type : 'Category',
 			position : 'bottom',
-			fields : ['SAMPLETYPE'],
+			fields : ['pilotShortName'],
 			//grid : true,
 			title : ''
 		}],
@@ -72,11 +72,11 @@ Ext.define('Sencha.view.pollutant.LineChart', {
 			fill : false, //雾
 			smooth : true,
 			label : {
-				field : 'TESTRESULTS'
+				field : 'TESTRESULTSNUM'
 			},
 			axis : 'left',
-			xField : 'SAMPLETYPE',
-			yField : 'TESTRESULTS'
+			xField : 'pilotShortName',
+			yField : 'TESTRESULTSNUM'
 		}]
 	}
 });
