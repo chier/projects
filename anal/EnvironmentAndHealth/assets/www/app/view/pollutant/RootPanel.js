@@ -89,7 +89,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 										}, {
 											xtype: 'panel',
 											id:'algorithmPanelId',
-											height:'200px',
+											height:'245px',
 											width:'80%',
 											style : 'margin-top:10px;margin-bottom:0px;margin-left:24px;',
 											scrollable: {
@@ -105,12 +105,12 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 											items: [
 												{
 													xtype : 'button',
-													width : '60%',
+													width : '80%',
 													cls : 'btn_con3 x-button-pressing',
 													_myPressed : true,
-													_codeValue:'count',
+													_codeValue:'avg',
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
-													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">计数(Count)</div>',
+													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">平均(Avg)</div>',
 													handler: function (button) {
 														Ext.getCmp("algorithmPanelId").items.each(function(item) {
 															console.info(item);
@@ -132,7 +132,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 												},
 												{
 													xtype : 'button',
-													width : '60%',
+													width : '80%',
 													cls : 'btn_con3',
 													_myPressed : false,
 													_codeValue:'sum',
@@ -159,7 +159,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 												},
 												{
 													xtype : 'button',
-													width : '60%',
+													width : '80%',
 													cls : 'btn_con3',
 													_myPressed : false,
 													_codeValue:'max',
@@ -187,7 +187,7 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 												},
 												{
 													xtype : 'button',
-													width : '60%',
+													width : '80%',
 													cls : 'btn_con3',
 													_myPressed : false,
 													_codeValue:'min',
@@ -215,13 +215,71 @@ Ext.define("Sencha.view.pollutant.RootPanel", {
 												},
 												{
 													xtype : 'button',
-													width : '60%',
+													width : '80%',
 													cls : 'btn_con3',
 													// pressed : isPressed,
 													_myPressed : false,
-													_codeValue:'avg',
+													_codeValue:'count',
 													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
-													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">平均(Avg)</div>',
+													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">计数(Count)</div>',
+													handler: function (button) {
+														Ext.getCmp("algorithmPanelId").items.each(function(item) {
+															console.info(item);
+															if(button.config._codeValue != item.config._codeValue){
+																if(item.config._myPressed == true){
+																	item.config._myPressed = false;
+																	item.setCls("btn_con3");
+																}
+															}
+														});
+
+														if(button.config._myPressed == false){ // 当 false时，表示按钮是非按下状态，改成按下状态，存储样品类别数据
+															Global.PollutantController.config.algorithm = button.config._codeValue;
+															button.config._myPressed = true;
+															button.setCls("btn_con3 x-button-pressing");
+														}
+
+														Global.PollutantController.ajaxGetDetectData();
+													}
+												},
+												{
+													xtype : 'button',
+													width : '80%',
+													cls : 'btn_con3',
+													// pressed : isPressed,
+													_myPressed : false,
+													_codeValue:'STD',
+													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
+													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">标准方差(Std)</div>',
+													handler: function (button) {
+														Ext.getCmp("algorithmPanelId").items.each(function(item) {
+															console.info(item);
+															if(button.config._codeValue != item.config._codeValue){
+																if(item.config._myPressed == true){
+																	item.config._myPressed = false;
+																	item.setCls("btn_con3");
+																}
+															}
+														});
+
+														if(button.config._myPressed == false){ // 当 false时，表示按钮是非按下状态，改成按下状态，存储样品类别数据
+															Global.PollutantController.config.algorithm = button.config._codeValue;
+															button.config._myPressed = true;
+															button.setCls("btn_con3 x-button-pressing");
+														}
+
+														Global.PollutantController.ajaxGetDetectData();
+													}
+												},
+												{
+													xtype : 'button',
+													width : '80%',
+													cls : 'btn_con3',
+													// pressed : isPressed,
+													_myPressed : false,
+													_codeValue:'STDDEV_SAMP',
+													// id : 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
+													html : '<em class="square_dept"></em><div style="position:absolute;left:44px;top:10px;">样本方差(Stddev_samp)</div>',
 													handler: function (button) {
 														Ext.getCmp("algorithmPanelId").items.each(function(item) {
 															console.info(item);

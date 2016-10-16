@@ -208,6 +208,71 @@ public class SurveyDataService extends GenericDAOImpl {
 			String html = viewJrxml(jrxmPath,request,rowNum == 0 ?0:rowNum -1);
 			WebUtils.outputJsonResponseVo(response, op, 0, "OK", html, callback);
 		}
+		
+		if("SurveyData.dfPicInfo".equalsIgnoreCase(op)){
+			String tblCode = obj.getString("tblCode");
+			tblCode = tblCode.toLowerCase();
+			String code = obj.getString("code");
+			logger.info("tableCode = " + tblCode + " |code=" + code + "");
+			String filePath = this.dfPicInfo(tblCode, code);
+//			String jrxmPath = findJrxmlinfoByTableCode(tblCode);
+//			logger.info(jrxmPath);
+			//			
+			// Map map = this.findById(comId);
+			
+//			int rowNum = this.getRownumByMysql(tblCode, code);
+//			String html = viewJrxml(jrxmPath,request,rowNum == 0 ?0:rowNum -1);
+			WebUtils.outputJsonResponseVo(response, op, 0, "OK", filePath, callback);
+		}
+	}
+	
+	/**
+	 * *8
+	 * @param tblCode
+	 * @param code
+	 * @return
+	 */
+	private  String dfPicInfo(String tblCode,String code){
+		String sql = "SELECT `code`,DFRASTER,DFSTUDY FROM `" + tblCode +"` where `code` = '" + code + "'";
+		List<Map> result = this.getHibernate_S9999().createMapSQLQuery(sql);
+		String filePath = null;
+		if(result != null && result.size() >0){
+			Map map = result.get(0);
+			String dfraster = map.get("DFRASTER") == null ?"":map.get("DFRASTER").toString();
+			String dfstudy = map.get("DFSTUDY") == null ?"":map.get("DFSTUDY").toString();
+			
+			String suveyDFPicUrl = LoadConfig.getInstance().getSuveyDFPngUrl();
+			String picUrl = this.findPicUrl(dfstudy);
+			
+			suveyDFPicUrl = suveyDFPicUrl + "\\" + picUrl + "\\pages\\";
+			dfraster = dfraster.replace("/", "\\\\");
+			suveyDFPicUrl += dfraster;
+			suveyDFPicUrl += ".png";
+			
+			File file = new File(suveyDFPicUrl);
+			if(file.isFile()){
+				System.out.println(file.getAbsolutePath());
+				filePath = file.getAbsolutePath();
+			}else{
+				System.out.println("不是文件");
+			}
+			
+		}
+		return filePath;
+	}
+	
+	private String findPicUrl(String dfstudy){
+		int length = dfstudy.length();
+		StringBuilder sbui = new StringBuilder("s");
+		if(length <3){
+			int i = 3-length;
+			while(i>0){
+				sbui.append("0");
+				i--;
+			}
+		}
+		sbui.append(dfstudy);
+		return sbui.toString();
 	}
 
 	/**
@@ -1008,5 +1073,6 @@ public class SurveyDataService extends GenericDAOImpl {
 		}
 		return 0;
 	}
-
+	
+	
 }

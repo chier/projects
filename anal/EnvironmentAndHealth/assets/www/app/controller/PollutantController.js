@@ -17,9 +17,9 @@ Ext.define('Sencha.controller.PollutantController', {
             //     initialize : 'getYearsInit'
             // }
         },
-        pilots:[],//存储试点选中数据
-        sampletypes:[],//存储样品类型选中的数据
-        sampletypesStr:[], // 存储样品类型选中的数据，存储的是名称
+        pilots:'',//存储试点选中数据
+        sampletypes:'',//存储样品类型选中的数据
+        sampletypesStr:'', // 存储样品类型选中的数据，存储的是名称
         //detect:[]       //存储污染物选中的数据
         detect:'',      //存储污染物选中的数据，暂时先做一个一维的数据
         algorithm:'count'    //存储污染物的统计算法
@@ -28,25 +28,20 @@ Ext.define('Sencha.controller.PollutantController', {
      * 初始化后的逻辑, 在init 方法后调用
      */
     launch: function () {
-        // 获取年份时间，并且初始化
-        // this.getYearsInit();
-        // this.getTimeInit();
-        //  this.totalMoneyIndex(globalTimeScope, globalTimeNumber, 0, globalIndexLineBtn);
-        console.info("PollutantController launch");
 
     },
     /**
      * 初始化方案，在 launch 之法前调用
      */
     init : function() {
-        console.info("PollutantController init");
     },
+
     // 初始化数据
     initList : function() {
         // 初始化数据存储
-        Global.PollutantController.config.pilots = [];
-        Global.PollutantController.config.sampletypes = [];
-        Global.PollutantController.config.sampletypesStr = [];
+        Global.PollutantController.config.pilots = '';
+        Global.PollutantController.config.sampletypes = '';
+        Global.PollutantController.config.sampletypesStr = '';
         //Global.PollutantController.config.detect = '';
         Global.PollutantController.config.algorithm = 'count';
 
@@ -59,13 +54,16 @@ Ext.define('Sencha.controller.PollutantController', {
             Ext.getCmp("pollutantButtonPanelId").remove(item);
         });
 
+        var store = Ext.getStore("PollutantChartStore");
+        store.removeAll();
 
-        console.info("Global.PollutantController.initList();");
+        var storeData = Ext.getStore("PollutantTableStore");
+        storeData.removeAll();
+
         Global.PollutantController.ajaxGetPilots();
     },
     // 初始化试点信息
     ajaxGetPilots:function(){
-        console.info("Global.PollutantController.initGetPilots();");
         var _year = Global.currentYears;
         var the_param = '{"op":"Pollutant.getPilots","source_id":"'
             + Global.SourceId + '","view_id":"' + Global.ViewId
@@ -79,8 +77,6 @@ Ext.define('Sencha.controller.PollutantController', {
                 format : 'json'
             },
             callback : function(success, result) {
-                //console.info(success);
-                //console.info(result);
                 if (!result || result.code != 0) {
                     console.log(result.msg);
                 } else {
@@ -93,7 +89,6 @@ Ext.define('Sencha.controller.PollutantController', {
         //Global.CaseInfoController.onDetailChart();
     },
     doSetPilots:function(result) {
-        console.info("Global.PollutantController.doSetPilots();");
         Ext.getCmp("buttomPilotButn").items.each(function(item) {
             Ext.getCmp("buttomPilotButn").remove(item);
         });
@@ -104,9 +99,10 @@ Ext.define('Sencha.controller.PollutantController', {
                 _isPressed = false;
                 _cls = "";
             }else{
-                Global.PollutantController.config.pilots.push(result.data[i].statunitcode);
+                Global.PollutantController.config.pilots = result.data[i].statunitcode;
             }
             Ext.getCmp("buttomPilotButn").insert(Ext.getCmp("buttomPilotButn").items.length, {
+                scope : this,
                 _code : result.data[i].statunitcode,
                 text: result.data[i].shartName,
                 cls:_cls,
@@ -118,12 +114,11 @@ Ext.define('Sencha.controller.PollutantController', {
 
     // 请求获取样品类型
     ajaxGetSampletype:function(){
-        console.info("Global.PollutantController.ajaxGetSampletype();");
         var _year = Global.currentYears;
 //		var dataArr = []; // 将返回的数据封装成数组后，再渲染成布局
         var the_param = '{"op":"Pollutant.getSampletype","source_id":"'
             + Global.SourceId + '","view_id":"' + Global.ViewId
-            + '","data":{"years":' + Global.currentYears + ',"pilots":"' + Global.PollutantController.config.pilots.join(",") + '"}}';
+            + '","data":{"years":' + Global.currentYears + ',"pilots":"' + Global.PollutantController.config.pilots + '"}}';
         Ext.data.JsonP.request({
             url : Global.URL,
             callbackKey : 'callback',
@@ -133,8 +128,6 @@ Ext.define('Sencha.controller.PollutantController', {
                 format : 'json'
             },
             callback : function(success, result) {
-                console.info(success);
-                console.info(result);
                 if (!result || result.code != 0) {
                     console.log(result.msg);
                 } else {
@@ -145,8 +138,6 @@ Ext.define('Sencha.controller.PollutantController', {
     },
     // 将样品类别数据解析成HTML
     doSetSampletype:function(result){
-        console.info(" Global.PollutantController.doSetSampletype(result);");
-        //sampleTypePanel
         Ext.getCmp("sampleTypePanel").items.each(function(item) {
             Ext.getCmp("sampleTypePanel").remove(item);
         });
@@ -160,8 +151,8 @@ Ext.define('Sencha.controller.PollutantController', {
                 _isPressed = false;
                 _cls = "btn_con3";
             }else{
-                Global.PollutantController.config.sampletypes.push(result.data[i].FID);
-                Global.PollutantController.config.sampletypesStr.push(result.data[i].SAMPLETYPE);
+                Global.PollutantController.config.sampletypes  = result.data[i].FID;
+                Global.PollutantController.config.sampletypesStr = result.data[i].SAMPLETYPE;
 
             }
 
@@ -185,42 +176,43 @@ Ext.define('Sencha.controller.PollutantController', {
                 //id: 'caseInfoBtn_' + _data.pid, // <em class="square_disc_index' + _barNum + '"></em>
                 //html: '<em class="square_dept' + _barNum + '"></em><div style="position:absolute;left:44px;top:10px;">' + indexDeptStr(_data.pname) + '：' + _data.ratios + '%</div>',
                 handler: function (button) {
-                    console.info(button);
-                    if(button.config._myPressed == false){ // 当 false时，表示按钮是非按下状态，改成按下状态，存储样品类别数据
+                    Ext.getCmp("sampleTypePanel").items.each(function(item) {
+                        //Ext.getCmp("sampleTypePanel").remove(item);
+                        item.setCls("btn_con3");
+                    });
+
+
+                    //if(button.config._myPressed == false){ // 当 false时，表示按钮是非按下状态，改成按下状态，存储样品类别数据
                         button.setCls("btn_con3 x-button-pressing");
                         button.config._myPressed = true;
 
-                        Global.PollutantController.config.sampletypes.push(button.config._code);
-                        Global.PollutantController.config.sampletypesStr.push(button.config._codeName);
-                        //console.info(true);
+                        Global.PollutantController.config.sampletypes = button.config._code;
+                        Global.PollutantController.config.sampletypesStr = button.config._codeName;
                         //Global.PollutantController.pilots.push(button.getText());
-                    }else{ // 当== true时，表示该按钮是按下状态，取消按下状态，并删除存储的样品类别数据
-                        button.setCls("btn_con3");
-                        button.config._myPressed = false;
+                    //}else{ // 当== true时，表示该按钮是按下状态，取消按下状态，并删除存储的样品类别数据
+                    //    button.setCls("btn_con3");
+                    //    button.config._myPressed = false;
+                    //
+                    //
+                    //    var _arr = Global.PollutantController.config.sampletypes;
+                    //    for(var i= 0;i<_arr.length;i++){
+                    //        if(button.config._code == _arr[i]){
+                    //            _arr.splice(i,1);
+                    //            Global.PollutantController.config.sampletypesStr.splice(i,1);
+                    //        }
+                    //    }
+                    //    Global.PollutantController.config.sampletypes = _arr;
+                    //
+                    //}
 
-
-                        var _arr = Global.PollutantController.config.sampletypes;
-                        for(var i= 0;i<_arr.length;i++){
-                            if(button.config._code == _arr[i]){
-                                _arr.splice(i,1);
-                                Global.PollutantController.config.sampletypesStr.splice(i,1);
-                            }
-                        }
-                        Global.PollutantController.config.sampletypes = _arr;
-
-                        //console.info(false);
-                    }
-
-                    var _arr = Global.PollutantController.config.sampletypes;
-                    for(var i=0;i<_arr.length;i++){
-                    	console.info(_arr[i]);
-                    }
+                    //var _arr = Global.PollutantController.config.sampletypes;
+                    //for(var i=0;i<_arr.length;i++){
+                    //}
                     Global.PollutantController.ajaxGetDetect();
 
                 }
                 //toggle: function(container, button, pressed){
                 //    alert("toggle");
-                //    console.info("User toggled the '" + button.getText() + "' button: " + (pressed ? 'on' : 'off'));
                 //}
             });
         }
@@ -228,13 +220,12 @@ Ext.define('Sencha.controller.PollutantController', {
     },
     // 请求污染物类别数据
     ajaxGetDetect:function(){
-        console.info("Global.PollutantController.ajaxGetDetect();");
         var _year = Global.currentYears;
 //		var dataArr = []; // 将返回的数据封装成数组后，再渲染成布局
         var the_param = '{"op":"Pollutant.getDetect","source_id":"'
             + Global.SourceId + '","view_id":"' + Global.ViewId
             + '","data":{"years":' + Global.currentYears + ',"sampletypes":"'
-                + Global.PollutantController.config.sampletypesStr.join(",") +'"}}';
+                + Global.PollutantController.config.sampletypesStr +'","pilots":"' + Global.PollutantController.config.pilots + '"}}';
         Ext.data.JsonP.request({
             url : Global.URL,
             callbackKey : 'callback',
@@ -244,8 +235,6 @@ Ext.define('Sencha.controller.PollutantController', {
                 format : 'json'
             },
             callback : function(success, result) {
-                console.info(success);
-                console.info(result);
                 if (!result || result.code != 0) {
                     console.log(result.msg);
                 } else {
@@ -256,8 +245,6 @@ Ext.define('Sencha.controller.PollutantController', {
     },
     // 污染物根据数据解析成HTML代码
     doSetDetect:function(result){
-        console.info("Global.PollutantController.doSetDetect();");
-
         Ext.getCmp("pollutantButtonPanelId").items.each(function(item) {
             Ext.getCmp("pollutantButtonPanelId").remove(item);
         });
@@ -309,10 +296,7 @@ Ext.define('Sencha.controller.PollutantController', {
                 _myPressed: _isPressed,
                 pressed:true,
                 handler: function (button) {
-                    console.info(button);
-
                     Ext.getCmp("pollutantButtonPanelId").items.each(function(item) {
-                        console.info(item);
                         if(button.config._code != item.config._code){
                             if(item.config._myPressed==true){
                                 item.config._myPressed = false;
@@ -338,7 +322,6 @@ Ext.define('Sencha.controller.PollutantController', {
                     //    //Global.PollutantController.config.detect.push(button.config._code);
                     //    Global.PollutantController.config.detect = button.config._code;
                     //
-                    //    //console.info(true);
                     //
                     //    //Global.PollutantController.pilots.push(button.getText());
                     //}else{ // 当== true时，表示该按钮是按下状态，取消按下状态，并删除存储的样品类别数据
@@ -363,16 +346,15 @@ Ext.define('Sencha.controller.PollutantController', {
     },
     // 请求污染物详细数据
     ajaxGetDetectData:function(){
-        console.info("Global.PollutantController.ajaxGetDetectData();");
         var _year = Global.currentYears;
 //		var dataArr = []; // 将返回的数据封装成数组后，再渲染成布局
         var the_param = '{"op":"Pollutant.getDetectData","source_id":"'
             + Global.SourceId + '","view_id":"' + Global.ViewId
             + '","data":{"years":' + Global.currentYears + ',"sampletypes":"'
-            + Global.PollutantController.config.sampletypesStr.join(",") +'","detectIndex":"'
+            + Global.PollutantController.config.sampletypesStr +'","detectIndex":"'
             + Global.PollutantController.config.detect +  '","algorithm":"'+
             Global.PollutantController.config.algorithm+'","pilots":"' +
-            Global.PollutantController.config.pilots.join(",") + '"}}';
+            Global.PollutantController.config.pilots + '"}}';
         Ext.data.JsonP.request({
             url : Global.URL,
             callbackKey : 'callback',
@@ -382,8 +364,6 @@ Ext.define('Sencha.controller.PollutantController', {
                 format : 'json'
             },
             callback : function(success, result) {
-                console.info(success);
-                console.info(result);
                 if (!result || result.code != 0) {
                     console.log(result.msg);
                 } else {
@@ -394,31 +374,19 @@ Ext.define('Sencha.controller.PollutantController', {
         });
     },
     doSetDetectChartsData:function(result){
-        //    result.data.chartsList
-
-        //var storeData = Ext.getStore("PollutantTableStore");
-        //storeData.setData(result.data.tableList);
-
         var store = Ext.getStore("PollutantChartStore");
         store.removeAll();
-        store.setData(result.data.chartsList);
-        store.insert(0,{"DETECTINDEX":"","SAMPLETYPE":"","TESTRESULTS":"","SURVEYYEAR":"","pilotShortName":""});
-        store.insert(result.data.chartsList.length + 1,{"DETECTINDEX":"","SAMPLETYPE":"","TESTRESULTS":"","SURVEYYEAR":"","pilotShortName":""});
+        if(result.data.chartsList.length == 0){
 
+        }else{
+            store.setData(result.data.chartsList);
+            store.insert(0,{"DETECTINDEX":"","SAMPLETYPE":"","TESTRESULTS":"","SURVEYYEAR":"","pilotShortName":""});
+            store.insert(result.data.chartsList.length + 1,{"DETECTINDEX":"","SAMPLETYPE":"","TESTRESULTS":"","SURVEYYEAR":"","pilotShortName":""});
 
-        //var storeData = Ext.getStore("PollutantChartStore");
-        //storeData.setData(result.data.chartsList);
-
-        //Ext.getCmp("pollutantLineChart_1").setStore(store);
+        }
     },
     doSetDetectTableData:function(result) {
-
-
-        //    result.data.tableList
-
         var storeData = Ext.getStore("PollutantTableStore");
         storeData.setData(result.data.tableList);
-
-        //Ext.getCmp("pollutantDataList").setStore(storeData);
     }
 });

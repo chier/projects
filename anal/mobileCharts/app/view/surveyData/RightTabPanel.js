@@ -102,7 +102,7 @@ Ext.define("Sencha.view.surveyData.RightTabPanel", {
 							} else {
 								var _code = selection[0].data["CODE"];
 								// 3. 查询相关的数据，并返回及结果
-								var the_param = '{"op":"SurveyData.japserInfo","source_id":"'
+								var the_param = '{"op":"SurveyData.dfPicInfo","source_id":"'
 										+ Global.SourceId
 										+ '","view_id":"'
 										+ Global.ViewId
@@ -120,36 +120,37 @@ Ext.define("Sencha.view.surveyData.RightTabPanel", {
 									},
 									callback : function(success, result) {
 										console.info(result);
-										var _html = result.data;
-
 										var _panel = Ext.create(
-												'Ext.form.Panel', {
+											'Ext.form.Panel', {
+												style : 'background:#f0f0f0;',
+												width : "70%",
+												height : 670,
+												fullscreen : true,
+												items : [{
+													xtype : 'panel',
 													style : 'background:#f0f0f0;',
-													width : "99%",
-													height : 500,
-													fullscreen : true,
+													height: 1064,
+													html : '<div style="position: absolute; left: 5px; top: 5px;">' +
+														'<img src="'+Global.BaseURL+'/controller/showImage.talent?imageUrl='+
+													result.data +'" /></div>'
+													// html :' 显示东西'
+												}, {
+													xtype : 'toolbar',
+													docked : 'bottom',
+													layout : {
+														pack : 'center'
+													},
 													items : [{
-														xtype : 'panel',
-														style : 'background:#f0f0f0;',
-														html : _html
-															// html :' 显示东西'
-													}, {
-														xtype : 'toolbar',
-														docked : 'bottom',
-														layout : {
-															pack : 'center'
-														},
-														items : [{
-															xtype : 'button',
-															text : '关闭',
-															handler : function() {
-																var form = this
-																		.up('panel');
-																form.hide();
-															}
-														}]
+														xtype : 'button',
+														text : '关闭',
+														handler : function() {
+															var form = this
+																.up('panel');
+															form.hide();
+														}
 													}]
-												});
+												}]
+											});
 										var _btn = Ext.getCmp("surveyData");
 										_panel.showBy(_btn);
 									}
@@ -166,76 +167,67 @@ Ext.define("Sencha.view.surveyData.RightTabPanel", {
 						style : 'margin-bottom:0px;width:108px;height:16px;',
 						html : '<div  class="f_right" style="min-width:6.0em;font-size:16px;color:#888888;text-shadow:rgba(0, 0, 0, 0.5) 0 -0.08em 0;">详细数据</div>',
 						handler : function() {
-
 							var surveyDataGridView = Ext
-									.getCmp("surveyDataGridView");
+								.getCmp("surveyDataGridView");
 							var selection = surveyDataGridView.getSelection();
-							if (selection.length > 0) {
-								var _code = selection[0].data["CODE"];
-
-								// 多 store 里面获取到值
-								var _record;
-								var _store = Ext.getCmp("surveyDataGridView")
-										.getStore();
-								// console.info(_store);
-								_store.each(function(record) {
-											if (_code == record.data["CODE"]) {
-												_record = record.data;
-											}
-										});
-
-								// 表头数据获取
-								var _items = [];
-								var _titleStore = Ext
-										.getStore("SurveyItemTitlsStore");
-								// console.info(_titleStore);
-								var i = 0;
-								_titleStore.each(function(record) {
-									_items[i] = {
-										xtype : 'textfield',
-										name : record.data["itemName"],
-										label : record.data["itemName"],
-										value : _record[record.data["itemCode"]]
-									};
-
-									i++;
-								});
-
-								// console.info(_items);
-
-								// doto 创建一个 frome 表的数据来显示内容
-
-								var _form = Ext.create('Ext.form.Panel', {
-											style : 'background:#f0f0f0;',
-											width : "50%",
-											height : 500,
-											fullscreen : true,
-											items : [{
-														xtype : 'fieldset',
-														style : 'background:#f0f0f0;',
-														items : _items
-													}, {
-														xtype : 'toolbar',
-														docked : 'bottom',
-														layout : {
-															pack : 'center'
-														},
-														items : [{
-															xtype : 'button',
-															text : '关闭',
-															handler : function() {
-																var form = this
-																		.up('panel');
-																form.hide();
-															}
-														}]
-													}]
-										});
-
-								var _btn = Ext.getCmp("surveyData");
-								_form.showBy(_btn);
-							} else {
+							if (selection.length == 0) {
 								Ext.Msg.alert("提示", "请选择一条数据！");
+							} else {
+								var _code = selection[0].data["CODE"];
+								// 3. 查询相关的数据，并返回及结果
+								var the_param = '{"op":"SurveyData.japserInfo","source_id":"'
+									+ Global.SourceId
+									+ '","view_id":"'
+									+ Global.ViewId
+									+ '","data":{"tblCode":"'
+									+ Global.SurveyTableCode
+									+ '","code":"'
+									+ _code + '"}}';
+								Ext.data.JsonP.request({
+									url : Global.URL,
+									callbackKey : 'callback',
+									type : "POST",
+									params : {
+										tt_requestbody : the_param,
+										format : 'json'
+									},
+									callback : function(success, result) {
+										console.info(result);
+										var _html = result.data;
+
+										var _panel = Ext.create(
+											'Ext.form.Panel', {
+												style : 'background:#f0f0f0;',
+												width : "70%",
+												height : 670,
+
+												fullscreen : true,
+												items : [{
+													xtype : 'panel',
+													style : 'background:#f0f0f0;',
+													html : _html
+													// html :' 显示东西'
+												}, {
+													xtype : 'toolbar',
+													docked : 'bottom',
+													layout : {
+														pack : 'center'
+													},
+													items : [{
+														xtype : 'button',
+														text : '关闭',
+														handler : function() {
+															var form = this
+																.up('panel');
+															form.hide();
+														}
+													}]
+												}]
+											});
+										var _btn = Ext.getCmp("surveyData");
+										_panel.showBy(_btn);
+									}
+								});
 							}
 						}
 

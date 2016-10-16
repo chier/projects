@@ -137,6 +137,11 @@ public class LoadConfig {
 	// private String contentCatchImagePath;
 
 	 private Long contentAttachMaxSize;
+	 
+	 /**
+	  * 图像路径
+	  */
+	 private String suveyDFPicUrl;
 
 	/** 体验版用户的使用期限配置 单位是月 */
 	// private int subuseDeploy;
@@ -165,6 +170,10 @@ public class LoadConfig {
 
 	/** 工程 workflow 节点图片文件保存目录 */
 	private String staticNodeFilePath;
+	/**
+	 * 调查数据，原始图片基本路径
+	 */
+	private String suveyDFPngUrl;
 	
 	/** 在调查数据，在根据年份进行分组时，条件通过map里面获取 */
 	private static Map surveyGroup = new HashMap();
@@ -302,7 +311,9 @@ public class LoadConfig {
 				this.surveyGroup.put(name.trim(), value);
 			}
 			
-
+			// 调查数据 图像路径
+			this.suveyDFPicUrl =  root.element("suveyDFPicUrl").getTextTrim();
+			this.suveyDFPngUrl = root.element("suveyDFPngUrl").getTextTrim();
 		} catch (DocumentException e) {
 			logger.error("systemConfig文件进行配置项获取失败" +e.getMessage(),e);
 		} catch(Exception e){
@@ -456,7 +467,20 @@ public class LoadConfig {
 	public static void setSurveyGroup(Map surveyGroup) {
 		LoadConfig.surveyGroup = surveyGroup;
 	}
-	
-	
-	
+
+	public String getSuveyDFPicUrl() {
+		return suveyDFPicUrl;
+	}
+
+	public void setSuveyDFPicUrl(String suveyDFPicUrl) {
+		this.suveyDFPicUrl = suveyDFPicUrl;
+	}
+
+	public String getSuveyDFPngUrl() {
+		return suveyDFPngUrl;
+	}
+
+	public void setSuveyDFPngUrl(String suveyDFPngUrl) {
+		this.suveyDFPngUrl = suveyDFPngUrl;
+	}
 }

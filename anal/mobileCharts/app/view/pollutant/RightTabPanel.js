@@ -12,7 +12,7 @@ Ext.define("Sencha.view.pollutant.RightTabPanel", {
 		activeItem:0,
 		tabBar : {
 			// cls:'default-tabPanel-head',
-			html : '<div id="indexSaleTitle" style="position:absolute;left:0px;top:0px;color:black"></div>',
+			html : '<div id="indexSaleTitle" style="position:absolute;left:0px;top:0px;color:black">X轴表示采样点编码  Y轴表示数值</div>',
 			docked : 'top',
 			layout : {
 				pack : 'end'

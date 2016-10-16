@@ -6,6 +6,7 @@ Ext.define('Sencha.view.surveyData.GridView', {
     mixins   : ['Sencha.view.feature.Feature'],
 
     config : {
+        width:"96%",
         columns : [],
         cls     : 'touchgridpanel',
         header  : {
