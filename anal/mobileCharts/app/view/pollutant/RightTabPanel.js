@@ -12,7 +12,7 @@ Ext.define("Sencha.view.pollutant.RightTabPanel", {
 		activeItem:0,
 		tabBar : {
 			// cls:'default-tabPanel-head',
-			html : '<div id="indexSaleTitle" style="position:absolute;left:0px;top:0px;color:black">X轴表示采样点编码  Y轴表示数值</div>',
+			html : '<div id="indexSaleTitle" style="position:absolute;left:0px;top:0px;color:black">按采样点分析</div>',
 			docked : 'top',
 			layout : {
 				pack : 'end'
@@ -30,9 +30,10 @@ Ext.define("Sencha.view.pollutant.RightTabPanel", {
 			type : 'slide'
 		},
 		ui : 'light',
-		items : [{
+		items : [ {
 			// iconMask: true,
-			title : '<div style="min-width:6.0em;line-height:24px;font-size:16px;"><span>图表</span></div>',
+			//title : '<div style="min-width:6.0em;line-height:24px;font-size:16px;"><span>拆线图</span></div>',
+			title : '<div><span class="title-zhexiantu"></span></div>',
 			cls : 'tab-border-background',
 			style : 'background:#f0f0f0;',
             id : 'pollutantLineChart_1',
@@ -41,6 +42,17 @@ Ext.define("Sencha.view.pollutant.RightTabPanel", {
 
 			// width : '100%'
 		}, {
+			// iconMask: true,
+			//title : '<div style="min-width:6.0em;line-height:24px;font-size:16px;"><span>柱状图</span></div>',
+			title : '<div><span class="title-zhuzhuangtu"></span></div>',
+			cls : 'tab-border-background',
+			style : 'background:#f0f0f0;',
+			id : 'pollutantBarChart_1',
+			xtype : 'pollutantBarChart',
+			height:'240px'
+
+			// width : '100%'
+		},{
 			title : '<div style="min-width:6.0em;line-height:24px;font-size:16px;"><span>列表</span></div>',
 			xtype : 'pollutantDataList',
             itemId:'1',

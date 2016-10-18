@@ -7,8 +7,8 @@ var Global = {
 	BaseURL:'http://59.42.176.107:8809/mobileAnal',
 //	URL:'http://www.micro-view.com:81/mobileAnal/controller/report.talent',
 //	 URL:'http://192.168.1.121:8080/mobileAnal/controller/report.talent',
-//	 URL:'http://127.0.0.1:8080/mobileAnal/controller/report.talent',
-	URL:'http://59.42.176.107:8809/mobileAnal/controller/report.talent',
+	 URL:'http://127.0.0.1:8080/mobileAnal/controller/report.talent',
+//	URL:'http://59.42.176.107:8809/mobileAnal/controller/report.talent',
 	currentYears:"2014", // 当前年份，默认是2013年
 	DATE : '2010-9-30',
 	ViewId : '用户名+密码', // a67eb045515f4bfdb78f4224a54eb2cd ;  a9edc36a05dd42a6883d21b093b04011
@@ -89,7 +89,7 @@ Ext.application({
 	// comprehensive 综合分析目录
 	'comprehensive.RootPanel','comprehensive.RightTopPanel','comprehensive.DataList','comprehensive.LineChart','comprehensive.BarChart',
 	// Pollutant 污染物分析
-	'pollutant.RootPanel','pollutant.TopPilotPanel','pollutant.RightTabPanel','pollutant.LineChart','pollutant.DataList','pollutant.RightBottomButtonPanel'
+	'pollutant.RootPanel','pollutant.TopPilotPanel','pollutant.RightTabPanel','pollutant.LineChart','pollutant.DataList','pollutant.RightBottomButtonPanel','pollutant.BarChart'
 	],
 	// 数据模板
 	models : [

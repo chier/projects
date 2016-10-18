@@ -22,7 +22,7 @@ Ext.define('Sencha.controller.PollutantController', {
         sampletypesStr:'', // 存储样品类型选中的数据，存储的是名称
         //detect:[]       //存储污染物选中的数据
         detect:'',      //存储污染物选中的数据，暂时先做一个一维的数据
-        algorithm:'count'    //存储污染物的统计算法
+        algorithm:'avg'    //存储污染物的统计算法
     },
     /**
      * 初始化后的逻辑, 在init 方法后调用
@@ -376,17 +376,22 @@ Ext.define('Sencha.controller.PollutantController', {
     doSetDetectChartsData:function(result){
         var store = Ext.getStore("PollutantChartStore");
         store.removeAll();
+        
+        var storeData = Ext.getStore("PollutantTableStore");
+        storeData.removeAll();
+        
         if(result.data.chartsList.length == 0){
 
         }else{
             store.setData(result.data.chartsList);
             store.insert(0,{"DETECTINDEX":"","SAMPLETYPE":"","TESTRESULTS":"","SURVEYYEAR":"","pilotShortName":""});
             store.insert(result.data.chartsList.length + 1,{"DETECTINDEX":"","SAMPLETYPE":"","TESTRESULTS":"","SURVEYYEAR":"","pilotShortName":""});
-
+            
+            storeData.setData(result.data.chartsList);
         }
     },
     doSetDetectTableData:function(result) {
-        var storeData = Ext.getStore("PollutantTableStore");
-        storeData.setData(result.data.tableList);
+//        var storeData = Ext.getStore("PollutantTableStore");
+//        storeData.setData(result.data.tableList);
     }
 });
