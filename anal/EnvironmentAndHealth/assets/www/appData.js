@@ -89,7 +89,7 @@ Ext.application({
 	// comprehensive 综合分析目录
 	'comprehensive.RootPanel','comprehensive.RightTopPanel','comprehensive.DataList','comprehensive.LineChart','comprehensive.BarChart',
 	// Pollutant 污染物分析
-	'pollutant.RootPanel','pollutant.TopPilotPanel','pollutant.RightTabPanel','pollutant.LineChart','pollutant.DataList','pollutant.RightBottomButtonPanel'
+	'pollutant.RootPanel','pollutant.TopPilotPanel','pollutant.RightTabPanel','pollutant.LineChart','pollutant.DataList','pollutant.RightBottomButtonPanel','pollutant.BarChart'
 	],
 	// 数据模板
 	models : [
