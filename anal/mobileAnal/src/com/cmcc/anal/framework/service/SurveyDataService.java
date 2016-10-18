@@ -250,13 +250,17 @@ public class SurveyDataService extends GenericDAOImpl {
 			suveyDFPicUrl += ".png";
 			
 			File file = new File(suveyDFPicUrl);
-			if(file.isFile()){
-				System.out.println(file.getAbsolutePath());
+			if(file != null){
 				filePath = file.getAbsolutePath();
-			}else{
-				System.out.println("不是文件");
 			}
-			
+			logger.info("png suveyDFPicUrl = " + suveyDFPicUrl);
+			logger.info("png file absolute path = " + filePath);
+//			if(file.isFile()){
+//				System.out.println(file.getAbsolutePath());
+//				filePath = file.getAbsolutePath();
+//			}else{
+//				System.out.println("不是文件");
+//			}
 		}
 		return filePath;
 	}
@@ -929,19 +933,34 @@ public class SurveyDataService extends GenericDAOImpl {
 			}
 
 			// 解决ie浏览器图片缓存问题
-			String rastr = "plt" + fileName.substring(1, 4) + ".png?t="
-					+ Math.random();// fileName.substring(1, 3);
+//			String rastr = "plt" + fileName.substring(1, 4) + ".png?t="
+//					+ Math.random();// fileName.substring(1, 3);
+//			Pattern pattern = Pattern
+//					.compile("(/images/jasperreports/)(\\w+)(\")");
+//			Matcher matcher = pattern.matcher(sbuffer.toString());
+//			String g = "";
+//			int offset = 0;
+//			while (matcher.find()) {
+//				offset = matcher.end();
+//				offset = matcher.start();
+//				g = matcher.group(0);
+//			}
+//			sbuffer.insert(offset + 22, rastr);
+			
+			String rastr = "?t=" + Math.random();//fileName.substring(1, 3);
 			Pattern pattern = Pattern
 					.compile("(/images/jasperreports/)(\\w+)(\")");
 			Matcher matcher = pattern.matcher(sbuffer.toString());
-			String g = "";
+//			String g = "";
 			int offset = 0;
 			while (matcher.find()) {
 				offset = matcher.end();
 				offset = matcher.start();
-				g = matcher.group(0);
+				offset = matcher.end();
+//				g=matcher.group(0);
 			}
-			sbuffer.insert(offset + 22, rastr);
+			sbuffer.insert(offset-1, rastr);
+
 			
 		} catch (Exception e) {
 			logger.error("分布显示错误", e);
