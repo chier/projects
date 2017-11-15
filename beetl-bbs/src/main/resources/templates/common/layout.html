@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麦子金服 论坛</title>
+    <meta name="keywords" content="麦子金服,麦子金服论坛">
+    <meta name="description" content="论坛">
+    <link rel="shortcut icon" href="${ctxPath}/static/img/favicon.ico">
+<!-- 	<link href="${ctxPath}/css/bootstrap.min.css" rel="stylesheet"> -->
+	<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script><!-- 部分content的里面可能用到jQuery，所以前置了 -->
+    <script src="${ctxPath}/js/alert.js"></script><!-- 自己写的一个简单的jq弹窗插件 -->
+    <style type="text/css">
+    	.ani{-webkit-transition: all .3s ease-out;-ms-transition: all .3s ease-out;-moz-transition: all .3s ease-out;-o-transition: all .3s ease-out;transition: all .3s ease-out;}
+		.serach .form-control{border-color: #ffce3d;}
+		#serach-btn{border-color: #ffce3d;background: #f56a00;color: #fff;}
+		.serach .form-control:focus {border-color: #ffce3d;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);}
+    	body { padding-top: 70px;font-family: PingFang SC,Microsoft YaHei,sans-serif; background-color: #f9f9f9;}
+    	.navbar-brand>svg{width: 24px;vertical-align: middle;fill:#000;}
+    	.mcount{background-color: orange;position: relative;top: -1px;}
+
+   		.navbar-default{background: #49b6d0;border-color:#fff;}
+   		.navbar-default .navbar-brand , .navbar-default .navbar-nav>li>a{color: #000;}
+   		.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{ color: #000;}
+   		.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {color: #000; background-color: #ffbf00;}
+		.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{ color: #000; background-color: #ffbf00;}
+   		
+   		#serach-btn:hover{cursor: pointer;}
+   		
+   		.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {border-color: #f56a00;background-color: #ffce3d;}
+		.navbar-default .navbar-toggle {border-color: #f56a00;}
+   		.navbar-default .navbar-toggle .icon-bar {background-color: #f56a00;}
+   		.navbar-default .navbar-collapse, .navbar-default .navbar-form{border-color: #f56a00}
+/*    		分页插件样式 */
+   		.pagination>li>a, .pagination>li>span,.pagination>li>a:hover{color: #000;}
+		.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{background-color: #ffbf00;    border-color: #ffbf00;color: #fff;}
+    	.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{color: #fff;background-color: #f56a00;border-color: #f56a00;}
+    	.pagination>li:first-child>a,.pagination>li:first-child>span, .pagination>li:last-child>a,  .pagination>li:last-child>span{border-radius: 0px}
+   		
+/*    		滚动条样式 */
+   		::-webkit-scrollbar {width: 10px!important;height: 5px!important;-webkit-appearance: none;}
+		::-webkit-scrollbar-thumb {height: 5px;border: 1px solid transparent;border-top: none;border-bottom: none;-webkit-border-radius: 6px;background-color: rgba(0,0,0,.3);background-clip: padding-box;}
+
+    </style>
+</head>
+<body>
+@  var _user = c.currentUser(request, servlet.response); 
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/bbs/bbs/index">
+     	<img src="http://www.maizijf.com/images/header/logo.png" style="height:100%"/>
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="${ctxPath}/bbs/index/1.html">首页综合</a></li>
+       <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">板块 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+           @for(moudle in moduleList){
+				<li><a href="${ctxPath}/bbs/topic/module/${moudle.id}-1.html">${moudle.name} </a></li>
+			@}
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+	        <div class="input-group serach">
+	         	<input type="text" class="form-control" id="keyword" name="keyword" placeholder="关键字搜索">
+			  	<span class="input-group-addon" id="serach-btn">搜索</span>
+			</div>
+         </div>
+      </form>
+      
+      <ul class="nav navbar-nav navbar-right">
+		@ if(_user==null){
+				<li><a href="#login-dialog" data-toggle="modal"><i class="fa fa-sign-in"></i> 登录</a></li>
+				<li><a href="#reg-dialog" data-toggle="modal"><i class="fa fa-user-plus"></i> 注册</a></li>
+		@}else{
+				<li><a href="/bbs/bbs/topic/add.html"><i class="fa fa-plus"></i> 发帖</a></li>
+				<li class="dropdown">
+				@ var mcount = c.myMessageCount(_user.id);
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user-circle-o"></i> ${_user.userName} ${mcount > 0?'<span class="badge mcount">'+mcount+'</span> '}<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="javascript:;">等级${level(_user.level)}</a></li>
+						<li class="divider"></li>
+						<li><a href="${ctxPath}/bbs/myMessage.html">给我的回复</a></li>
+					</ul>
+				</li>
+				<li><a href="javascript:;" onclick="$.post('${ctxPath}/bbs/user/logout',function(){location.reload()})"><i class="fa fa-sign-out"></i> 注销</a></li>
+		@}
+       
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+	
+    <div class="container">
+	    <div class="row">
+			<div class="col-sm-9">
+					${layoutContent}
+			</div>
+  			<div class="col-sm-3">
+  			</div>
+	  	</div>
+           	
+    </div>
+   @ if(_user==null){
+	<div class="modal fade" id="login-dialog" tabindex="-1" >
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-body">
+					<form action="${ctxPath}/bbs/user/login" onsubmit="return ajaxSubmit(this,'reload')">
+		                <div class="form-group">
+							<label>用户名</label>
+							<input type="text" placeholder="请输入您用户名" name="userName"  class="form-control">
+						</div>
+	                       <div class="form-group">
+	                           <label>密码</label>
+								<input type="password" placeholder="请输入密码" name="password" class="form-control">
+	                       </div>
+						<button class="btn btn-primary btn-block" type="submit">登 录</button>
+               		</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="reg-dialog" tabindex="-1" >
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<form class="form-horizontal m-t" id="signupForm" action="${ctxPath}/bbs/user/doRegister" method="POST" onsubmit="return ajaxSubmit(this)">
+			              <div class="form-group">
+			                  <label class="col-sm-3 control-label">用户名：</label>
+			                  <div class="col-sm-8">
+			                      <input id="username" name="userName" class="form-control" type="text" aria-required="true" aria-invalid="true" value="${user.userName!}" class="error">
+			                  </div>
+			              </div>
+			            <div class="form-group">
+			                  <label class="col-sm-3 control-label">密码：</label>
+			                  <div class="col-sm-8">
+			                      <input id="password" name="password" class="form-control" type="password" aria-required="true" aria-invalid="true" class="error" value="${user.password!}">
+			                  </div>
+			              </div>
+			              <div class="form-group">
+			                  <label class="col-sm-3 control-label">E-mail：</label>
+			                  <div class="col-sm-8">
+			                      <input id="email" name="email" class="form-control" type="email" value=${user.email!}>
+			                  </div>
+			              </div>
+			              <div class="form-group">
+			                  <label class="col-sm-3 control-label">验证码：</label>
+			                  <div class="col-sm-8" style="position:relative;">
+			                      <input id="code" name="code" class="form-control" type="text" aria-required="true" aria-invalid="false" class="valid">
+			                  		<img src="${ctxPath}/bbs/user/authImage" onclick="this.src='${ctxPath}/bbs/user/authImage?_='+Date.now()" title="点击刷新验证码" style="position:absolute;height:32px;top:1px;right:16px;cursor:pointer;border-radius:0 4px 4px 0">
+			                  	</div>
+			              </div>
+			              <div class="form-group">
+			                  <div class="col-sm-8 col-sm-offset-3">
+			                      <button class="btn btn-primary" type="submit">提交</button>
+			                  </div>
+			              </div>
+			          </form>
+				</div>
+			</div>
+		</div>
+	</div>
+   @}
+   
+		
+    <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    @if( _user!=null && requiredEditor!false){
+    <link rel="stylesheet" href="${ctxPath}/simditor/simditor.min.css" />
+    <script src="//cdn.bootcss.com/marked/0.3.6/marked.min.js"></script>
+    <script src="//cdn.bootcss.com/to-markdown/3.0.3/to-markdown.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/simditor/simditor.min.js"></script>
+    <script type="text/javascript">
+		var editor = new Simditor({
+			textarea: $('#postContent'),
+			defaultImage:'http://www.maizijf.com/images/header/logo.png',
+			pasteImage:true,
+			cleanPaste:true,
+			toolbar:['title','bold','italic','underline','strikethrough','fontScale','color','ol','ul','blockquote','table','link','image','hr','indent','outdent','alignment','|','markdown'],
+			//按Beetl论坛的用处来看，暂时只需要如下几个语言（HTML、XML、json、java、javascript、markdown、sql）,如有需要再扩展
+			codeLanguages:[{name:'HTML,XML',value:'html'},{name:'JSON',value:'json'},{name:'Java',value:'java'},{name:'JavaScript',value:'js'},{name:'Markdown',value:'markdown'},{name:'SQL',value:'sql'}],
+			upload:{
+				url: '${ctxPath}/bbs/upload',
+				fileKey: 'editormd-image-file',
+				connectionCount: 3,
+				leaveConfirm: '上传正在进行中，确定要离开当前页面吗？'
+			}
+		});
+		 function preview(){
+			 	var preWin = window.open('about:blank','preview');
+				preWin.document.write('<meta name="google" value="notranslate"><link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><style>.panel img{max-width:100% !important;heightLauto !important;}.panel{margin-top:20px;}</style>');
+				preWin.document.write('<div class="container-fluid"><div class="row"><div class="col-sm-8 col-sm-offset-2"><div class="panel panel-default"><div class="panel-heading">内容提交预览</div><div class="panel-body">'+editor.sync()+'</div><div class="panel-footer"><a href="javascript:;" class="btn btn-link" onclick="window.close();">关闭预览</a></div></div></div></div></div>');
+				preWin.document.write('<link href="http://cdn.bootcss.com/highlight.js/9.8.0/styles/github-gist.min.css" rel="stylesheet"><script src="http://cdn.bootcss.com/highlight.js/9.8.0/highlight.min.js"></scr'+'ipt><script>hljs.initHighlightingOnLoad();</scr'+'ipt>');
+				preWin.document.close();
+		}
+    </script>
+    @}
+    <script>
+    //全局表单ajax提交(onsubmit="return ajaxSubmit(this,reload)")
+	 function ajaxSubmit(form,reload){
+		 form = $(form);
+		 $.post(form.attr('action'),form.serialize(),function(json){
+			 json.err?$.alert(json.msg):reload?location.reload():location.replace('${ctxPath}'+json.msg);
+		 })
+		 return false;
+	 }
+    </script>
+<script type="text/javascript">
+$(function(){
+	$('#serach-btn').on('click',function(){
+		var keyword = $('#keyword').val().trim();	
+		location.href = '/bbs/bbs/index/1.html?keyword='+keyword;
+	})
+	$("#keyword").on('keydown',function (e) {
+        if (e.keyCode == 13) {
+			stopDefault(e);
+        	$('#serach-btn').trigger('click');
+        }
+    });
+})
+function stopDefault(e) {  
+        //如果提供了事件对象，则这是一个非IE浏览器   
+        if(e && e.preventDefault) {  
+        　　//阻止默认浏览器动作(W3C)  
+        　　e.preventDefault();  
+        } else {  
+        　　//IE中阻止函数器默认动作的方式   
+        　　window.event.returnValue = false;   
+        }  
+        return false;  
+    }  
+</script>
+</body>
+</html>
