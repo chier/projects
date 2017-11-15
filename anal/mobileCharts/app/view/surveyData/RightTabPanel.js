@@ -120,6 +120,11 @@ Ext.define("Sencha.view.surveyData.RightTabPanel", {
 									},
 									callback : function(success, result) {
 										console.info(result);
+										if(result.data.isFile == false){
+											Ext.Msg.alert("提示","原始影像数据不存在");
+											return;
+										}
+										
 										var _panel = Ext.create(
 											'Ext.form.Panel', {
 												style : 'background:#f0f0f0;',
@@ -132,7 +137,7 @@ Ext.define("Sencha.view.surveyData.RightTabPanel", {
 													height: 1064,
 													html : '<div style="position: absolute; left: 5px; top: 5px;">' +
 														'<img src="'+Global.BaseURL+'/controller/showImage.talent?imageUrl='+
-													result.data +'" /></div>'
+													result.data.filePath +'" /></div>'
 													// html :' 显示东西'
 												}, {
 													xtype : 'toolbar',

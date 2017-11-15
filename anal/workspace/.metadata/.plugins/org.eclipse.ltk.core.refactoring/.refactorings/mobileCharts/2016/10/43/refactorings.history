@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;PollutantController.js&apos; to &apos;controller&apos;&#x0D;&#x0A;- Original project: &apos;mobileCharts&apos;&#x0D;&#x0A;- Destination element: &apos;controller&apos;&#x0D;&#x0A;- Original element: &apos;PollutantController.js&apos;" description="Copy file" element1="app/controller/PollutantController.js" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1476623490002" target="/EnvironmentAndHealth/assets/www/app/controller" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" >
+<beans default-autowire="byName">
+
+
+	<bean id="warningDAO"
+		class="com.cmcc.framework.persistence.impl.warning.WarningDAOImpl">
+	</bean>
+	
+	<bean id="warningManager"
+		class="com.cmcc.framework.business.impl.warning.WarningManagerImpl">
+	</bean>
+	<bean id="warningAction"
+		class="com.cmcc.framework.controller.action.warning.WarningAction">
+	</bean>
+	
+	<!--
+		<bean id="rawDataManager"
+		class="com.cmcc.framework.business.impl.rawdata.RawDataManagerImpl">
+		<property name="dataSource" ref="datasource_s9999"></property>
+		</bean>
+	-->
+</beans>

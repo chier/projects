@@ -214,7 +214,8 @@ public class SurveyDataService extends GenericDAOImpl {
 			tblCode = tblCode.toLowerCase();
 			String code = obj.getString("code");
 			logger.info("tableCode = " + tblCode + " |code=" + code + "");
-			String filePath = this.dfPicInfo(tblCode, code);
+			Map result = this.dfPicInfo(tblCode, code);
+			
 //			String jrxmPath = findJrxmlinfoByTableCode(tblCode);
 //			logger.info(jrxmPath);
 			//			
@@ -222,7 +223,7 @@ public class SurveyDataService extends GenericDAOImpl {
 			
 //			int rowNum = this.getRownumByMysql(tblCode, code);
 //			String html = viewJrxml(jrxmPath,request,rowNum == 0 ?0:rowNum -1);
-			WebUtils.outputJsonResponseVo(response, op, 0, "OK", filePath, callback);
+			WebUtils.outputJsonResponseVo(response, op, 0, "OK", result, callback);
 		}
 	}
 	
@@ -232,7 +233,9 @@ public class SurveyDataService extends GenericDAOImpl {
 	 * @param code
 	 * @return
 	 */
-	private  String dfPicInfo(String tblCode,String code){
+	private  Map dfPicInfo(String tblCode,String code){
+		Map<String,Object> resultMap = new HashMap<String,Object>();
+		
 		String sql = "SELECT `code`,DFRASTER,DFSTUDY FROM `" + tblCode +"` where `code` = '" + code + "'";
 		List<Map> result = this.getHibernate_S9999().createMapSQLQuery(sql);
 		String filePath = null;
@@ -252,17 +255,17 @@ public class SurveyDataService extends GenericDAOImpl {
 			File file = new File(suveyDFPicUrl);
 			if(file != null){
 				filePath = file.getAbsolutePath();
+				resultMap.put("filePath", filePath);
 			}
 			logger.info("png suveyDFPicUrl = " + suveyDFPicUrl);
 			logger.info("png file absolute path = " + filePath);
-//			if(file.isFile()){
-//				System.out.println(file.getAbsolutePath());
-//				filePath = file.getAbsolutePath();
-//			}else{
-//				System.out.println("不是文件");
-//			}
+			if(file.isFile()){
+				resultMap.put("isFile", true);
+			}else{
+				resultMap.put("isFile", false);
+			}
 		}
-		return filePath;
+		return resultMap;
 	}
 	
 	private String findPicUrl(String dfstudy){

@@ -1,0 +1,28 @@
+    <!DOCTYPE struts PUBLIC
+              "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+              "http://struts.apache.org/dtds/struts-2.0.dtd">
+    <struts>
+
+	<package name="struts-configguide" namespace="/manage/configguide" extends="struts-interceptor">
+
+
+        <action name="configGuideDispatherAction" class="configGuideDispatherAction">
+            <result name="index" type="redirect">/html/configguide/index.jsp</result>
+            <result name="addDeptInput" type="dispatcher">/html/configguide/addDepartment.jsp</result>
+            <result name="showFlash" type="dispatcher">/html/configguide/configguide.jsp</result>
+            <result name="firstPage" type="dispatcher">/html/configguide/firstPage.jsp</result>
+            <result name="quickGuide" type="dispatcher">/html/configguide/quickGuide.jsp</result>
+            <result name="newFun" type="dispatcher">/html/configguide/newFun.jsp</result>
+           	<result name="adminGuid" type="dispatcher">/html/configguide/adminGuide.jsp</result>
+            <interceptor-ref name="common-params"/>	
+        </action>
+        <!-- 
+        <action name="configGuideAction" class="configGuideAction">
+			<result name="view" type="dispatcher">/html/configguide/listUploadedDepts.jsp</result>
+			<result name="success" type="dispatcher">/html/configguide/addDepartment.jsp</result>		
+			<result name="result" type="dispatcher">/html/configguide/addDepartment.jsp</result>
+			<interceptor-ref name="common-params-upload"/>
+        </action>
+		 -->
+	</package>
+</struts>

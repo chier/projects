@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" >
+<beans default-autowire="byName">
+
+	<!-- 列出系统操作日志模块的Action -->
+	<bean id="listOperLogAction"
+		class="com.cmcc.framework.controller.action.log.ListOperLogAction"
+		scope="prototype" />
+
+
+	<bean id="operLogManager"
+		class="com.cmcc.framework.business.impl.log.OperLogManagerImpl">
+		<property name="operLogDAO">
+			<ref bean="operLogDAO" />
+		</property>
+
+	</bean>
+
+	<bean id="operLogDAO"
+		class="com.cmcc.framework.persistence.impl.log.OperLogDAOImpl">
+	</bean>
+
+</beans>

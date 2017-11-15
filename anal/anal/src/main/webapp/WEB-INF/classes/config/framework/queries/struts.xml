@@ -1,0 +1,21 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="struts-queries" namespace="/manage/queries" extends="struts-interceptor">
+		<!-- 模块的Action -->
+		<action name="queriesAction" class="queriesAction">
+			<result name="success" type="dispatcher">/html/webadmin/default.jsp</result>
+			<result name="listTreeQueries" type="dispatcher">/html/queries/listTreeQueries.jsp</result>
+			<result name="welcome" 	type="dispatcher">/html/queries/welcome.jsp</result>
+			<result name="listQueries" type="dispatcher">/html/queries/listQueries.jsp</result>
+			<result name="leftTopFrame" type="dispatcher">/html/queries/leftTopFrame.jsp</result>
+			<result name="leftFrame" type="dispatcher">/html/queries/leftFrame.jsp</result>
+			<interceptor-ref name="common-params"/>
+		</action>
+		<!-- 导出的 action -->
+		<action name="exportAction" class="exportAction">
+			<interceptor-ref name="common-params"/>
+		</action>
+	</package>
+</struts>

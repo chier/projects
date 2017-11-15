@@ -1,0 +1,7 @@
+package com.cmcc.anal.framework.service;
+
+import com.cmcc.anal.common.persistence.generic.impl.GenericDAOImpl;
+
+public class PollutantService extends GenericDAOImpl {
+
+}

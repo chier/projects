@@ -1,0 +1,39 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="struts-password" namespace="/manage/common/password" extends="struts-interceptor">
+		<!-- 修改管理员的Action -->
+		<action name="modifyAdminPwdAction" class="modifyAdminPwdAction">
+			<result name="success" type="dispatcher">/html/webadmin/webAdmin-success.jsp</result>
+			<result name="toModifyPwd" type="dispatcher">/html/webadmin/updatePwd.jsp</result>
+			<interceptor-ref name="common-params"/>
+		</action>
+	</package>
+	
+	<package name="struts-admin" namespace="/manage/safemanage/webadmin" extends="struts-interceptor">
+		<!-- 管理员列表的Action -->
+		<action name="listWebAdminAction" class="listWebAdminAction">
+			<result name="success" type="dispatcher">/html/webadmin/listWebAdmin.jsp</result>
+			<result name="index" type="dispatcher">/html/webadmin/index.jsp</result>
+			<interceptor-ref name="common-params"/>
+		</action>
+		<!-- 创建管理员的Action -->
+		<action name="createWebAdminAction" class="createWebAdminAction">
+			<result name="success" type="redirect">listWebAdminAction.portal</result>
+			<result name="toCreateWebAdmin" type="dispatcher">/html/webadmin/updateWebAdmin.jsp</result>
+			<interceptor-ref name="common-model"/>
+		</action>
+		<!-- 修改管理员的Action -->
+		<action name="modifyWebAdminAction" class="modifyWebAdminAction">
+			<result name="success" type="redirect">listWebAdminAction.portal?${nextResult}</result>
+			<result name="toModify" type="dispatcher">/html/webadmin/updateWebAdmin.jsp</result>
+			<interceptor-ref name="common-model"/>
+		</action>
+		<!-- 删除管理员的Action -->
+		<action name="removeWebAdminAction" class="removeWebAdminAction">
+			<result name="success" type="redirect">listWebAdminAction.portal</result>
+			<interceptor-ref name="common-params"/>
+		</action>
+	</package>
+</struts>

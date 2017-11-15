@@ -1,0 +1,17 @@
+package com.cmcc.anal.framework.service;
+
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.cmcc.anal.common.persistence.generic.impl.GenericDAOImpl;
+
+/**
+ * 试点污染物分析  service层实现 
+ * @author w
+ *
+ */
+@Component
+@Transactional
+public class PollutantService extends GenericDAOImpl {
+
+}

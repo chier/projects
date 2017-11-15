@@ -1,0 +1,16 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="struts-log" namespace="/manage/safemanage/log" extends="struts-interceptor">
+		<!-- 操作日志Action -->
+		<action name="listOperLog" class="listOperLogAction">
+			<result name="success" type="dispatcher">/html/log/listOperLog.jsp</result>
+			<interceptor-ref name="common-params"/>
+		</action>
+	</package>
+	<package name="public-log" namespace="/public/common/log" extends="struts-interceptor">
+		<action name="noteLog" class="listOperLogAction" method="noteLog">
+		</action>
+	</package>
+</struts>

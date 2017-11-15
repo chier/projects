@@ -1,0 +1,17 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="struts-customAna" namespace="/manage/customAnalysis" extends="struts-interceptor">
+		<!-- 模块的Action -->
+		<action name="customAnaAction" class="customAnaAction">
+			<result name="success" type="dispatcher">/html/webadmin/default.jsp</result>
+			<result name="listJrxml" type="dispatcher">/html/customAnalysis/listAnaInfo.jsp</result>
+			<result name="welcome" 	type="dispatcher">/html/customAnalysis/welcome.jsp</result>
+			<result name="viewPage" type="dispatcher">/html/rawData/viewPage.jsp</result>
+			<interceptor-ref name="common-params"/>
+		</action>
+		
+	
+	</package>
+</struts>

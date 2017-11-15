@@ -1,0 +1,73 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="struts-interceptor" extends="struts-default">		
+		<!-- 把所有的拦截器写在一起 -->
+		<interceptors>
+			<!-- 参数的拦截器堆栈 -->
+			<interceptor-stack name="common-params">
+				<interceptor-ref name="basicStack" />
+			</interceptor-stack>
+			<!-- 带Action链的参数拦截器堆栈 -->
+			<interceptor-stack name="common-params-chain">
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="basicStack" />
+			</interceptor-stack>
+			<!-- 参数拒绝重复提交的拦截器堆栈 -->
+			<interceptor-stack name="common-params-token">
+				<interceptor-ref name="token" />
+				<interceptor-ref name="basicStack" />
+			</interceptor-stack>
+			<!-- 带文件上传的参数拦截器堆栈 -->
+			<interceptor-stack name="common-params-upload">
+				<interceptor-ref name="fileUpload" />
+				<interceptor-ref name="basicStack" />
+			</interceptor-stack>
+			<!-- 带文件上传拒绝重复提交的参数拦截器堆栈 -->
+			<interceptor-stack name="common-params-upload-token">
+				<interceptor-ref name="fileUpload" />
+				<interceptor-ref name="token" />
+				<interceptor-ref name="basicStack" />
+			</interceptor-stack>
+			<!-- 带模型驱动的拦截器堆栈 -->
+			<interceptor-stack name="common-model">
+				<interceptor-ref name="modelDrivenStack" />
+			</interceptor-stack>
+			<!-- 带模型驱动拒绝重复提交的拦截器堆栈 -->
+			<interceptor-stack name="common-model-token">
+				<interceptor-ref name="token" />
+				<interceptor-ref name="modelDrivenStack" />
+			</interceptor-stack>
+			
+			
+			<!-- 带文件上传的模型驱动拦截器堆栈 -->
+			<interceptor-stack name="common-model-upload">
+				<interceptor-ref name="fileUpload" />
+				<interceptor-ref name="modelDrivenStack" />
+			</interceptor-stack>
+			<!-- 带文件上传拒绝重复提交的模型驱动拦截器堆栈 -->
+			<interceptor-stack name="common-model-upload-token">
+				<interceptor-ref name="fileUpload" />
+				<interceptor-ref name="token" />
+				<interceptor-ref name="modelDrivenStack" />
+			</interceptor-stack>
+			<!-- 带模型驱动以及参数拒绝重复提交的拦截器堆栈 -->
+			<interceptor-stack name="common-model-params-token">
+				<interceptor-ref name="token" />
+				<interceptor-ref name="modelDrivenStack"/>
+				<interceptor-ref name="basicStack"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 定义全局结果 -->
+		<global-results> 
+		    <result name="error" type="dispatcher"> 
+		        <param name="location">/commons/error/error.jsp</param>
+		    </result>
+		    <result name="invalid.token" type="dispatcher"> 
+		        <param name="location">/commons/error/invalidToken.jsp</param> 
+		    </result>
+		</global-results> 
+	</package>
+</struts>

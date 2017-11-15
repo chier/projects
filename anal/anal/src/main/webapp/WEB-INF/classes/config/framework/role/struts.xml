@@ -1,0 +1,46 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="struts-Role" namespace="/manage/rolemanage/role"
+		extends="struts-interceptor">
+		<!-- 模块的Action-->
+		<action name="roleAction" class="roleAction">
+			<result name="savasuccess" type="dispatcher">
+				/html/role/listRole.jsp
+			</result>
+			<result name="adderror" type="dispatcher">
+				/html/role/addRole.jsp
+			</result>
+			<result name="updateerror" type="dispatcher">
+				/html/role/updateRole.jsp
+			</result>
+			<result name="roletree" type="dispatcher">
+				/html/role/roleTree.jsp
+			</result>
+			<result name="toupdate" type="dispatcher">
+				/html/role/updateRole.jsp
+			</result>
+			<result name="goindex" type="dispatcher">
+				/html/role/index.jsp
+			</result>
+			<result name="manageEmp" type="dispatcher">
+				/html/role/manageEmp.jsp
+			</result>
+			<result name="selectRoleEmp" type="dispatcher">
+				/html/role/selectRoleEmp.jsp
+			</result>
+			
+			<result name="managePer" type="dispatcher">
+				/html/role/managePer.jsp
+			</result>
+			<result name="listUserInRole" type="dispatcher">
+				/html/role/listEmpForRole.jsp
+			</result>
+			<result name="addRoleForUser" type="dispatcher">
+				/html/role/userAddRole.jsp
+			</result>
+			<interceptor-ref name="common-params" />
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,11 @@
+package com.cmcc.anal.framework.service;
+
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.cmcc.anal.common.persistence.generic.impl.GenericDAOImpl;
+@Component
+@Transactional
+public class PollutantService extends GenericDAOImpl {
+
+}

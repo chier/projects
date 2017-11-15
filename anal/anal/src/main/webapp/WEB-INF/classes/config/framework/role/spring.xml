@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName">
+	<!--模块底层实现接口 -->
+	<bean id="roleDAO"
+		class="com.cmcc.framework.persistence.impl.role.RoleDAOImpl" />
+	<bean id="roleWorkflowDAO"
+		class="com.cmcc.framework.persistence.impl.role.RoleWorkflowDAOImpl">
+	</bean>
+	<!--模块商业接口 -->
+	<bean id="roleManager"
+		class="com.cmcc.framework.business.impl.role.RoleManagerImpl">
+	</bean>
+	<!--模块Action 基类 -->
+	<bean id="roleAction"
+		class="com.cmcc.framework.controller.action.role.RoleAction"
+		scope="prototype">
+	</bean>
+
+</beans>

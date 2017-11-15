@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName">
+	
+	<!-- 用户登录，登出的BaseAction -->
+	<bean id="webActionBase" abstract="true"
+		class="com.cmcc.framework.controller.action.webaction.WebActionBase"
+		scope="prototype">
+	</bean>
+	
+	<!-- 用户登录，验证码用到的BaseAction -->
+	<bean id="baseAtion" abstract="true"
+		class="com.cmcc.common.controller.action.BaseAction"
+		scope="prototype">
+		<!-- 
+		<property name="userManager">
+			<ref bean="userManager" />
+		</property>
+		 -->
+	</bean>
+	
+	<!-- 用户登录，登出的Action -->
+	<bean id="loginAction"
+		class="com.cmcc.framework.controller.action.webaction.NewLoginAction"
+		scope="prototype" parent="webActionBase" />
+		
+	<bean id="logOutAction"
+		class="com.cmcc.framework.controller.action.webaction.LogOutAction"
+		scope="prototype" parent="webActionBase" />
+		
+	
+	<!-- 用户登录时，验证码的action -->
+	<bean id="piccode"
+		class="com.cmcc.framework.controller.action.webaction.PicCodeAction"
+		scope="prototype" parent="baseAtion" />
+	
+	<!-- 用户登录时，验证码的检验action -->
+	<bean id="validate"
+		class="com.cmcc.framework.controller.action.webaction.ValidateCodeAction"
+		scope="prototype" parent="baseAtion" />
+		
+	<!-- 登录业务操作 -->
+	<bean id="loginManager" class="com.cmcc.framework.business.impl.login.LoginManagerImpl"></bean>
+</beans>

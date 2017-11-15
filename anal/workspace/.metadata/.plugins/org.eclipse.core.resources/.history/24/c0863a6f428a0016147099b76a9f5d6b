@@ -1,0 +1,5 @@
+package com.cmcc.anal.framework.service;
+
+public class PollutantService {
+
+}

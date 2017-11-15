@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;RightTabPanel.js&apos; to &apos;surveyData&apos;&#x0D;&#x0A;- Original project: &apos;mobileCharts&apos;&#x0D;&#x0A;- Destination element: &apos;surveyData&apos;&#x0D;&#x0A;- Original element: &apos;RightTabPanel.js&apos;" description="Copy file" element1="app/view/surveyData/RightTabPanel.js" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1477289271255" target="/EnvironmentAndHealth/assets/www/app/view/surveyData" units="0" version="1.0"/>
+</session>

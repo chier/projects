@@ -1,0 +1,9 @@
+#Fri Oct 07 00:55:39 CST 2016
+tomcatJRE=1475592290599
+tomcatDir=E\:\\Program Files\\Server\\apache-tomcat-7.0.25
+eclipse.preferences.version=1
+fixTomcatHomeBug=fixed
+contextsDir=E\:\\Program Files\\Server\\apache-tomcat-7.0.25\\conf\\Catalina\\localhost
+tomcatVersion=tomcatV7
+computeSourcePath=true
+tomcatConfigFile=E\:\\Program Files\\Server\\apache-tomcat-7.0.25\\conf\\server.xml

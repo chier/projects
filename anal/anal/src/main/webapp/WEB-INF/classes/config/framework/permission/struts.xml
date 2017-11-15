@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="struts-permission" namespace="/manage/permission"
+		extends="struts-interceptor">
+	<!-- 模块的Action -->
+		<action name="permissionAction" class="permissionAction">
+			<result name="success" type="dispatcher">/html/permission/default.jsp</result>
+			<result name="index" type="dispatcher">/html/permission/index.jsp</result>
+			<interceptor-ref name="common-params"/>
+		</action>
+	</package>
+</struts>

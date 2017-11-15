@@ -1,0 +1,7 @@
+INDEX VERSION 1.122+G:\github.com\projects\anal\workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1703479284.index
+3270562830.index
+3474800770.index
+2796767553.index
+1172768945.index
+2461521992.index
